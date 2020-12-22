@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2020 at 10:47 AM
+-- Generation Time: Dec 22, 2020 at 04:05 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -41,22 +41,20 @@ CREATE TABLE `tabel_menu` (
 --
 
 INSERT INTO `tabel_menu` (`id`, `nama_menu`, `link`, `icon`, `is_main_menu`) VALUES
-(1, 'DATAbase SISWA', 'siswa', 'fa fa-users', 0),
-(2, 'DATAbase GURU', 'guru', 'fa fa-graduation-cap', 0),
-(8, 'data sekolah', 'sekolah', 'fa fa-building', 0),
-(9, 'Data master', '#', 'fa fa-bars', 0),
-(10, 'Mata Pelajaran', 'mapel', 'fa fa-book', 9),
+(1, 'DATA SISWA', 'siswa', 'fas fa-user', 9),
+(2, 'DATA GURU & KARYAWAN', 'guru', 'fa fa-user', 9),
+(8, 'data sekolah', 'sekolah', 'fa fa-building', 9),
+(9, 'DATA & INFORMASI', '#', 'fa fa-bars', 0),
+(10, 'MAPEL', 'mapel', 'fa fa-book', 9),
 (11, 'Ruangan Kelas', 'ruangan', 'fa fa-building', 9),
 (12, 'Jurusan', 'jurusan', 'fa fa-th-large', 9),
 (13, 'Tahun Akademik', 'tahunakademik', 'fa fa-calendar-o', 9),
-(14, 'Jadwal pelajaran', 'jadwal', 'fa fa-calendar', 0),
+(14, 'MATA PELAJARAN', '#', 'fa fa-calendar', 0),
 (15, 'Rombongan Belajar', 'rombel', 'fa fa-users', 9),
-(16, 'laporan nilai', 'nilai', 'fa fa-file-excel-o', 0),
-(17, 'Pengguna sistem', 'users', 'fa fa-cubes', 0),
 (19, 'Kurikulum', 'kurikulum', 'fa fa-newspaper-o', 9),
-(20, 'Wali Kelas', 'walikelas', 'fa fa-users', 0),
+(20, 'Wali Kelas', 'walikelas', 'fa fa-users', 9),
 (21, 'form pembayaran', 'keuangan/form', 'fa fa-shopping-cart', 0),
-(22, 'Peserta Didik', 'siswa/siswa_aktif', 'fa fa-graduation-cap', 0),
+(22, 'Peserta Didik', 'siswa/siswa_aktif', 'fa fa-graduation-cap', 9),
 (23, 'jenis pembayaran', 'jenis_pembayaran', 'fa fa-credit-card', 0),
 (24, 'setup biaya', 'keuangan/setup', 'fa fa-graduation-cap', 0),
 (25, 'Raport Online', 'raport', 'fa fa-graduation-cap', 0),
@@ -64,7 +62,18 @@ INSERT INTO `tabel_menu` (`id`, `nama_menu`, `link`, `icon`, `is_main_menu`) VAL
 (27, 'phonebook', 'sms_group', 'fa fa-book', 26),
 (28, 'form sms', 'sms', 'fa fa-keyboard-o', 26),
 (29, 'Laporan', 'keuangan', 'fa fa-desktop', 0),
-(30, 'Laporan', 'keuangan', 'fa fa-desktop', 0);
+(31, 'DATA NILAI SISWA', '#', 'fa fa-home', 0),
+(32, 'RAPORT SISWA', 'raport', 'fas fa-user', 31),
+(34, 'PPDB', '#', 'fas fa-user', 0),
+(36, 'DATA CALON SISWA', 'ppdb', 'fas fa-user', 34),
+(37, 'SISWA DITERIMA', 'ppdb/siswa_diterima', 'fas fa-user', 34),
+(39, 'USERS', 'users', 'fas fa-user', 0),
+(40, 'MENU SISTEM', 'menu', 'fas fa-user', 0),
+(41, 'LOGOUT', 'auth/logout', 'fas fa-user', 0),
+(42, 'PRESENSI SISWA', 'presensi', 'fas fa-user', 14),
+(43, 'JADWAL', 'jadwal', 'fas fa-user', 14),
+(44, 'NILAI SISWA', 'nilai', 'fas fa-user', 31),
+(45, 'ARSIP DOKUMEN', 'arsip', 'fas fa-user', 0);
 
 -- --------------------------------------------------------
 
@@ -138,7 +147,8 @@ INSERT INTO `tbl_guru` (`id_guru`, `nuptk`, `nama_guru`, `gender`, `username`, `
 (1, '8728372382738273', 'drs diawan sst', 'p', '', ''),
 (2, '46676768686', 'nuris akbar mkom', 'p', '', ''),
 (3, '4343434434343434', 'irma muliana sst mpd', 'w', '', ''),
-(4, '3434343232323', 'syamsuddin', 'w', 'udin123', '3af4c9341e31bce1f4262a326285170d');
+(4, '3434343232323', 'syamsuddin', 'w', 'udin123', '3af4c9341e31bce1f4262a326285170d'),
+(5, '093902903', 'Ardian', 'p', 'admin', '0192023a7bbd73250516f069df18b500');
 
 -- --------------------------------------------------------
 
@@ -511,7 +521,7 @@ CREATE TABLE `tbl_sekolah_info` (
 --
 
 INSERT INTO `tbl_sekolah_info` (`id_sekolah`, `nama_sekolah`, `id_jenjang_sekolah`, `alamat_sekolah`, `email`, `telpon`) VALUES
-(1, 'SMK N 2 LANGSA', 2, 'JL AHMAD YANI NO 2, DESA PAYA BUJOK SELEUMAK, KOTA LANGSA - ACEH', 'smkn2langsa@sch.id', '02134235');
+(1, 'SMP MARDISISWA 2 SEMARANG', 2, 'Jl. Soekarno Hatta No.12, Tlogosari Kulon, Kec. Pedurungan, Kota Semarang, Jawa Tengah 50198', 'http://smpmardisiswa2.mysch.id', '(024)6710570');
 
 -- --------------------------------------------------------
 
@@ -608,7 +618,6 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`id_user`, `nama_lengkap`, `username`, `password`, `id_level_user`, `foto`) VALUES
-(7, 'desi handayani', 'desi123', '14ddc434109d6e8df730d4ea4eefc06c', 5, 'Yaya_yah1.png'),
 (8, 'ardian ferdy firmansyah', 'ardian', '09cfbef35d33065e77443a5ff1e6e2d1', 1, '');
 
 -- --------------------------------------------------------
@@ -649,19 +658,21 @@ INSERT INTO `tbl_user_rule` (`id_rule`, `id_menu`, `id_level_user`) VALUES
 (26, 23, 5),
 (27, 24, 5),
 (28, 25, 3),
-(29, 26, 1),
 (30, 26, 5),
 (31, 29, 5),
 (32, 15, 1),
-(33, 16, 1),
-(34, 21, 1),
-(35, 23, 1),
-(36, 24, 1),
-(37, 25, 1),
-(38, 27, 1),
-(39, 28, 1),
-(40, 29, 1),
-(41, 30, 1);
+(42, 31, 1),
+(43, 35, 1),
+(44, 34, 1),
+(45, 39, 1),
+(46, 40, 1),
+(47, 41, 1),
+(48, 45, 1),
+(49, 42, 1),
+(50, 43, 1),
+(51, 44, 1),
+(52, 36, 1),
+(53, 37, 1);
 
 -- --------------------------------------------------------
 
@@ -681,7 +692,7 @@ CREATE TABLE `tbl_walikelas` (
 --
 
 INSERT INTO `tbl_walikelas` (`id_walikelas`, `id_guru`, `id_tahun_akademik`, `id_rombel`) VALUES
-(7, 4, 1, 1),
+(7, 5, 1, 1),
 (8, 3, 1, 2),
 (9, 1, 1, 3),
 (10, 2, 1, 4);
@@ -927,7 +938,7 @@ ALTER TABLE `tbl_walikelas`
 -- AUTO_INCREMENT for table `tabel_menu`
 --
 ALTER TABLE `tabel_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `tbl_biaya_sekolah`
@@ -939,7 +950,7 @@ ALTER TABLE `tbl_biaya_sekolah`
 -- AUTO_INCREMENT for table `tbl_guru`
 --
 ALTER TABLE `tbl_guru`
-  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_history_kelas`
@@ -1035,7 +1046,7 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_user_rule`
 --
 ALTER TABLE `tbl_user_rule`
-  MODIFY `id_rule` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id_rule` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `tbl_walikelas`
