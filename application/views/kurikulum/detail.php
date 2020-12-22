@@ -20,7 +20,7 @@
                         </select>
                     </td></tr>
                 <tr><td colspan="2">
-                    <?php echo anchor('kurikulum/adddetail/'.$this->uri->segment(3), '<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Tambah Data', "title='Dambah Data' class='btn btn-danger btn-sm'"); ?>
+                    <?php echo anchor('kurikulum/adddetail/'.$this->uri->segment(3), '<i class="fas fa-edit" aria-hidden="true"></i> Tambah Data', "title='Dambah Data' class='btn btn-danger btn-sm'"); ?>
                     <?php echo anchor('kurikulum','Kembali',"class='btn btn-success btn-sm'");?>
                     </td></tr>
             </table>

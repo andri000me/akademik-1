@@ -463,7 +463,7 @@
                             }
                         }
                         ?>
-                        <li><a href="<?php echo base_url() ?>/auth/logout"><i class="fa fa-sign-out"></i><span class='title'>LOGOUT</span></a></li>
+                        
 
                     </ul>
                     <!-- end: MAIN NAVIGATION MENU -->

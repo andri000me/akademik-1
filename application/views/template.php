@@ -21,7 +21,8 @@
         <!-- start: MAIN CSS -->
         <link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Raleway:400,100,200,300,500,600,700,800,900/" />
         <link type="text/css" rel="stylesheet" href="http://clipone.nurisakbar.com/bower_components/bootstrap/dist/css/bootstrap.min.css" />
-        <link type="text/css" rel="stylesheet" href="<?php echo base_url()?>template/font-awesome/css/font-awesome.min.css" />
+        <!-- <link type="text/css" rel="stylesheet" href="<?php echo base_url()?>template/font-awesome/css/font-awesome.min.css" />         -->
+        <link type="text/css" rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
         <link type="text/css" rel="stylesheet" href="http://clipone.nurisakbar.com/assets/fonts/clip-font.min.css" />
         <link type="text/css" rel="stylesheet" href="http://clipone.nurisakbar.com/bower_components/iCheck/skins/all.css" />
         <link type="text/css" rel="stylesheet" href="http://clipone.nurisakbar.com/bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css" />
@@ -464,7 +465,7 @@
                         }
                         ?>
                         
-                        <li class="active_open"><a href="<?php echo base_url() ?>/auth/logout"><i class="fa fa-sign-out"></i><span class="title">LOGOUT</span></a></li>
+                        <!-- <li class="active_open"><a href="<?php echo base_url() ?>/auth/logout"><i class="fa fa-sign-out"></i><span class="title">LOGOUT</span></a></li> -->
 
                     </ul>
                     <!-- end: MAIN NAVIGATION MENU -->
@@ -628,7 +629,7 @@
 
                         <!-- end: PAGE CONTENT-->
                     </div>
-                </div> -->
+                </div>
                 <!-- end: PAGE -->
             </div>
             <!-- end: MAIN CONTAINER -->

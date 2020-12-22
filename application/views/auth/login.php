@@ -21,7 +21,7 @@
         <!-- start: MAIN CSS -->
         <link rel="shortcut icon" href="<?php echo base_url()?>uploads/smp2.png">
         <link rel="stylesheet" href="http://www.cliptheme.com/preview/admin/clip-one/assets/plugins/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="http://www.cliptheme.com/preview/admin/clip-one/assets/plugins/font-awesome/css/font-awesome.min.css">
+        <!-- <link rel="stylesheet" href="http://www.cliptheme.com/preview/admin/clip-one/assets/plugins/font-awesome/css/font-awesome.min.css"> -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
         <link rel="stylesheet" href="http://www.cliptheme.com/preview/admin/clip-one/assets/fonts/style.css">
         <link rel="stylesheet" href="http://www.cliptheme.com/preview/admin/clip-one/assets/css/main.css">
