@@ -19,8 +19,10 @@
         <meta content="" name="author" />
         <!-- end: META -->
         <!-- start: MAIN CSS -->
+        <link rel="shortcut icon" href="<?php echo base_url()?>uploads/smp2.png">
         <link rel="stylesheet" href="http://www.cliptheme.com/preview/admin/clip-one/assets/plugins/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://www.cliptheme.com/preview/admin/clip-one/assets/plugins/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
         <link rel="stylesheet" href="http://www.cliptheme.com/preview/admin/clip-one/assets/fonts/style.css">
         <link rel="stylesheet" href="http://www.cliptheme.com/preview/admin/clip-one/assets/css/main.css">
         <link rel="stylesheet" href="http://www.cliptheme.com/preview/admin/clip-one/assets/css/main-responsive.css">
@@ -40,7 +42,8 @@
     <!-- start: BODY -->
     <body class="login example2">
         <div class="main-login col-sm-4 col-sm-offset-4">
-            <div class="logo">SISTEM INFORMASI AKADEMIK
+            <div class="logo">SISTEM INFORMASI AKADEMIK <br> SMP MARDISISWA 2 SEMARANG
+            <img src="<?php echo base_url()?>uploads/smp2.png" alt="Logo SMP" width="150" height="150">
             </div>
             <!-- start: LOGIN BOX -->
             <div class="box-login">
@@ -60,15 +63,15 @@
                         <span class="input-icon">
                             <input type="password" class="form-control password" name="password" placeholder="Password">
                             <i class="fa fa-lock"></i>
-                            <a class="forgot" href="#">
+                            <!-- <a class="forgot" href="#">
                                 I forgot my password
-                            </a> </span>
+                            </a> </span> -->
                     </div>
                     <div class="form-actions">
-                        <label for="remember" class="checkbox-inline">
+                        <!-- <label for="remember" class="checkbox-inline">
                             <input type="checkbox" class="grey remember" id="remember" name="remember">
                             Keep me signed in
-                        </label>
+                        </label> -->
                         <button type="submit" name="submit" class="btn btn-bricky pull-right">
                             Login <i class="fa fa-arrow-circle-right"></i>
                         </button>
@@ -177,9 +180,9 @@
             </div>
             <!-- end: REGISTER BOX -->
             <!-- start: COPYRIGHT -->
-            <div class="copyright">
+            <!-- <div class="copyright">
                 2014 &copy; clip-one by cliptheme.
-            </div>
+            </div> -->
             <!-- end: COPYRIGHT -->
         </div>
         <!-- start: MAIN JAVASCRIPTS -->

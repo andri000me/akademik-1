@@ -3,11 +3,11 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <i class="fa fa-external-link-square"></i>
-            Text Fields
+            Edit Data Siswa
             <div class="panel-tools">
                 <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
                 </a>
-                <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
+                <!-- <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
                     <i class="fa fa-wrench"></i>
                 </a>
                 <a class="btn btn-xs btn-link panel-refresh" href="#">
@@ -18,7 +18,7 @@
                 </a>
                 <a class="btn btn-xs btn-link panel-close" href="#">
                     <i class="fa fa-times"></i>
-                </a>
+                </a> -->
             </div>
         </div>
         <div class="panel-body">

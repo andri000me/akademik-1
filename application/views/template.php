@@ -7,8 +7,8 @@
     <!--<![endif]-->
 
     <head>
-        <title>SISFO AKADEMIK</title>
-        <link rel="shortcut icon" href="favicon.ico" />
+        <title>SISTEM AKADEMIK</title>
+        <link rel="shortcut icon" href="<?php echo base_url()?>uploads/smp2.png">
         <!-- start: META -->
         <meta charset="utf-8" />
         <!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
@@ -50,8 +50,8 @@
                     </button>
                     <!-- end: RESPONSIVE MENU TOGGLER -->
                     <!-- start: LOGO -->
-                    <a class="navbar-brand" href="index.html">
-                        SISFO AKADEMIK
+                    <a class="navbar-brand" href="<?php echo base_url()?>index.php/siswa">
+                        SISTEM AKADEMIK
                     </a>
                     <!-- end: LOGO -->
                 </div>
@@ -59,7 +59,7 @@
                     <!-- start: TOP NAVIGATION MENU -->
                     <ul class="nav navbar-right">
                         <!-- start: TO-DO DROPDOWN -->
-                        <li class="dropdown">
+                        <!-- <li class="dropdown">
                             <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
                                 <i class="fa fa-envelope-o" aria-hidden="true"></i>
                                 <span class="badge"> 12</span>
@@ -157,10 +157,10 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> -->
                         <!-- end: TO-DO DROPDOWN-->
                         <!-- start: NOTIFICATION DROPDOWN -->
-                        <li class="dropdown">
+                        <!-- <li class="dropdown">
                             <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
                                 <i class="fa fa-map-o" aria-hidden="true"></i>
                                 <span class="badge"> 11</span>
@@ -272,10 +272,10 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> -->
                         <!-- end: NOTIFICATION DROPDOWN -->
                         <!-- start: MESSAGE DROPDOWN -->
-                        <li class="dropdown">
+                        <!-- <li class="dropdown">
                             <a class="dropdown-toggle" data-close-others="true" data-hover="dropdown" data-toggle="dropdown" href="#">
                                 <i class="fa fa-wifi" aria-hidden="true"></i>
                                 <span class="badge"> 9</span>
@@ -366,12 +366,12 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> -->
                         <!-- end: MESSAGE DROPDOWN -->
                         <!-- start: USER DROPDOWN -->
                         <li class="dropdown current-user">
                             <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
-                                <img src="http://clipone.nurisakbar.com/assets/images/avatar-1-small.jpg" class="circle-img" alt="">
+                                <img src="https://www.flaticon.com/svg/static/icons/svg/3135/3135768.svg" class="circle-img" alt="Gambar" width="25px" height="30px">
                                 <span class="username"><?php echo $this->session->userdata('nama_lengkap') ?></span>
                                 <i class="fa fa-angle-down" aria-hidden="true"></i>
                             </a>
@@ -381,7 +381,7 @@
                                         <i class="fa fa-user" aria-hidden="true"></i> &nbsp;My Profile
                                     </a>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <a href="pages_calendar.html">
                                         <i class="clip-calendar"></i> &nbsp;My Calendar
                                     </a>
@@ -395,8 +395,8 @@
                                     <a href="utility_lock_screen.html">
                                         <i class="clip-locked"></i> &nbsp;Lock Screen
                                     </a>
-                                </li>
-                                <li>
+                                </li>-->
+                                <li> 
 
                                     <?php
                                     echo anchor('auth/logout', '<i class="fa fa-sign-out" aria-hidden="true"></i> &nbsp;Log Out');
@@ -407,9 +407,9 @@
                         </li>
                         <!-- end: USER DROPDOWN -->
                         <!-- start: PAGE SIDEBAR TOGGLE -->
-                        <li>
+                        <!-- <li>
                             <a class="sb-toggle" href="#"><i class="fa fa-outdent"></i></a>
-                        </li>
+                        </li> -->
                         <!-- end: PAGE SIDEBAR TOGGLE -->
                     </ul>
                     <!-- end: TOP NAVIGATION MENU -->
@@ -502,12 +502,12 @@
                 </div>
                 <!-- /.modal -->
                 <!-- end: SPANEL CONFIGURATION MODAL FORM -->
-                <div class="container">
+                <!-- <div class="container">
                     <!-- start: PAGE HEADER -->
                     <div class="row">
                         <div class="col-sm-12">
                             <!-- start: STYLE SELECTOR BOX -->
-                            <div id="style_selector" class="hidden-xs close-style">
+                            <!-- <div id="style_selector" class="hidden-xs close-style">
                                 <div id="style_selector_container" style="display:block">
                                     <div class="style-main-title">
                                         Style Selector
@@ -588,7 +588,7 @@
                                 <div class="style-toggle open">
                                     <i class="fa fa-cog fa-spin"></i>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- end: STYLE SELECTOR BOX -->
                             <!-- start: PAGE TITLE & BREADCRUMB -->
                             <ol class="breadcrumb">
@@ -601,7 +601,7 @@
                                 <li class="active">
                                     Dashboard
                                 </li>
-                                <li class="search-box">
+                                <!-- <li class="search-box">
                                     <form class="sidebar-search">
                                         <div class="form-group">
                                             <input type="text" placeholder="Start Searching...">
@@ -610,7 +610,7 @@
                                             </button>
                                         </div>
                                     </form>
-                                </li>
+                                </li> -->
                             </ol>
                             <div class="page-header">
                                 <h1>Dashboard <small>overview &amp; stats </small></h1>
@@ -628,7 +628,7 @@
 
                         <!-- end: PAGE CONTENT-->
                     </div>
-                </div>
+                </div> -->
                 <!-- end: PAGE -->
             </div>
             <!-- end: MAIN CONTAINER -->
@@ -645,7 +645,7 @@
             </div>
             <!-- end: FOOTER -->
             <!-- start: RIGHT SIDEBAR -->
-            <div id="page-sidebar">
+            <!-- <div id="page-sidebar">
                 <a class="sidebar-toggler sb-toggle" href="#"><i class="fa fa-indent"></i></a>
                 <div class="sidebar-wrapper">
                     <ul class="nav nav-tabs nav-justified" id="sidebar-tab">
@@ -974,7 +974,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- end: RIGHT SIDEBAR -->
             <div id="event-management" class="modal fade" tabindex="-1" data-width="760" style="display: none;">
                 <div class="modal-dialog">
