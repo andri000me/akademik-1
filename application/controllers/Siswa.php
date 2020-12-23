@@ -9,10 +9,10 @@ Class Siswa extends CI_Controller {
         $this->load->model('Model_siswa');
     }
 
-    
-    
+
+
     function data() {
-   
+
         // nama tabel
         $table = 'tbl_siswa';
         // nama PK
@@ -26,7 +26,7 @@ Class Siswa extends CI_Controller {
                        return "<img width='30px' src='".  base_url()."/uploads/user-siluet.jpg'>";
                    }else{
                        return "<img width='20px' src='".  base_url()."/uploads/".$d."'>";
-                   }   
+                   }
                 }
             ),
             array('db' => 'nim', 'dt' => 'nim'),
@@ -38,7 +38,7 @@ Class Siswa extends CI_Controller {
                 'dt' => 'aksi',
                 'formatter' => function( $d) {
                     //return "<a href='edit.php?id=$d'>EDIT</a>";
-                    return anchor('siswa/edit/'.$d,'<i class="fa fa-edit"></i>','class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit"').' 
+                    return anchor('siswa/edit/'.$d,'<i class="fa fa-edit"></i>','class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit"').'
                         '.anchor('siswa/delete/'.$d,'<i class="fa fa-trash"></i>','class="btn btn-xs btn-danger tooltips" data-placement="top" data-original-title="Delete"');
                 }
             )
@@ -69,7 +69,7 @@ Class Siswa extends CI_Controller {
             $this->template->load('template', 'siswa/add');
         }
     }
-    
+
     function edit(){
         if(isset($_POST['submit'])){
             $uploadFoto = $this->upload_foto_siswa();
@@ -81,7 +81,7 @@ Class Siswa extends CI_Controller {
             $this->template->load('template', 'siswa/edit',$data);
         }
     }
-    
+
     function delete(){
         $nim = $this->uri->segment(3);
         if(!empty($nim)){
@@ -91,7 +91,7 @@ Class Siswa extends CI_Controller {
         }
         redirect('siswa');
     }
-    
+
     function upload_foto_siswa(){
         $config['upload_path']          = './uploads/';
         $config['allowed_types']        = 'jpg|png';
@@ -102,15 +102,15 @@ Class Siswa extends CI_Controller {
         $upload = $this->upload->data();
         return $upload['file_name'];
     }
-    
-    
+
+
     function siswa_aktif(){
         $this->template->load('template', 'siswa/siswa_aktif');
     }
-    
+
     function load_data_siswa_by_rombel(){
         $rombel = $_GET['rombel'];
-        
+
         echo "<table class='table table-bordered'>
             <tr><th width='90'>NIM</th><th>NAMA</th></tr>";
         $this->db->where('id_rombel',$rombel);
@@ -120,13 +120,13 @@ Class Siswa extends CI_Controller {
         }
         echo"</table>";
     }
-    
+
     function data_by_rombel_excel(){
         $this->load->library('CPHP_excel');
         $objPHPExcel = new PHPExcel();
         $objPHPExcel->getActiveSheet()->setCellValue('A1', 'NIM');
         $objPHPExcel->getActiveSheet()->setCellValue('B1', 'SISWA');
-        
+
         $rombel = $_POST['rombel'];
         $this->db->where('id_rombel',$rombel);
         $siswa = $this->db->get('tbl_siswa');
@@ -136,8 +136,8 @@ Class Siswa extends CI_Controller {
             $objPHPExcel->getActiveSheet()->setCellValue('B'.$no, $row->nama);
             $no++;
         }
-        
-        $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007'); 
+
+        $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
         $objWriter->save("data-siswa.xlsx");
         $this->load->helper('download');
         force_download('data-siswa.xlsx', NULL);
