@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 24, 2020 at 10:01 AM
+-- Generation Time: Dec 24, 2020 at 02:44 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -127,6 +127,33 @@ INSERT INTO `tbl_biaya_sekolah` (`id_biaya`, `id_jenis_pembayaran`, `id_tahun_ak
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_dokumen`
+--
+
+CREATE TABLE `tbl_dokumen` (
+  `id_dokumen` int(100) NOT NULL,
+  `nama_pemilik` varchar(4000) NOT NULL,
+  `nis_nuptk` varchar(40) NOT NULL,
+  `nama_dokumen` varchar(4000) NOT NULL,
+  `tanggal` date NOT NULL,
+  `pemilik` enum('s','g') NOT NULL,
+  `file_dokumen` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_dokumen`
+--
+
+INSERT INTO `tbl_dokumen` (`id_dokumen`, `nama_pemilik`, `nis_nuptk`, `nama_dokumen`, `tanggal`, `pemilik`, `file_dokumen`) VALUES
+(1, 'Ardian', '3400495', 'Ijazah', '2020-12-23', 's', ''),
+(2, 'Andika', '2300920', 'Ijazah', '2020-12-24', 's', ''),
+(3, 'Alif', '039093', 'Ijazah', '2020-12-23', 's', ''),
+(4, 'Paijo', '2300920', 'Ijazah', '2020-12-24', 's', ''),
+(5, 'Painem', '3030998', 'Ijazah', '2020-12-24', 's', '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_guru`
 --
 
@@ -176,7 +203,11 @@ INSERT INTO `tbl_history_kelas` (`id_history`, `id_rombel`, `nim`, `id_tahun_aka
 (6, 1, 'TIM102135', 1),
 (7, 1, 'TI1021395', 1),
 (8, 1, 'A11.2017.10', 1),
-(9, 1, 'A11.2017.10', 1);
+(9, 1, 'A11.2017.10', 1),
+(10, 1, '', 1),
+(11, 1, '2200033', 1),
+(12, 1, '2903902', 1),
+(13, 1, '292030', 1);
 
 -- --------------------------------------------------------
 
@@ -560,6 +591,10 @@ CREATE TABLE `tbl_siswa` (
 --
 
 INSERT INTO `tbl_siswa` (`nim`, `nama`, `gender`, `tanggal_lahir`, `tempat_lahir`, `kd_agama`, `foto`, `id_rombel`) VALUES
+('2200033', 'Agus', 'P', '1221-02-21', 'Surabaya', '01', 'biscuits.png', 1),
+('29023', 'Tukijan', 'P', '0999-02-23', 'Semarang', '01', 'antman.jpg', 1),
+('2903902', 'Rendy', 'W', '3223-02-23', 'Sulawesy', '06', 'app.png', 1),
+('292030', 'Rocky', 'P', '2022-04-30', 'Bikini Bottom', '01', 'blackpanther.jpg', 1),
 ('A11.2017.10', 'Ardian Ferdy Firmansyah', 'P', '1999-02-23', 'Semarang', '01', 'me.jpg', 1),
 ('RM00502', 'SAFIKAH KAMAL', 'P', '2017-01-23', 'BANDA ACEH', '02', '', 1),
 ('TI102132', 'NURIS AKBAR', 'P', '2017-01-22', 'LANGSA', '01', '', 1),
@@ -808,6 +843,12 @@ ALTER TABLE `tbl_biaya_sekolah`
   ADD PRIMARY KEY (`id_biaya`);
 
 --
+-- Indexes for table `tbl_dokumen`
+--
+ALTER TABLE `tbl_dokumen`
+  ADD PRIMARY KEY (`id_dokumen`);
+
+--
 -- Indexes for table `tbl_guru`
 --
 ALTER TABLE `tbl_guru`
@@ -968,6 +1009,12 @@ ALTER TABLE `tbl_biaya_sekolah`
   MODIFY `id_biaya` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT for table `tbl_dokumen`
+--
+ALTER TABLE `tbl_dokumen`
+  MODIFY `id_dokumen` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `tbl_guru`
 --
 ALTER TABLE `tbl_guru`
@@ -977,7 +1024,7 @@ ALTER TABLE `tbl_guru`
 -- AUTO_INCREMENT for table `tbl_history_kelas`
 --
 ALTER TABLE `tbl_history_kelas`
-  MODIFY `id_history` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_history` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `tbl_jadwal`
