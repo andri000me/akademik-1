@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 22, 2020 at 04:05 PM
+-- Generation Time: Dec 24, 2020 at 08:44 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -41,7 +41,7 @@ CREATE TABLE `tabel_menu` (
 --
 
 INSERT INTO `tabel_menu` (`id`, `nama_menu`, `link`, `icon`, `is_main_menu`) VALUES
-(1, 'DATA SISWA', 'siswa', 'fas fa-user', 9),
+(1, 'DATA SISWA', 'siswa', 'fa fa-users', 9),
 (2, 'DATA GURU & KARYAWAN', 'guru', 'fa fa-user', 9),
 (8, 'data sekolah', 'sekolah', 'fa fa-building', 9),
 (9, 'DATA & INFORMASI', '#', 'fa fa-bars', 0),
@@ -62,18 +62,18 @@ INSERT INTO `tabel_menu` (`id`, `nama_menu`, `link`, `icon`, `is_main_menu`) VAL
 (27, 'phonebook', 'sms_group', 'fa fa-book', 26),
 (28, 'form sms', 'sms', 'fa fa-keyboard-o', 26),
 (29, 'Laporan', 'keuangan', 'fa fa-desktop', 0),
-(31, 'DATA NILAI SISWA', '#', 'fa fa-home', 0),
-(32, 'RAPORT SISWA', 'raport', 'fas fa-user', 31),
-(34, 'PPDB', '#', 'fas fa-user', 0),
-(36, 'DATA CALON SISWA', 'ppdb', 'fas fa-user', 34),
-(37, 'SISWA DITERIMA', 'ppdb/siswa_diterima', 'fas fa-user', 34),
-(39, 'USERS', 'users', 'fas fa-user', 0),
-(40, 'MENU SISTEM', 'menu', 'fas fa-user', 0),
-(41, 'LOGOUT', 'auth/logout', 'fas fa-user', 0),
+(31, 'DATA NILAI SISWA', '#', 'fa fa-graduation-cap', 0),
+(32, 'RAPORT SISWA', 'raport', 'fa fa-bookmark-o', 31),
+(34, 'PPDB', '#', 'fa fa-plus-square', 0),
+(36, 'DATA CALON SISWA', 'ppdb', 'fa fa-user-circle o', 34),
+(37, 'SISWA DITERIMA', 'ppdb/siswa_diterima', 'fa fa-user-circle o', 34),
+(39, 'USERS', 'users', 'fa fa-user-plus', 0),
+(40, 'MENU SISTEM', 'menu', 'fa fa-address-book', 0),
+(41, 'LOGOUT', 'auth/logout', 'fa fa-sign-out', 0),
 (42, 'PRESENSI SISWA', 'presensi', 'fas fa-user', 14),
 (43, 'JADWAL', 'jadwal', 'fas fa-user', 14),
-(44, 'NILAI SISWA', 'nilai', 'fas fa-user', 31),
-(45, 'ARSIP DOKUMEN', 'arsip', 'fas fa-user', 0);
+(44, 'NILAI SISWA', 'nilai', 'fa fa-file-text', 31),
+(45, 'ARSIP DOKUMEN', 'arsip', 'fa fa-files-o', 0);
 
 -- --------------------------------------------------------
 
