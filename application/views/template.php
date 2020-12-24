@@ -394,9 +394,9 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="pages_user_profile.html">
-                                        <i class="fa fa-user" aria-hidden="true"></i> &nbsp;My Profile
-                                    </a>
+                                    <?php
+                                    echo anchor('profile', '<i class="fa fa-user" aria-hidden="true"></i> &nbsp;My Profile');
+                                    ?>
                                 </li>
                                 <!-- <li>
                                     <a href="pages_calendar.html">
@@ -652,12 +652,13 @@
             <!-- start: FOOTER -->
             <div class="footer clearfix">
                 <div class="footer-inner">
+                    
                     <script>
                         document.write(new Date().getFullYear())
-                    </script> &copy; clip-one by cliptheme.
+                    </script> &copy; SISTEM AKADEMIK SMP MARDISISWA 2 SEMARANG
                 </div>
                 <div class="footer-items">
-                    <span class="go-top"><i class="clip-chevron-up"></i></span>
+                    <span class="go-top"><i class="fa fa-arrow-up" ></i></span>
                 </div>
             </div>
             <!-- end: FOOTER -->

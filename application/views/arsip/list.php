@@ -3,7 +3,7 @@
    
     <div class="panel panel-default">
         <div class="panel-heading">
-            <i class="fa fa-external-link-square"></i> Data Guru
+            <i class="fa fa-external-link-square"></i> Arsip Dokumen
             <div class="panel-tools">
                 <?php echo anchor('arsip/add','<i class="fa fa-edit" aria-hidden="true"></i>',"title='Tambah Data'");?>
                 <!-- <a class="btn btn-xs btn-link panel-collapse collapses" href="#"> </a>
@@ -18,10 +18,13 @@
                 <thead>
                     <tr>
                         <th>NO</th>
-                        <th>NUPTK</th>
-                        <th>NAMA GURU</th>
-                        <th>GENDER</th>
-                        <th></th>
+                        <th>NAMA</th>
+                        <th>NIS/NUPTK</th>
+                        <th>NAMA DOKUMEN</th>
+                        <th>TANGGAL</th>
+                        <th>PEMILIK</th>
+                        <th>FILE</th>
+                        <th>OPSI</th>
                     </tr>
                 </thead>
             </table>
@@ -37,23 +40,39 @@
   <script>
         $(document).ready(function() {
             var t = $('#mytable').DataTable( {
-                "ajax": '<?php echo site_url('guru/data'); ?>',
+                "ajax": '<?php echo site_url('arsip/data'); ?>',
                 "order": [[ 2, 'asc' ]],
                 "columns": [
                     {
                         "data": null,
-                        "width": "50px",
+                        "width": "10px",
                         "sClass": "text-center",
                         "orderable": false,
                     },
-                    {
-                        "data": "nuptk",
-                        "width": "120px",
-                        "sClass": "text-left"
+                    { "data": "nama_pemilik" ,
+                        "width": "80px",
+                        "sClass": "text-center", 
                     },
-                    { "data": "nama_guru" },
-                    { "data": "gender","width": "90px", },
-                    { "data": "aksi","width": "80px" },
+                    {
+                        "data": "nis_nuptk",
+                        "width": "150px",
+                        "height" : "10px",
+                        "sClass": "text-center"
+                    },
+                    { "data": "nama_dokumen",
+                        "width":"100px",
+                        "sClass": "text-center", },
+                    { "data": "tanggal",
+                        "width":"100px",
+                        "sClass": "text-center", },
+                    { "data": "pemilik", "width": "15px",
+                        "sClass": "text-center", 
+                    },
+                    { "data": "file_dokumen", "width": "15px",
+                        "sClass": "text-center", 
+                    },
+                    { "data": "aksi","width": "1px",
+                        "sClass": "text-center", },
                 ]
             } );
                

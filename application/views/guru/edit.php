@@ -47,7 +47,7 @@
 
             <div class="form-group">
                 <label class="col-sm-2 control-label" for="form-field-1">
-                    GENGER
+                    GENDER
                 </label>
                 <div class="col-sm-9">
                     <?php echo form_dropdown('gender', array('p' => 'LAKI LAKI', 'w' => 'PEREMPUAN'), $guru['gender'], "class='form-control'") ?>

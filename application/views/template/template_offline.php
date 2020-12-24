@@ -639,7 +639,7 @@
                     </script> &copy; clip-one by cliptheme.
                 </div>
                 <div class="footer-items">
-                    <span class="go-top"><i class="clip-chevron-up"></i></span>
+                    <span class="go-top"><i class="fa fa-arrow-up"></i></span>
                 </div>
             </div>
             <!-- end: FOOTER -->

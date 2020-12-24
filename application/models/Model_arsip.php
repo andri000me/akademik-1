@@ -4,14 +4,14 @@ class Model_arsip extends CI_Model {
 
     public $table ="tbl_dokumen";
     
-    function save($dokumen) {
+    function save($foto) {
         $data = array(
             'nama_pemilik'           => $this->input->post('nama_pemilik', TRUE),
             'nis_nuptk'      => $this->input->post('nis_nuptk', TRUE),
             'nama_dokumen'          => $this->input->post('dokumen', TRUE),
             'tanggal' => $this->input->post('tanggal', TRUE),
             'pemilik'        => $this->input->post('pemilik', TRUE),
-            'file_dokumen'          => $dokumen
+            'file_dokumen'          => $foto
         );
         $this->db->insert($this->table,$data);
     

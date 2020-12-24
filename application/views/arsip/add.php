@@ -63,7 +63,7 @@
                     KATEGORI PEMILIK
                 </label>
                 <div class="col-sm-9">
-                    <?php echo form_dropdown('pemilik', array('s' => 'Siswa', 'g' => 'Guru dan Karyawan'), null, "class='form-control'") ?>
+                    <?php echo form_dropdown('pemilik', array('Siswa' => 'Siswa', 'Guru' => 'Guru', 'Karyawan' => 'Karyawan'), null, "class='form-control'") ?>
                 </div>
             </div>
             <div class="form-group">
@@ -71,7 +71,7 @@
                     UPLOAD FILE
                 </label>
                 <div class="col-sm-9">
-                    <input type="file" name="file_dokumen">
+                    <input type="file" name="userfile">
                 </div>
             </div>
             
