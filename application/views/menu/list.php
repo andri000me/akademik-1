@@ -3,7 +3,7 @@
 
     <div class="panel panel-default">
         <div class="panel-heading">
-            <i class="fa fa-external-link-square"></i> Dynamic Table
+            <i class="fa fa-external-link-square"></i> Menu
             <div class="panel-tools">
                 <?php echo anchor('menu/add', '<i class="fas fa-edit" aria-hidden="true"></i>', "title='Tambah Data'"); ?>
                 <!-- <a class="btn btn-xs btn-link panel-collapse collapses" href="#"> </a>
