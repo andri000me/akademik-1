@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 24, 2020 at 08:44 AM
+-- Generation Time: Dec 24, 2020 at 09:02 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -49,7 +49,7 @@ INSERT INTO `tabel_menu` (`id`, `nama_menu`, `link`, `icon`, `is_main_menu`) VAL
 (11, 'Ruangan Kelas', 'ruangan', 'fa fa-building', 9),
 (12, 'Jurusan', 'jurusan', 'fa fa-th-large', 9),
 (13, 'Tahun Akademik', 'tahunakademik', 'fa fa-calendar-o', 9),
-(14, 'MATA PELAJARAN', '#', 'fa fa-calendar', 0),
+(14, 'DATA PRESENSI', '#', 'fa fa-book', 0),
 (15, 'Rombongan Belajar', 'rombel', 'fa fa-users', 9),
 (19, 'Kurikulum', 'kurikulum', 'fa fa-newspaper-o', 9),
 (20, 'Wali Kelas', 'walikelas', 'fa fa-users', 9),
@@ -70,8 +70,8 @@ INSERT INTO `tabel_menu` (`id`, `nama_menu`, `link`, `icon`, `is_main_menu`) VAL
 (39, 'USERS', 'users', 'fa fa-user-plus', 0),
 (40, 'MENU SISTEM', 'menu', 'fa fa-address-book', 0),
 (41, 'LOGOUT', 'auth/logout', 'fa fa-sign-out', 0),
-(42, 'PRESENSI SISWA', 'presensi', 'fas fa-user', 14),
-(43, 'JADWAL', 'jadwal', 'fas fa-user', 14),
+(42, 'PRESENSI SISWA', 'presensi', 'fa fa-check-square-o', 14),
+(43, 'JADWAL', 'jadwal', 'fa fa-calendar', 14),
 (44, 'NILAI SISWA', 'nilai', 'fa fa-file-text', 31),
 (45, 'ARSIP DOKUMEN', 'arsip', 'fa fa-files-o', 0);
 
