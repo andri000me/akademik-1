@@ -8,6 +8,10 @@ Class Presensi extends CI_Controller {
       $this->load->library('ssp');
       $this->load->model('Model_presensi');
   }
+  function index() {
+    $this->template->load('template', 'presensi/list');
+}
+
   function data() {
       // nama tabel
       $table = 'tbl_presensi';
