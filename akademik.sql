@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 24, 2020 at 09:02 AM
+-- Generation Time: Dec 24, 2020 at 10:01 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -459,6 +459,21 @@ INSERT INTO `tbl_phonebook` (`id_phonebook`, `id_group`, `no_hp`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_presensi`
+--
+
+CREATE TABLE `tbl_presensi` (
+  `id_presensi` int(11) NOT NULL,
+  `tanggal` date NOT NULL,
+  `nim` int(11) NOT NULL,
+  `nama` text NOT NULL,
+  `rombel` varchar(11) NOT NULL,
+  `absen` varchar(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_rombel`
 --
 
@@ -545,7 +560,7 @@ CREATE TABLE `tbl_siswa` (
 --
 
 INSERT INTO `tbl_siswa` (`nim`, `nama`, `gender`, `tanggal_lahir`, `tempat_lahir`, `kd_agama`, `foto`, `id_rombel`) VALUES
-('A11.2017.10', 'Ardian Ferdy Firmansyah', 'P', '1999-02-23', 'Semarang', '01', 'aspirin.jpg', 1),
+('A11.2017.10', 'Ardian Ferdy Firmansyah', 'P', '1999-02-23', 'Semarang', '01', 'me.jpg', 1),
 ('RM00502', 'SAFIKAH KAMAL', 'P', '2017-01-23', 'BANDA ACEH', '02', '', 1),
 ('TI102132', 'NURIS AKBAR', 'P', '2017-01-22', 'LANGSA', '01', '', 1),
 ('TI102133', 'M HAFIDZ MUZAKI', 'P', '2017-01-16', 'LANGSA', '01', '', 1),
@@ -877,6 +892,12 @@ ALTER TABLE `tbl_phonebook`
   ADD PRIMARY KEY (`id_phonebook`);
 
 --
+-- Indexes for table `tbl_presensi`
+--
+ALTER TABLE `tbl_presensi`
+  ADD PRIMARY KEY (`id_presensi`);
+
+--
 -- Indexes for table `tbl_rombel`
 --
 ALTER TABLE `tbl_rombel`
@@ -1017,6 +1038,12 @@ ALTER TABLE `tbl_pembayaran`
 --
 ALTER TABLE `tbl_phonebook`
   MODIFY `id_phonebook` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tbl_presensi`
+--
+ALTER TABLE `tbl_presensi`
+  MODIFY `id_presensi` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_rombel`
