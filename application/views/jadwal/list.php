@@ -26,7 +26,7 @@
                             <i class="fa fa-cogs" aria-hidden="true"></i> Generate Jadwal
                         </button>
                         <button type="submit" name="export_jadwal" class="btn btn-danger btn-sm"><i class="fa fa-print" aria-hidden="true"></i> Cetak PDF</button>
-                        <?php //echo anchor('kurikulum/adddetail/'.$this->uri->segment(3), '<i class="fas fa-edit" aria-hidden="true"></i> Tambah Data', "title='Dambah Data' class='btn btn-danger btn-sm'"); ?>
+                        <?php //echo anchor('kurikulum/adddetail/'.$this->uri->segment(3), '<i class="fa fa-edit" aria-hidden="true"></i> Tambah Data', "title='Dambah Data' class='btn btn-danger btn-sm'"); ?>
                         <?php //echo anchor('kurikulum', 'Kembali', "class='btn btn-success btn-sm'"); ?>
                     </td></tr>
             </table>

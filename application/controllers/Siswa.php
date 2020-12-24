@@ -25,7 +25,7 @@ Class Siswa extends CI_Controller {
                    if(empty($d)){
                        return "<img width='30px' src='".  base_url()."/uploads/user-siluet.jpg'>";
                    }else{
-                       return "<img width='20px' src='".  base_url()."/uploads/".$d."'>";
+                       return "<img width='75px' height='88px' src='".  base_url()."/uploads/".$d."'>";
                    }
                 }
             ),
@@ -39,6 +39,7 @@ Class Siswa extends CI_Controller {
                 'formatter' => function( $d) {
                     //return "<a href='edit.php?id=$d'>EDIT</a>";
                     return anchor('siswa/edit/'.$d,'<i class="fa fa-edit"></i>','class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit"').'
+                    <br><br>
                         '.anchor('siswa/delete/'.$d,'<i class="fa fa-trash"></i>','class="btn btn-xs btn-danger tooltips" data-placement="top" data-original-title="Delete"');
                 }
             )

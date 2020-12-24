@@ -2,14 +2,14 @@
     <!-- start: DYNAMIC TABLE PANEL -->
    <?php echo anchor('siswa/add','Input Data Baru',array('class'=>'btn btn-danger btn-sm'))?>
    <!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Import Data Excel Dari Dapodik</button>
+<!-- <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Import Data Excel Dari Dapodik</button> -->
 
     <div style="margin-bottom: 10px;"></div>
     <div class="panel panel-default">
         <div class="panel-heading">
             <i class="fa fa-external-link-square"></i> Data Siswa
             <div class="panel-tools">
-                <?php echo anchor('siswa/add','<i class="fas fa-edit" aria-hidden="true"></i>',"title='Tambah Data'");?>
+                <?php echo anchor('siswa/add','<i class="fa fa-edit" aria-hidden="true"></i>',"title='Tambah Data'");?>
                 <a class="btn btn-xs btn-link panel-collapse collapses" href="#"> </a>
                 <!-- <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal"> <i class="fa fa-wrench"></i> </a>
                 <a class="btn btn-xs btn-link panel-refresh" href="#"> <i class="fa fa-refresh"></i> </a>
@@ -21,13 +21,13 @@
             <table id="mytable" class="table table-striped table-bordered table-hover table-full-width dataTable" cellspacing="0" width="100%">
                 <thead>
                     <tr>
-                        <th>NO</th>
-                        <th>FOTO</th>
-                        <th>NIM</th>
-                        <th>NAMA</th>
-                        <th>TEMPAT LAHIR</th>
-                        <th>TANGGAL LAHIR</th>
-                        <th>OPSI</th>
+                        <th class="text-center">NO</th>
+                        <th class="text-center">FOTO</th>
+                        <th class="text-center">NIS</th>
+                        <th class="text-center">NAMA</th>
+                        <th class="text-center">TEMPAT LAHIR</th>
+                        <th class="text-center">TANGGAL LAHIR</th>
+                        <th class="text-center">OPSI</th>
                     </tr>
                 </thead>
             </table>
@@ -48,21 +48,31 @@
                 "columns": [
                     {
                         "data": null,
-                        "width": "50px",
+                        "width": "10px",
                         "sClass": "text-center",
                         "orderable": false,
                     },
-                    { "data": "foto" },
+                    { "data": "foto" ,
+                        "width": "80px",
+                        "sClass": "text-center", 
+                    },
                     {
                         "data": "nim",
-                        "width": "400px",
-                        "height" : "300px",
+                        "width": "150px",
+                        "height" : "30px",
                         "sClass": "text-center"
                     },
-                    { "data": "nama" },
-                    { "data": "tempat_lahir" },
-                    { "data": "tanggal_lahir", "width": "150px" },
-                    { "data": "aksi","width": "75px" },
+                    { "data": "nama",
+                        "width":"100px",
+                        "sClass": "text-center", },
+                    { "data": "tempat_lahir",
+                        "width":"100px",
+                        "sClass": "text-center", },
+                    { "data": "tanggal_lahir", "width": "15px",
+                        "sClass": "text-center", 
+                    },
+                    { "data": "aksi","width": "50px",
+                        "sClass": "text-center", },
                 ]
             } );
                
