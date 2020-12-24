@@ -43,6 +43,7 @@
     <body class="login example2">
         <div class="main-login col-sm-4 col-sm-offset-4">
             <div class="logo">SISTEM INFORMASI AKADEMIK <br> SMP MARDISISWA 2 SEMARANG
+            <br>
             <img src="<?php echo base_url()?>uploads/smp2.png" alt="Logo SMP" width="150" height="150">
             </div>
             <!-- start: LOGIN BOX -->
