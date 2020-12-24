@@ -8,9 +8,6 @@ Class Presensi extends CI_Controller {
       $this->load->library('ssp');
       $this->load->model('Model_presensi');
   }
-  function index() {
-    $this->template->load('template', 'presensi/list');
-}
 
   function data() {
       // nama tabel
@@ -20,9 +17,10 @@ Class Presensi extends CI_Controller {
       // list field
       $columns = array(
           array('db' => 'id_presensi', 'dt' => 'id_presensi'),
+          array('db' => 'tanggal', 'dt' => 'tanggal'),
           array('db' => 'nim', 'dt' => 'nim'),
           array('db' => 'nama', 'dt' => 'nama'),
-          array('db' => 'rombel','dt' => 'rombel'),
+          array('db' => 'id_rombel','dt' => 'id_rombel'),
           array(
               'db' => 'absen',
               'dt' => 'absen',
@@ -44,6 +42,19 @@ Class Presensi extends CI_Controller {
       echo json_encode(
               SSP::simple($_GET, $sql_details, $table, $primaryKey, $columns)
       );
+  }
+
+  function index() {
+    $this->template->load('template', 'presensi/list');
+  }
+
+  function add() {
+      if (isset($_POST['submit'])) {
+          $this->Model_presensi->tambah_absen();
+          redirect('presensi');
+      } else {
+          $this->template->load('template', 'presensi/add');
+      }
   }
   function edit(){
       if(isset($_POST['submit'])){

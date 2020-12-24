@@ -5,7 +5,7 @@
         <div class="panel-heading">
             <i class="fa fa-external-link-square"></i> Tabel Presensi Siswa
             <div class="panel-tools">
-                <?php echo anchor('guru/add','<i class="fa fa-edit" aria-hidden="true"></i>',"title='Tambah Data'");?>
+                <?php echo anchor('presensi/add','<i class="fa fa-edit" aria-hidden="true"></i>',"title='Tambah Data'");?>
                 <a class="btn btn-xs btn-link panel-collapse collapses" href="#"> </a>
                 <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal"> <i class="fa fa-wrench"></i> </a>
                 <a class="btn btn-xs btn-link panel-refresh" href="#"> <i class="fa fa-refresh"></i> </a>
@@ -18,10 +18,11 @@
                 <thead>
                     <tr>
                         <th>NO</th>
-                        <th>HARI, TANGGAL</th>
+                        <th>TANGGAL</th>
                         <th>NAMA SISWA</th>
                         <th>ROMBEL</th>
                         <th>ABSEN</th>
+                        <th>OPSI</th>
                     </tr>
                 </thead>
             </table>
@@ -37,7 +38,7 @@
   <script>
         $(document).ready(function() {
             var t = $('#mytable').DataTable( {
-                "ajax": '<?php echo site_url('guru/data'); ?>',
+                "ajax": '<?php echo site_url('presensi/data'); ?>',
                 "order": [[ 2, 'asc' ]],
                 "columns": [
                     {
@@ -47,13 +48,16 @@
                         "orderable": false,
                     },
                     {
-                        "data": "nuptk",
+                        "data": "tanggal",
                         "width": "120px",
                         "sClass": "text-left"
                     },
-                    { "data": "nama_guru" },
-                    { "data": "gender","width": "90px", },
-                    { "data": "aksi","width": "80px" },
+                    { "data": "nim" },
+                    { "data": "nama" },
+                    { "data": "id_rombel" },
+                    { "data": "absen" },
+                    { "data": "","width": "70px", },
+                    { "data": "aksi","width": "70px" },
                 ]
             } );
 
