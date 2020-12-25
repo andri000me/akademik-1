@@ -20,27 +20,26 @@ class Model_arsip extends CI_Model {
     function update($foto) {
         if(empty($foto)){
             // update without foto
-            $data = array(
-            'nama'          => $this->input->post('nama', TRUE),
-            'kd_agama'      => $this->input->post('agama', TRUE),
-            'tanggal_lahir' => $this->input->post('tanggal_lahir', TRUE),
-            'tempat_lahir'  => $this->input->post('tempat_lahir', TRUE),
-            'gender'        => $this->input->post('gender', TRUE)
-        );
+                $data = array(
+                'nama_pemilik'          => $this->input->post('nama_pemilik', TRUE),
+                'nis_nuptk'      => $this->input->post('nis_nuptk', TRUE),
+                'nama_dokumen' => $this->input->post('nama_dokumen', TRUE),
+                'tanggal'  => $this->input->post('tanggal', TRUE),
+                'pemilik'        => $this->input->post('pemilik', TRUE)
+            );
         }else{
             // update with foto
-            $data = array(
-            'nama'          => $this->input->post('nama', TRUE),
-            'kd_agama'      => $this->input->post('agama', TRUE),
-            'tanggal_lahir' => $this->input->post('tanggal_lahir', TRUE),
-            'tempat_lahir'  => $this->input->post('tempat_lahir', TRUE),
-            'gender'        => $this->input->post('gender', TRUE),
-            'foto'          => $foto,
-            'id_rombel'     => $this->input->post('rombel',TRUE)
-        );
+                $data = array(
+                    'nama_pemilik'          => $this->input->post('nama_pemilik', TRUE),
+                    'nis_nuptk'      => $this->input->post('nis_nuptk', TRUE),
+                    'nama_dokumen' => $this->input->post('nama_dokumen', TRUE),
+                    'tanggal'  => $this->input->post('tanggal', TRUE),
+                    'pemilik'        => $this->input->post('pemilik', TRUE),
+                    'file_dokumen'          => $foto
+            );
         }
-        $nim   = $this->input->post('nim');
-        $this->db->where('nim',$nim);
+        $id_dok   = $this->input->post('id_dokumen');
+        $this->db->where('id_dokumen',$id_dok);
         $this->db->update($this->table,$data);
     }
     

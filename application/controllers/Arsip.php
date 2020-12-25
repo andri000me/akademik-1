@@ -7,7 +7,6 @@ Class Arsip extends CI_Controller {
         //chekAksesModule();
         $this->load->library('ssp');
         $this->load->model('Model_arsip');
-        $this->load->helper(array('form', 'url'));
     }
 
     function data() {
@@ -28,14 +27,20 @@ Class Arsip extends CI_Controller {
             //        }
             //     }
             // ),
+            array('db' => 'id_dokumen', 'dt' => 'id_dokumen'),
             array('db' => 'nama_pemilik', 'dt' => 'nama_pemilik'),
             array('db' => 'nis_nuptk', 'dt' => 'nis_nuptk'),
             array('db' => 'nama_dokumen', 'dt' => 'nama_dokumen'),
             array('db' => 'tanggal', 'dt' => 'tanggal'),
             array('db' => 'pemilik', 'dt' => 'pemilik'),
-            array('db' => 'file_dokumen', 
-                    'dt' => 'file_dokumen'
-                ),
+            array('db' => 'file_dokumen', 'dt' => 'file_dokumen',
+            'formatter' => function( $d) {
+                if(empty($d)){
+                    return "File Tidak Ada";
+                }else{
+                    return "<a href='".  base_url()."uploads/file/".$d."' download>Download</a>";
+                }
+             }),
             array(
                 'db' => 'id_dokumen',
                 'dt' => 'aksi',
@@ -77,20 +82,20 @@ Class Arsip extends CI_Controller {
     function edit(){
         if(isset($_POST['submit'])){
             $uploadFoto = $this->upload_file_dokumen();
-            $this->Model_siswa->update($uploadFoto);
-            redirect('siswa');
+            $this->model_arsip->update($uploadFoto);
+            redirect('arsip');
         }else{
-            $nim           = $this->uri->segment(3);
-            $data['siswa'] = $this->db->get_where('tbl_siswa',array('nim'=>$nim))->row_array();
+            $id_dok  = $this->uri->segment(3);
+            $data['arsip'] = $this->db->get_where('tbl_dokumen',array('id_dokumen'=>$id_dok))->row_array();
             $this->template->load('template', 'arsip/edit',$data);
         }
     }
 
     function delete(){
-        $id = $this->uri->segment(3);
-        if(!empty($id)){
+        $id_dok = $this->uri->segment(3);
+        if(!empty($id_dok)){
             // proses delete data
-            $this->db->where('id_dokumen',$id);
+            $this->db->where('id_dokumen',$id_dok);
             $this->db->delete('tbl_dokumen');
         }
         redirect('arsip');
@@ -114,6 +119,7 @@ Class Arsip extends CI_Controller {
     //     // return $upload['file_name'];
     // }
     function upload_file_dokumen(){
+        $id_dok = $this->uri->segment(3);
         $config['upload_path']          = './uploads/file/';
         $config['allowed_types']        = 'jpg|png|pdf';
         $config['max_size']             = 1024; // imb

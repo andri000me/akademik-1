@@ -7,7 +7,7 @@
     <!--<![endif]-->
 
     <head>
-        <title>SISTEM AKADEMIK</title>
+        <title>SISTEM AKADEMIK - SMP MARDISISWA 2 SEMARANG</title>
         <link rel="shortcut icon" href="<?php echo base_url()?>uploads/smp2.png">
         <!-- start: META -->
         <meta charset="utf-8" />
