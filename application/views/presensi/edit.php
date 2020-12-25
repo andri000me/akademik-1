@@ -25,7 +25,7 @@
 
             <?php
             echo form_open('presensi/edit', 'role="form" class="form-horizontal"');
-            // echo form_hidden('id_presensi', $pres['id_presensi']);
+            echo form_hidden('id_presensi', $presensi['id_presensi']);
             ?>
 
 <div class="form-group">
@@ -33,7 +33,7 @@
                     NIM
                 </label>
                 <div class="col-sm-4">
-                    <input type="text" name="nim" placeholder="MASUKAN NIM" id="form-field-1" class="form-control">
+                    <input type="text" value="<?php echo $presensi['nim'] ?>" readonly="" placeholder="MASUKAN NIM" id="form-field-1" class="form-control">
                 </div>
             </div>
 
@@ -42,7 +42,7 @@
                     NAMA
                 </label>
                 <div class="col-sm-4">
-                    <input type="text" name="nama" placeholder="MASUKAN NAMA LENGKAP" id="form-field-1" class="form-control">
+                    <input type="text" value="<?php echo $presensi['nama'] ?>" readonly="" placeholder="MASUKAN NAMA" id="form-field-1" class="form-control">
                 </div>
             </div>
 

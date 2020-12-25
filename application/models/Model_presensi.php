@@ -25,9 +25,9 @@ class Model_presensi extends CI_Model {
 
   function edit_absen(){
     $data = array(
-      'tanggal_absen' => $this->input->post('tanggal', TRUE),
-      'nim'     => $this->input->post('nim',TRUE),
-      'nama'    => $this->input->post('nama', TRUE),
+      'tanggal' => $this->input->post('tanggal_absen', TRUE),
+      // 'nim'     => $this->input->post('nim',TRUE),
+      // 'nama'    => $this->input->post('nama', TRUE),
       'rombel'  => $this->input->post('rombel', TRUE),
       'absen'   => $this->input->post('absen', TRUE)
     );
