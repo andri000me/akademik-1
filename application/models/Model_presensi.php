@@ -4,6 +4,14 @@ class Model_presensi extends CI_Model {
 
   public $table = "tbl_presensi";
 
+  function tampil()
+  {
+    $hasil = $this->db->query("SELECT pr.tanggal, pr.nim, pr.nama, pr.id_rombel,pr.absen
+    FROM tbl_presensi pr
+    LEFT JOIN tbl_rombel rm ON pr.id_rombel = rm.id_rombel");
+    return $hasil->result();
+  }
+
   function tambah_absen(){
     $data = array(
       'tanggal' => $this->input->post('tanggal_absen', TRUE),

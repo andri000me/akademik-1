@@ -19,6 +19,7 @@
                     <tr>
                         <th>NO</th>
                         <th>TANGGAL</th>
+                        <th>NIS</th>
                         <th>NAMA SISWA</th>
                         <th>ROMBEL</th>
                         <th>ABSEN</th>
@@ -47,11 +48,7 @@
                         "sClass": "text-center",
                         "orderable": false,
                     },
-                    {
-                        "data": "tanggal",
-                        "width": "120px",
-                        "sClass": "text-left"
-                    },
+                    { "data": "tanggal"},
                     { "data": "nim" },
                     { "data": "nama" },
                     { "data": "id_rombel" },
@@ -67,4 +64,33 @@
                 } );
             } ).draw();
         } );
+
+        // $(document).ready(function(){
+        //   tampil_data();
+        //   $('#mytable').dataTable();
+        //
+        //   function tampil_data(){
+        //     $.ajax({
+        //       type : 'ajax',
+        //       url  : '<?php echo base_url('presensi/tampil_data') ?>',
+        //       async : false,
+        //       dataType :'json',
+        //       success : function(data){
+        //         var html = '';
+        //         var i;
+        //         for(i=0; i<data.length; i++){
+        //           html += '<tr>'+
+        //                   '<td>'+data[i].tanggal+'</td>'+
+        //                   '<td>'+data[i].nim+'</td>'+
+        //                   '<td>'+data[i].nama+'</td>'+
+        //                   '<td>'+data[i].nama_rombel+'</td>'+
+        //                   '<td>'+data[i].absen+'</td>'+
+        //                   '<tr>';
+        //         }
+        //         $('#show_data').html(html);
+        //       }
+        //     });
+        //   }
+        // });
+
     </script>

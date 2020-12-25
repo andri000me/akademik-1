@@ -16,11 +16,10 @@ Class Presensi extends CI_Controller {
       $primaryKey = 'id_presensi';
       // list field
       $columns = array(
-          array('db' => 'id_presensi', 'dt' => 'id_presensi'),
           array('db' => 'tanggal', 'dt' => 'tanggal'),
           array('db' => 'nim', 'dt' => 'nim'),
           array('db' => 'nama', 'dt' => 'nama'),
-          array('db' => 'id_rombel','dt' => 'id_rombel'),
+          array('db' => 'rombel','dt' => 'rombel'),
           array(
               'db' => 'absen',
               'dt' => 'absen',
@@ -42,6 +41,12 @@ Class Presensi extends CI_Controller {
       echo json_encode(
               SSP::simple($_GET, $sql_details, $table, $primaryKey, $columns)
       );
+  }
+
+  function tampil_data(){
+    $data = $this->Model_presensi->tampil();
+    // var_dump($data);
+    echo json_encode($data);
   }
 
   function index() {

@@ -3,7 +3,7 @@
 class Model_arsip extends CI_Model {
 
     public $table ="tbl_dokumen";
-    
+
     function save($foto) {
         $data = array(
             'nama_pemilik'           => $this->input->post('nama_pemilik', TRUE),
@@ -14,9 +14,9 @@ class Model_arsip extends CI_Model {
             'file_dokumen'          => $foto
         );
         $this->db->insert($this->table,$data);
-    
+
     }
-    
+
     function update($foto) {
         if(empty($foto)){
             // update without foto
@@ -42,6 +42,6 @@ class Model_arsip extends CI_Model {
         $this->db->where('id_dokumen',$id_dok);
         $this->db->update($this->table,$data);
     }
-    
+
 
 }
