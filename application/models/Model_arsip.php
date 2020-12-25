@@ -2,7 +2,8 @@
 
 class Model_arsip extends CI_Model {
 
-    public $table ="tbl_dokumen";
+    private $table   = "tbl_dokumen";
+    
 
     function save($foto) {
         $data = array(
@@ -16,6 +17,7 @@ class Model_arsip extends CI_Model {
         $this->db->insert($this->table,$data);
 
     }
+
 
     function update($foto) {
         if(empty($foto)){

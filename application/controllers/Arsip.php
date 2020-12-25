@@ -9,6 +9,7 @@ Class Arsip extends CI_Controller {
         $this->load->model('Model_arsip');
     }
 
+
     function data() {
 
         // nama tabel
@@ -56,6 +57,7 @@ Class Arsip extends CI_Controller {
     }
 
     function index() {
+
         $this->template->load('template', 'arsip/list');
     }
 
@@ -69,7 +71,8 @@ Class Arsip extends CI_Controller {
         }
     }
 
-    function edit(){
+    function edit($id = null){
+
         if(isset($_POST['submit'])){
             $uploadFoto = $this->upload_file_dokumen();
             $this->Model_arsip->update($uploadFoto);
@@ -77,7 +80,7 @@ Class Arsip extends CI_Controller {
         }else{
             $id_dok  = $this->uri->segment(3);
             $data['arsip'] = $this->db->get_where('tbl_dokumen',array('id_dokumen'=>$id_dok))->row_array();
-            // $data['id_dok'] = $id_dok;
+            
             $this->template->load('template', 'arsip/edit',$data);
         }
     }

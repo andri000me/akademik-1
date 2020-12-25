@@ -25,14 +25,14 @@
 
             <?php
             echo form_open('arsip/edit', 'role="form" class="form-horizontal"');
-            echo form_hidden('id_dokumen', $siswa['id_dokumen']);
+             echo form_hidden('id_dokumen', $arsip['id_dokumen']);
             ?>
             <div class="form-group">
                 <label class="col-sm-2 control-label" for="form-field-1">
                     NAMA PEMILIK
                 </label>
                 <div class="col-sm-9">
-                    <input type="text" value="<?php echo $siswa['nama_pemilik']?>" name="nama_pemilik" placeholder="MASUKAN NAMA PEMILIK" id="form-field-1" class="form-control">
+                    <input type="text" value="<?php echo $arsip['nama_pemilik']?>" name="nama_pemilik" placeholder="MASUKAN NAMA PEMILIK" id="form-field-1" class="form-control">
                 </div>
             </div>
             <div class="form-group">
