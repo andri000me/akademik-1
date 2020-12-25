@@ -17,16 +17,6 @@ Class Arsip extends CI_Controller {
         $primaryKey = 'id_dokumen';
         // list field
         $columns = array(
-            // array('db' => 'foto',
-            //     'dt' => 'foto',
-            //     'formatter' => function( $d) {
-            //        if(empty($d)){
-            //            return "<img width='30px' src='".  base_url()."/uploads/user-siluet.jpg'>";
-            //        }else{
-            //            return "<img width='75px' height='88px' src='".  base_url()."/uploads/".$d."'>";
-            //        }
-            //     }
-            // ),
             array('db' => 'id_dokumen', 'dt' => 'id_dokumen'),
             array('db' => 'nama_pemilik', 'dt' => 'nama_pemilik'),
             array('db' => 'nis_nuptk', 'dt' => 'nis_nuptk'),
@@ -87,7 +77,7 @@ Class Arsip extends CI_Controller {
         }else{
             $id_dok  = $this->uri->segment(3);
             $data['arsip'] = $this->db->get_where('tbl_dokumen',array('id_dokumen'=>$id_dok))->row_array();
-            $data['id_dok'] = $id_dok;
+            // $data['id_dok'] = $id_dok;
             $this->template->load('template', 'arsip/edit',$data);
         }
     }

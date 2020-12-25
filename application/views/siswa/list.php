@@ -27,7 +27,7 @@
                         <th class="text-center">NAMA</th>
                         <th class="text-center">TEMPAT LAHIR</th>
                         <th class="text-center">TANGGAL LAHIR</th>
-                        <th class="text-center">OPSI</th>
+                        <th class="text-center">AKSI</th>
                     </tr>
                 </thead>
             </table>

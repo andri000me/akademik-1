@@ -6,11 +6,11 @@
             <i class="fa fa-external-link-square"></i> Tabel Presensi Siswa
             <div class="panel-tools">
                 <?php echo anchor('presensi/add','<i class="fa fa-edit" aria-hidden="true"></i>',"title='Tambah Data'");?>
-                <a class="btn btn-xs btn-link panel-collapse collapses" href="#"> </a>
+                <!-- <a class="btn btn-xs btn-link panel-collapse collapses" href="#"> </a>
                 <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal"> <i class="fa fa-wrench"></i> </a>
                 <a class="btn btn-xs btn-link panel-refresh" href="#"> <i class="fa fa-refresh"></i> </a>
                 <a class="btn btn-xs btn-link panel-expand" href="#"> <i class="fa fa-resize-full"></i> </a>
-                <a class="btn btn-xs btn-link panel-close" href="#"> <i class="fa fa-times"></i> </a>
+                <a class="btn btn-xs btn-link panel-close" href="#"> <i class="fa fa-times"></i> </a> -->
             </div>
         </div>
         <div class="panel-body">
@@ -23,7 +23,7 @@
                         <th>NAMA SISWA</th>
                         <th>ROMBEL</th>
                         <th>ABSEN</th>
-                        <th>OPSI</th>
+                        <th>AKSI</th>
                     </tr>
                 </thead>
             </table>
@@ -44,17 +44,27 @@
                 "columns": [
                     {
                         "data": null,
-                        "width": "50px",
+                        "width": "1px",
                         "sClass": "text-center",
                         "orderable": false,
                     },
-                    { "data": "tanggal"},
-                    { "data": "nim" },
-                    { "data": "nama" },
-                    { "data": "id_rombel" },
-                    { "data": "absen" },
-                    { "data": "","width": "70px", },
-                    { "data": "aksi","width": "70px" },
+                    { "data": "tanggal",
+                        "width": "5px",
+                        "sClass": "text-center",},
+                    { "data": "nim",
+                        "width": "5px",
+                        "sClass": "text-center",},
+                    { "data": "nama",
+                        "width": "5px",
+                        "sClass": "text-center",},
+                    { "data": "rombel",
+                        "width": "5px",
+                        "sClass": "text-center",},
+                    { "data": "absen",
+                        "width": "5px",
+                        "sClass": "text-center",},
+                    { "data": "aksi","width": "1px",
+                        "sClass": "text-center", },
                 ]
             } );
 

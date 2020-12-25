@@ -24,7 +24,7 @@
                         <th>TANGGAL</th>
                         <th>PEMILIK</th>
                         <th>FILE</th>
-                        <th>OPSI</th>
+                        <th>AKSI</th>
                     </tr>
                 </thead>
             </table>

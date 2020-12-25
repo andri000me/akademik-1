@@ -16,13 +16,15 @@ Class Presensi extends CI_Controller {
       $primaryKey = 'id_presensi';
       // list field
       $columns = array(
+          array('db' => 'id_presensi', 'dt' => 'id_presensi'),
           array('db' => 'tanggal', 'dt' => 'tanggal'),
           array('db' => 'nim', 'dt' => 'nim'),
           array('db' => 'nama', 'dt' => 'nama'),
           array('db' => 'rombel','dt' => 'rombel'),
+          array('db' => 'absen','dt' => 'absen'),
           array(
               'db' => 'absen',
-              'dt' => 'absen',
+              'dt' => 'aksi',
               'formatter' => function( $d) {
                   //return "<a href='edit.php?id=$d'>EDIT</a>";
                   return anchor('presensi/edit/'.$d,'<i class="fa fa-edit"></i>','class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit"').'

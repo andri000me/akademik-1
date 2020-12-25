@@ -68,7 +68,7 @@
                     KETERANGAN ABSENSI
                 </label>
                 <div class="col-sm-9">
-                    <input type="text" name="absen" placeholder="Hadir, Izin, Sakit, Alfa" id="form-field-1" class="form-control">
+                <?php echo form_dropdown('absen', array('Hadir' => 'Hadir','Sakit' => 'Sakit', 'Izin' => 'Izin', 'Alpa' => 'Alpa'), null, "class='form-control'") ?>
                 </div>
             </div>
             <div class="form-group">

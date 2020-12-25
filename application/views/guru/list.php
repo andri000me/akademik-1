@@ -21,7 +21,7 @@
                         <th>NUPTK</th>
                         <th>NAMA GURU</th>
                         <th>GENDER</th>
-                        <th>OPSI</th>
+                        <th>AKSI</th>
                     </tr>
                 </thead>
             </table>

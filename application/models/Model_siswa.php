@@ -36,7 +36,7 @@ class Model_siswa extends CI_Model {
             'tanggal_lahir' => $this->input->post('tanggal_lahir', TRUE),
             'tempat_lahir'  => $this->input->post('tempat_lahir', TRUE),
             'gender'        => $this->input->post('gender', TRUE)
-        );
+            );
         }else{
             // update with foto
             $data = array(
@@ -47,7 +47,7 @@ class Model_siswa extends CI_Model {
             'gender'        => $this->input->post('gender', TRUE),
             'foto'          => $foto,
             'id_rombel'     => $this->input->post('rombel',TRUE)
-        );
+            );
         }
         $nim   = $this->input->post('nim');
         $this->db->where('nim',$nim);
