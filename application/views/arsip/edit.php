@@ -40,7 +40,7 @@
                     NIS/NUPTK
                 </label>
                 <div class="col-sm-9">
-                    <input type="text" name="nis_nuptk" placeholder="MASUKAN NIS/NUPTK" id="form-field-1" class="form-control">
+                    <input type="text" value="<?php echo $arsip['nis_nuptk']?>"name="nis_nuptk" placeholder="MASUKAN NIS/NUPTK" id="form-field-1" class="form-control">
                 </div>
             </div>
             <div class="form-group">
@@ -48,13 +48,13 @@
                     NAMA DOKUMEN
                 </label>
                 <div class="col-sm-9">
-                    <input type="text" name="dokumen" placeholder="MASUKAN NAMA DOKUMEN" id="form-field-1" class="form-control">
+                    <input type="text" value="<?php echo $arsip['nama_dokumen']?>" name="dokumen" placeholder="MASUKAN NAMA DOKUMEN" id="form-field-1" class="form-control">
                 </div>
             </div>
             <div class="form-group">
             <label class="col-sm-2  control-label" for="date">Tanggal</label>
             <div class="col-sm-9">
-                <input type="date" name="tanggal" placeholder="TANGGAL" id="form-field-1" class="form-control">
+                <input type="date"value="<?php echo $arsip['tanggal']?>" name="tanggal" placeholder="TANGGAL" id="form-field-1" class="form-control">
             </div>
             </div>
 
@@ -72,6 +72,10 @@
                 </label>
                 <div class="col-sm-9">
                     <input type="file" name="userfile">
+                    <br>
+                    <a href="<?php echo base_url()."uploads/file/".$arsip['file_dokumen']?>" class="btn btn-warning btn-sm" target="_blank">Lihat File Sekarang</a>
+                    
+                    <!-- <iframe src="<?php echo base_url()."uploads/file/".$arsip['file_dokumen']?>" width="50%" height="50%"></iframe> -->
                 </div>
             </div>
             <div class="form-group">

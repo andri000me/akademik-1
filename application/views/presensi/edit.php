@@ -4,22 +4,6 @@
         <div class="panel-heading">
             <i class="fa fa-external-link-square"></i>
             Edit Data Presensi
-            <!-- <div class="panel-tools">
-                <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
-                </a>
-                <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
-                    <i class="fa fa-wrench"></i>
-                </a>
-                <a class="btn btn-xs btn-link panel-refresh" href="#">
-                    <i class="fa fa-refresh"></i>
-                </a>
-                <a class="btn btn-xs btn-link panel-expand" href="#">
-                    <i class="fa fa-resize-full"></i>
-                </a>
-                <a class="btn btn-xs btn-link panel-close" href="#">
-                    <i class="fa fa-times"></i>
-                </a>
-            </div> -->
         </div>
         <div class="panel-body">
 
@@ -51,7 +35,7 @@
                     TANGGAL
                 </label>
                 <div class="col-sm-4">
-                    <input type="date" name="tanggal_absen" placeholder="TANGGAL ABSEN" id="form-field-1" class="form-control">
+                    <input type="date" value="<?php echo $presensi['tanggal'] ?>" name="tanggal_absen" placeholder="TANGGAL ABSEN" id="form-field-1" class="form-control">
                 </div>
             </div>
 
@@ -61,7 +45,7 @@
                 </label>
                 <div class="col-sm-4">
                     <!-- <?php echo cmb_dinamis('rombel', 'tbl_rombel', 'nama_rombel', 'id_rombel') ?> -->
-                    <input type="text" name="rombel" placeholder="Rombel" id="form-field-1" class="form-control" >
+                    <input type="text" value="<?php echo $presensi['rombel'] ?>" name="rombel" placeholder="Rombel" id="form-field-1" class="form-control" >
                 </div>
             </div>
             <div class="form-group">
