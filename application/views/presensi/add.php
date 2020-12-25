@@ -1,10 +1,10 @@
-<div class="col-sm-8">
+<div class="col-sm-12">
     <!-- start: TEXT FIELDS PANEL -->
     <div class="panel panel-default">
         <div class="panel-heading">
             <i class="fa fa-external-link-square"></i>
             Form Presensi Siswa
-            <div class="panel-tools">
+            <!-- <div class="panel-tools">
                 <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
                 </a>
                 <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
@@ -18,7 +18,7 @@
                 </a>
                 <a class="btn btn-xs btn-link panel-close" href="#">
                     <i class="fa fa-times"></i>
-                </a>
+                </a> -->
             </div>
         </div>
         <div class="panel-body">
@@ -40,7 +40,7 @@
                 <label class="col-sm-3 control-label" for="form-field-1">
                     NAMA
                 </label>
-                <div class="col-sm-9">
+                <div class="col-sm-4">
                     <input type="text" name="nama" placeholder="MASUKAN NAMA LENGKAP" id="form-field-1" class="form-control">
                 </div>
             </div>
@@ -58,7 +58,7 @@
                 <label class="col-sm-3 control-label" for="form-field-1">
                     ROMBEL
                 </label>
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <!-- <?php echo cmb_dinamis('rombel', 'tbl_rombel', 'nama_rombel', 'id_rombel') ?> -->
                     <input type="text" name="rombel" placeholder="Rombel" id="form-field-1" class="form-control" >
                 </div>
@@ -67,7 +67,7 @@
                 <label class="col-sm-3 control-label" for="form-field-1">
                     KETERANGAN ABSENSI
                 </label>
-                <div class="col-sm-9">
+                <div class="col-sm-4">
                 <?php echo form_dropdown('absen', array('Hadir' => 'Hadir','Sakit' => 'Sakit', 'Izin' => 'Izin', 'Alpa' => 'Alpa'), null, "class='form-control'") ?>
                 </div>
             </div>
