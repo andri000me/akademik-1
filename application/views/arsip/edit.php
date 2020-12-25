@@ -25,7 +25,7 @@
 
             <?php
             echo form_open('arsip/edit', 'role="form" class="form-horizontal"');
-            echo form_hidden('id_dokumen', $id_dok['id_dokumen']);
+            echo $id_dok;
             ?>
             <div class="form-group">
                 <label class="col-sm-2 control-label" for="form-field-1">
