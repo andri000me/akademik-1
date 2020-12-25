@@ -79,7 +79,7 @@ Class Users extends CI_Controller {
     
     
      function upload_foto_user(){
-        $config['upload_path']          = './uploads/foto_user/';
+        $config['upload_path']          = './uploads/foto_users/';
         $config['allowed_types']        = 'jpg|png';
         $config['max_size']             = 1024; // imb
         $this->load->library('upload', $config);

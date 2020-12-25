@@ -23,7 +23,7 @@ Class Presensi extends CI_Controller {
           array('db' => 'rombel','dt' => 'rombel'),
           array('db' => 'absen','dt' => 'absen'),
           array(
-              'db' => 'absen',
+              'db' => 'id_presensi',
               'dt' => 'aksi',
               'formatter' => function( $d) {
                   //return "<a href='edit.php?id=$d'>EDIT</a>";
@@ -65,7 +65,7 @@ Class Presensi extends CI_Controller {
   }
   function edit(){
       if(isset($_POST['submit'])){
-          $this->Model_presensi->update();
+          $this->Model_presensi->edit_absen();
           redirect('presensi');
       }else{
           $id_presensi      = $this->uri->segment(3);

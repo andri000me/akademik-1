@@ -3,14 +3,14 @@
    <?php echo anchor('users/rule','RULE USER',array('class'=>'btn btn-danger btn-sm'));?>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <i class="fa fa-external-link-square"></i> Dynamic Table
+            <i class="fa fa-external-link-square"></i> Data Users
             <div class="panel-tools">
-                <?php echo anchor('users/add','<i class="fa fa-edit" aria-hidden="true"></i>',"title='Dambah Data'");?>
-                <a class="btn btn-xs btn-link panel-collapse collapses" href="#"> </a>
+                <?php echo anchor('users/add','<i class="fa fa-edit" aria-hidden="true"></i>',"title='Tambah Data'");?>
+                <!-- <a class="btn btn-xs btn-link panel-collapse collapses" href="#"> </a>
                 <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal"> <i class="fa fa-wrench"></i> </a>
                 <a class="btn btn-xs btn-link panel-refresh" href="#"> <i class="fa fa-refresh"></i> </a>
                 <a class="btn btn-xs btn-link panel-expand" href="#"> <i class="fa fa-resize-full"></i> </a>
-                <a class="btn btn-xs btn-link panel-close" href="#"> <i class="fa fa-times"></i> </a>
+                <a class="btn btn-xs btn-link panel-close" href="#"> <i class="fa fa-times"></i> </a> -->
             </div>
         </div>
         <div class="panel-body">
@@ -20,7 +20,7 @@
                         <th>NO</th>
                         <th>NAMA LENGKAP</th>
                         <th>LEVEL</th>
-                        <th></th>
+                        <th>AKSI</th>
                     </tr>
                 </thead>
             </table>
