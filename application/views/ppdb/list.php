@@ -1,6 +1,6 @@
 <div class="col-md-12">
     <!-- start: DYNAMIC TABLE PANEL -->
-   <?php echo anchor('ppdb/add','Input Data Baru',array('class'=>'btn btn-danger btn-sm'))?>
+   <?php echo anchor('ppdb/add','Input Data Pendaftar',array('class'=>'btn btn-danger btn-sm'))?>
    <!-- Trigger the modal with a button -->
 <!-- <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Import Data Excel Dari Dapodik</button> -->
 
