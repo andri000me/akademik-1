@@ -1,9 +1,9 @@
-<div class="col-sm-12">
+<div class="col-sm-6">
     <!-- start: TEXT FIELDS PANEL -->
     <div class="panel panel-default">
         <div class="panel-heading">
             <i class="fa fa-external-link-square"></i>
-            Text Fields
+            Form Pendaftaran Siswa Baru
             <div class="panel-tools">
                 <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
                 </a>
@@ -24,60 +24,185 @@
         <div class="panel-body">
 
             <?php
-            echo form_open('menu/add', 'role="form" class="form-horizontal"');
+            echo form_open_multipart('ppdb/add', 'role="form" class="form-horizontal"');
             ?>
 
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="form-field-1">
-                    NAMA MENU
+                <label class="col-sm-3 control-label" for="form-field-1">
+                    NISN
                 </label>
-                <div class="col-sm-9">
-                    <input type="text" name="nama menu" placeholder="MASUKAN NAMA MENU" id="form-field-1" class="form-control">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label" for="form-field-1">
-                    LINK
-                </label>
-                <div class="col-sm-9">
-                    <input type="text" name="link" placeholder="MASUKAN LINK" id="form-field-1" class="form-control">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label" for="form-field-1">
-                    ICON
-                </label>
-                <div class="col-sm-9">
-                    <input type="text" name="icon" placeholder="MASUKAN KODE ICON" id="form-field-1" class="form-control">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label" for="form-field-1">
-                    IS MAIN MENU
-                </label>
-                <div class="col-sm-9">
-                    <select name="is_main_menu" class="form-control">
-                        <option value="0">MAIN MENU</option>
-                        <?php
-                        $menu = $this->db->get('tabel_menu');
-                        foreach ($menu->result() as $row){
-                            echo "<option value='$row->id'>$row->nama_menu</option>";
-                        }
-                        ?>
-                    </select>
-                    <?php //echo cmb_dinamis('is_main_menu', 'tabel_menu', 'nama_menu', 'id')?>
+                <div class="col-sm-5">
+                    <input type="text" name="nisn" placeholder="MASUKAN NISN" id="form-field-1" class="form-control">
                 </div>
             </div>
 
             <div class="form-group">
+                <label class="col-sm-3 control-label" for="form-field-1">
+                    NAMA
+                </label>
+                <div class="col-sm-9">
+                    <input type="text" name="nama" placeholder="MASUKAN NAMA LENGKAP" id="form-field-1" class="form-control">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="form-field-1">
+                    TTL
+                </label>
+                <div class="col-sm-5">
+                    <input type="text" name="tempat_lahir" placeholder="TEMPAT LAHIR" id="form-field-1" class="form-control">
+                </div>
+                <div class="col-sm-4">
+                    <input type="date" name="tanggal_lahir" placeholder="TANGGAL LAHIR" id="form-field-1" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="form-field-1">
+                    JENIS KELAMIN
+                </label>
+                <div class="col-sm-5">
+                    <?php
+                    echo form_dropdown('gender', array('P' => 'LAKI LAKI', 'W' => 'PEREMPUAN'), null, "class='form-control'");
+                    ?>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="form-field-1">
+                    AGAMA
+                </label>
+                <div class="col-sm-5">
+                    <?php
+                    echo cmb_dinamis('agama', 'tbl_agama', 'nama_agama', 'kd_agama');
+                    ?>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="form-field-1">
+                    Alamat
+                </label>
+                <div class="col-sm-6">
+                    <textarea name="alamat" class="form-control"></textarea>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="form-field-1">
+                    Foto
+                </label>
+                <div class="col-sm-2">
+                    <input type="file" name="userfile">
+                </div>
+            </div>
+            <div class="form-group">
                 <label class="col-sm-2 control-label" for="form-field-1">
 
                 </label>
-                <div class="col-sm-1">
+                <div class="col-sm-2">
                     <button type="submit" name="submit" class="btn btn-danger  btn-sm">SIMPAN</button>
                 </div>
-                <div class="col-sm-1">
-                    <?php echo anchor('menu', 'Kembali', array('class' => 'btn btn-info btn-sm')); ?>
+                <div class="col-sm-3">
+                    <?php echo anchor('ppdb', 'Kembali', array('class' => 'btn btn-info btn-sm')); ?>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+    <!-- end: TEXT FIELDS PANEL -->
+</div>
+
+
+
+<div class="col-sm-6">
+    <!-- start: TEXT FIELDS PANEL -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <i class="fa fa-external-link-square"></i>
+            Form Data Pendaftaran Siswa Baru
+            <div class="panel-tools">
+                <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+                </a>
+                <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
+                    <i class="fa fa-wrench"></i>
+                </a>
+                <a class="btn btn-xs btn-link panel-refresh" href="#">
+                    <i class="fa fa-refresh"></i>
+                </a>
+                <a class="btn btn-xs btn-link panel-expand" href="#">
+                    <i class="fa fa-resize-full"></i>
+                </a>
+                <a class="btn btn-xs btn-link panel-close" href="#">
+                    <i class="fa fa-times"></i>
+                </a>
+            </div>
+        </div>
+        <div class="panel-body">
+
+            <?php
+            echo form_open_multipart('siswa/add', 'role="form" class="form-horizontal"');
+            ?>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="form-field-1">
+                    Alamat
+                </label>
+                <div class="col-sm-6">
+                    <textarea class="form-control"></textarea>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="form-field-1">
+                    RT / RW
+                </label>
+                <div class="col-sm-3">
+                    <input type="text" name="nama" placeholder="RT" id="form-field-1" class="form-control">
+                </div>
+                                <div class="col-sm-3">
+                    <input type="text" name="nama" placeholder="RW" id="form-field-1" class="form-control">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="form-field-1">
+                    TTL
+                </label>
+                <div class="col-sm-5">
+                    <input type="text" name="tempat_lahir" placeholder="TEMPAT LAHIR" id="form-field-1" class="form-control">
+                </div>
+                <div class="col-sm-4">
+                    <input type="date" name="tanggal_lahir" placeholder="TANGGAL LAHIR" id="form-field-1" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="form-field-1">
+                    JENIS KELAMIN
+                </label>
+                <div class="col-sm-5">
+                    <?php
+                    echo form_dropdown('gender', array('P' => 'LAKI LAKI', 'W' => 'PEREMPUAN'), null, "class='form-control'");
+                    ?>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="form-field-1">
+                    AGAMA
+                </label>
+                <div class="col-sm-5">
+                    <?php
+                    echo cmb_dinamis('agama', 'tbl_agama', 'nama_agama', 'kd_agama');
+                    ?>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="form-field-1">
+
+                </label>
+                <div class="col-sm-2">
+                    <button type="submit" name="submit" class="btn btn-danger  btn-sm">SIMPAN</button>
+                </div>
+                <div class="col-sm-3">
+                    <?php echo anchor('siswa', 'Kembali', array('class' => 'btn btn-info btn-sm')); ?>
                 </div>
             </div>
             </form>
