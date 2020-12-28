@@ -59,8 +59,8 @@
                     ROMBEL
                 </label>
                 <div class="col-sm-4">
-                    <!-- <?php echo cmb_dinamis('rombel', 'tbl_rombel', 'nama_rombel', 'id_rombel') ?> -->
-                    <input type="text" name="rombel" placeholder="Rombel" id="form-field-1" class="form-control" >
+                    <?php echo cmb_dinamis('rombel', 'tbl_rombel', 'nama_rombel', 'id_rombel') ?>
+                    <!-- <input type="text" name="rombel" placeholder="Rombel" id="form-field-1" class="form-control" > -->
                 </div>
             </div>
             <div class="form-group">

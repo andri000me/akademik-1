@@ -16,7 +16,7 @@ Class Siswa extends CI_Controller {
         // nama tabel
         $table = 'tbl_siswa';
         // nama PK
-        $primaryKey = 'nim';
+        $primaryKey = 'nis';
         // list field
         $columns = array(
             array('db' => 'foto',
@@ -29,18 +29,20 @@ Class Siswa extends CI_Controller {
                    }
                 }
             ),
-            array('db' => 'nim', 'dt' => 'nim'),
+            array('db' => 'nis', 'dt' => 'nis'),
             array('db' => 'nama', 'dt' => 'nama'),
             array('db' => 'tempat_lahir', 'dt' => 'tempat_lahir'),
             array('db' => 'tanggal_lahir', 'dt' => 'tanggal_lahir'),
             array(
-                'db' => 'nim',
+                'db' => 'nis',
                 'dt' => 'aksi',
                 'formatter' => function( $d) {
                     //return "<a href='edit.php?id=$d'>EDIT</a>";
-                    return anchor('siswa/edit/'.$d,'<i class="fa fa-edit"></i>','class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit"').'
-                    <br><br>
-                        '.anchor('siswa/delete/'.$d,'<i class="fa fa-trash"></i>','class="btn btn-xs btn-danger tooltips" data-placement="top" data-original-title="Delete"');
+                    return anchor('siswa/edit/'.$d,'<i class="fa fa-edit"></i>','class="btn btn-xs btn-warning tooltips" data-placement="top" data-original title="Edit"').'
+                    &nbsp;
+                        '.anchor('siswa/detail/'.$d,'<i class="fa fa-search"></i>','class="btn btn-xs btn-success tooltips" data-placement="top" data-original title="Detail"').'
+                        &nbsp;
+                        '.anchor('siswa/delete/'.$d,'<i class="fa fa-trash"></i>','class="btn btn-xs btn-danger tooltips" data-placement="top" data-original title="Delete"');
                 }
             )
         );
@@ -60,6 +62,17 @@ Class Siswa extends CI_Controller {
     function index() {
         $this->template->load('template', 'siswa/list');
     }
+    function detail() {
+        if(isset($_POST['submit'])){
+            $uploadFoto = $this->upload_foto_siswa();
+            $this->Model_siswa->update($uploadFoto);
+            redirect('siswa');
+        }else{
+            $nim           = $this->uri->segment(3);
+            $data['siswa'] = $this->db->get_where('tbl_siswa',array('nis'=>$nim))->row_array();
+            $this->template->load('template', 'siswa/detail',$data);
+        }
+    }
 
     function add() {
         if (isset($_POST['submit'])) {
@@ -78,7 +91,7 @@ Class Siswa extends CI_Controller {
             redirect('siswa');
         }else{
             $nim           = $this->uri->segment(3);
-            $data['siswa'] = $this->db->get_where('tbl_siswa',array('nim'=>$nim))->row_array();
+            $data['siswa'] = $this->db->get_where('tbl_siswa',array('nis'=>$nim))->row_array();
             $this->template->load('template', 'siswa/edit',$data);
         }
     }
@@ -87,7 +100,7 @@ Class Siswa extends CI_Controller {
         $nim = $this->uri->segment(3);
         if(!empty($nim)){
             // proses delete data
-            $this->db->where('nim',$nim);
+            $this->db->where('nis',$nim);
             $this->db->delete('tbl_siswa');
         }
         redirect('siswa');
@@ -143,5 +156,5 @@ Class Siswa extends CI_Controller {
         $this->load->helper('download');
         force_download('data-siswa.xlsx', NULL);
     }
-
+  
 }
