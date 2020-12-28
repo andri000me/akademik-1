@@ -4,13 +4,16 @@ class Model_guru extends CI_Model {
 
     public $table ="tbl_guru";
     
-    function save() {
+    function save($foto) {
         $data = array(
             'nuptk'      => $this->input->post('nuptk', TRUE),
             'nama_guru'  => $this->input->post('nama_guru', TRUE),
             'gender'     => $this->input->post('gender', TRUE),
-            'username'   => $this->input->post('username', TRUE),
-            'password'   => md5($this->input->post('password', TRUE))
+            'tempat_lahir'   => $this->input->post('tempat_lahir', TRUE),
+            'tanggal_lahir'   => $this->input->post('tanggal_lahir', TRUE),
+            'phone'   => $this->input->post('phone', TRUE),
+            'alamat'   => $this->input->post('alamat', TRUE),
+            'foto'          => $foto,
         );
         $this->db->insert($this->table,$data);
     }

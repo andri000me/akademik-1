@@ -15,6 +15,16 @@ Class Guru extends CI_Controller {
         $primaryKey = 'id_guru';
         // list field
         $columns = array(
+            array('db' => 'foto',
+            'dt' => 'foto',
+            'formatter' => function( $d) {
+               if(empty($d)){
+                   return "<img width='30px' src='".  base_url()."/uploads/foto_guru/no-image.png'>";
+               }else{
+                   return "<img width='75px' height='88px' src='".  base_url()."/uploads/foto_guru/".$d."'>";
+               }
+            }
+        ),
             array('db' => 'id_guru', 'dt' => 'id_guru'),
             array('db' => 'nuptk', 'dt' => 'nuptk'),
             array('db' => 'nama_guru', 'dt' => 'nama_guru'),
@@ -24,12 +34,17 @@ Class Guru extends CI_Controller {
                     //return "<a href='edit.php?id=$d'>EDIT</a>";
                     return $d=='p'?'Laki Laki':'Wanita';
                 }),
+            array('db' => 'tempat_lahir', 'dt' => 'tempat_lahir'),
+            array('db' => 'tanggal_lahir', 'dt' => 'tanggal_lahir'),
+            array('db' => 'phone', 'dt' => 'phone'),
+            array('db' => 'alamat', 'dt' => 'alamat'),
             array(
                 'db' => 'id_guru',
                 'dt' => 'aksi',
                 'formatter' => function( $d) {
                     //return "<a href='edit.php?id=$d'>EDIT</a>";
                     return anchor('guru/edit/'.$d,'<i class="fa fa-edit"></i>','class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit"').' 
+                    &nbsp;
                         '.anchor('guru/delete/'.$d,'<i class="fa fa-trash"></i>','class="btn btn-xs btn-danger tooltips" data-placement="top" data-original-title="Delete"');
                 }
             )
@@ -53,7 +68,8 @@ Class Guru extends CI_Controller {
 
     function add() {
         if (isset($_POST['submit'])) {
-            $this->Model_guru->save();
+            $uploadFoto = $this->upload_foto_siswa();
+            $this->Model_guru->save($uploadFoto);
             redirect('guru');
         } else {
             $this->template->load('template', 'guru/add');
@@ -79,6 +95,16 @@ Class Guru extends CI_Controller {
             $this->db->delete('tbl_guru');
         }
         redirect('guru');
+    }
+    function upload_foto_siswa(){
+        $config['upload_path']          = './uploads/foto_guru';
+        $config['allowed_types']        = 'jpg|png';
+        $config['max_size']             = 1024; // imb
+        $this->load->library('upload', $config);
+            // proses upload
+        $this->upload->do_upload('userfile');
+        $upload = $this->upload->data();
+        return $upload['file_name'];
     }
 
 }

@@ -1,6 +1,8 @@
 <div class="col-md-12">
     <!-- start: DYNAMIC TABLE PANEL -->
-   <?php echo anchor('users/rule','RULE USER',array('class'=>'btn btn-danger btn-sm'));?>
+    &nbsp;<?php echo anchor('users/rule','Rule Users',array('class'=>'btn btn-success btn-sm'))?>
+    &nbsp;<?php echo anchor('users/add','Tambah User',array('class'=>'btn btn-warning btn-sm'))?>
+    <div style="margin-bottom: 10px;"></div>
     <div class="panel panel-default">
         <div class="panel-heading">
             <i class="fa fa-external-link-square"></i> Data Users
@@ -41,15 +43,20 @@
                 "columns": [
                     {
                         "data": null,
-                        "width": "50px",
+                        "width": "10px",
                         "sClass": "text-center",
                         "orderable": false,
                     },
                     {
-                        "data": "nama_lengkap"
+                        "data": "nama_lengkap",
+                        "width": "80px",
+                        "sClass": "text-justify"
                     },
-                    { "data": "nama_level" },
-                    { "data": "aksi","width": "80px" },
+                    { "data": "nama_level",
+                        "width": "80px",
+                        "sClass": "text-justify" },
+                    { "data": "aksi","width": "1px",
+                        "sClass": "text-center", },
                 ]
             } );
                

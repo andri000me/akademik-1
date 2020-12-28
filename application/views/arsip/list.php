@@ -1,5 +1,7 @@
 <div class="col-md-12">
     <!-- start: DYNAMIC TABLE PANEL -->
+    &nbsp;<?php echo anchor('arsip/add','Tambah Dokumen',array('class'=>'btn btn-success btn-sm'))?>
+    <div style="margin-bottom: 10px;"></div>
     <?php
     if(!empty($message)) {
                 echo $message;

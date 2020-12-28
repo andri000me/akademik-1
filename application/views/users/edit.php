@@ -3,23 +3,7 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <i class="fa fa-external-link-square"></i>
-            Text Fields
-            <div class="panel-tools">
-                <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
-                </a>
-                <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
-                    <i class="fa fa-wrench"></i>
-                </a>
-                <a class="btn btn-xs btn-link panel-refresh" href="#">
-                    <i class="fa fa-refresh"></i>
-                </a>
-                <a class="btn btn-xs btn-link panel-expand" href="#">
-                    <i class="fa fa-resize-full"></i>
-                </a>
-                <a class="btn btn-xs btn-link panel-close" href="#">
-                    <i class="fa fa-times"></i>
-                </a>
-            </div>
+            Edit Data User
         </div>
         <div class="panel-body">
 
@@ -69,7 +53,8 @@
                 </label>
                 <div class="col-sm-2">
                     <input type="file" name="userfile">
-                    <img src="<?php echo base_url().'uploads/foto_user/'.$user['foto']?>" width="200">
+                    <br>
+                    <img src="<?php echo base_url().'uploads/foto_users/'.$user['foto']?>" width="200">
                 </div>
             </div>
             <div class="form-group">

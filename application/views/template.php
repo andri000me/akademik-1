@@ -87,21 +87,6 @@
                                     echo anchor('profile', '<i class="fa fa-user" aria-hidden="true"></i> &nbsp;My Profile');
                                     ?>
                                 </li>
-                                <!-- <li>
-                                    <a href="pages_calendar.html">
-                                        <i class="clip-calendar"></i> &nbsp;My Calendar
-                                    </a>
-                                <li>
-                                    <a href="pages_messages.html">
-                                        <i class="clip-bubble-4"></i> &nbsp;My Messages (3)
-                                    </a>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <a href="utility_lock_screen.html">
-                                        <i class="clip-locked"></i> &nbsp;Lock Screen
-                                    </a>
-                                </li>-->
                                 <li> 
 
                                     <?php
@@ -209,93 +194,9 @@
                 <!-- /.modal -->
                 <!-- end: SPANEL CONFIGURATION MODAL FORM -->
                 <!-- <div class="container">
-                    <!-- start: PAGE HEADER -->
+                    start: PAGE HEADER -->
                     <div class="row">
                         <div class="col-sm-12">
-                            <!-- start: STYLE SELECTOR BOX -->
-                            <!-- <div id="style_selector" class="hidden-xs close-style">
-                                <div id="style_selector_container" style="display:block">
-                                    <div class="style-main-title">
-                                        Style Selector
-                                    </div>
-                                    <div class="box-title">
-                                        Choose Your Layout Style
-                                    </div>
-                                    <div class="input-box">
-                                        <div class="input">
-                                            <select name="layout">
-                                                <option value="default">Wide</option>
-                                                <option value="boxed">Boxed</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="box-title">
-                                        Choose Your Orientation
-                                    </div>
-                                    <div class="input-box">
-                                        <div class="input">
-                                            <select name="orientation">
-                                                <option value="default">Default</option>
-                                                <option value="rtl">RTL</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="box-title">
-                                        Choose Your Header Style
-                                    </div>
-                                    <div class="input-box">
-                                        <div class="input">
-                                            <select name="header">
-                                                <option value="fixed">Fixed</option>
-                                                <option value="default">Default</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="box-title">
-                                        Choose Your Footer Style
-                                    </div>
-                                    <div class="input-box">
-                                        <div class="input">
-                                            <select name="footer">
-                                                <option value="default">Default</option>
-                                                <option value="fixed">Fixed</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="box-title">
-                                        Backgrounds for Boxed Version
-                                    </div>
-                                    <div class="images boxed-patterns">
-                                        <a id="bg_style_1" href="#"><img alt="" src="http://clipone.nurisakbar.com/assets/images/bg.png"></a>
-                                        <a id="bg_style_2" href="#"><img alt="" src="http://clipone.nurisakbar.com/assets/images/bg_2.png"></a>
-                                        <a id="bg_style_3" href="#"><img alt="" src="http://clipone.nurisakbar.com/assets/images/bg_3.png"></a>
-                                        <a id="bg_style_4" href="#"><img alt="" src="http://clipone.nurisakbar.com/assets/images/bg_4.png"></a>
-                                        <a id="bg_style_5" href="#"><img alt="" src="http://clipone.nurisakbar.com/assets/images/bg_5.png"></a>
-                                    </div>
-                                    <div class="box-title">
-                                        5 Predefined Color Schemes
-                                    </div>
-                                    <div class="images icons-color">
-                                        <a id="light" href="#"><img class="active" alt="" src="http://clipone.nurisakbar.com/assets/images/lightgrey.png"></a>
-                                        <a id="dark" href="#"><img alt="" src="http://clipone.nurisakbar.com/assets/images/darkgrey.png"></a>
-                                        <a id="black-and-white" href="#"><img alt="" src="http://clipone.nurisakbar.com/assets/images/blackandwhite.png"></a>
-                                        <a id="navy" href="#"><img alt="" src="http://clipone.nurisakbar.com/assets/images/navy.png"></a>
-                                        <a id="green" href="#"><img alt="" src="http://clipone.nurisakbar.com/assets/images/green.png"></a>
-                                    </div>
-                                    <div style="height:25px;line-height:25px; text-align: center">
-                                        <a class="clear_style" href="#">
-                                            Clear Styles
-                                        </a>
-                                        <a class="save_style" href="#">
-                                            Save Styles
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="style-toggle open">
-                                    <i class="fa fa-cog fa-spin"></i>
-                                </div>
-                            </div> -->
-                            <!-- end: STYLE SELECTOR BOX -->
                             <!-- start: PAGE TITLE & BREADCRUMB -->
                             <ol class="breadcrumb">
                                 <li>

@@ -1,6 +1,7 @@
 <div class="col-md-12">
     <!-- start: DYNAMIC TABLE PANEL -->
-
+    &nbsp;<?php echo anchor('menu/add','Tambah Menu',array('class'=>'btn btn-success btn-sm'))?>
+    <div style="margin-bottom: 10px;"></div>
     <div class="panel panel-default">
         <div class="panel-heading">
             <i class="fa fa-external-link-square"></i> Menu
@@ -20,8 +21,8 @@
                         <th>NO</th>
                         <th>NAMA MENU</th>
                         <th>LINK</th>
-                        <th>IS MAIN MENU</th>
-                        <th></th>
+                        <th>MENU</th>
+                        <th>AKSI</th>
                     </tr>
                 </thead>
             </table>
@@ -42,17 +43,23 @@
             "columns": [
                 {
                     "data": null,
-                    "width": "50px",
+                    "width": "1px",
                     "sClass": "text-center",
                     "orderable": false,
                 },
-                { "data": "nama_menu" },
+                { "data": "nama_menu",
+                    "width": "80px",
+                    "sClass": "text-justify"},
                 {
                     "data": "link",
-                    "width": "120px",
+                    "width": "50px",
+                    "sClass": "text-justify"
                 },
-                { "data": "is_main_menu" },
-                { "data": "aksi","width": "80px" },
+                { "data": "is_main_menu",
+                    "width": "50px",
+                    "sClass": "text-center"},
+                { "data": "aksi","width": "1px",
+                    "sClass": "text-center",},
             ]
         } );
                

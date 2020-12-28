@@ -78,7 +78,7 @@
                         </label>
                         <div class="col-sm-2">
                         <input type="file" name="userfile">
-                        <img src="<?php echo base_url()."/uploads/".$siswa['foto']?>" width="200">
+                        <img src="<?php echo base_url()."/uploads/foto_siswa/".$siswa['foto']?>" width="200">
                         </div>
                     </div>
 

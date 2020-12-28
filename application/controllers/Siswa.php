@@ -23,9 +23,9 @@ Class Siswa extends CI_Controller {
                 'dt' => 'foto',
                 'formatter' => function( $d) {
                    if(empty($d)){
-                       return "<img width='30px' src='".  base_url()."/uploads/user-siluet.jpg'>";
+                       return "<img width='30px' src='".  base_url()."/uploads/foto_siswa/no-image.png'>";
                    }else{
-                       return "<img width='75px' height='88px' src='".  base_url()."/uploads/".$d."'>";
+                       return "<img width='75px' height='88px' src='".  base_url()."/uploads/foto_siswa/".$d."'>";
                    }
                 }
             ),
@@ -107,9 +107,11 @@ Class Siswa extends CI_Controller {
     }
 
     function upload_foto_siswa(){
-        $config['upload_path']          = './uploads/';
+        $config['upload_path']          = './uploads/foto_siswa';
         $config['allowed_types']        = 'jpg|png';
         $config['max_size']             = 1024; // imb
+        $config['file_name']            = "foto_siswa-" . uniqid();
+
         $this->load->library('upload', $config);
             // proses upload
         $this->upload->do_upload('userfile');

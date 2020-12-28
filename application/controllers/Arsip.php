@@ -38,7 +38,7 @@ Class Arsip extends CI_Controller {
                 'formatter' => function( $d) {
                     //return "<a href='edit.php?id=$d'>EDIT</a>";
                     return anchor('arsip/edit/'.$d,'<i class="fa fa-edit"></i>','class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit"').'
-                    <br><br>
+                    &nbsp;
                         '.anchor('arsip/delete/'.$d,'<i class="fa fa-trash"></i>','class="btn btn-xs btn-danger tooltips" data-placement="top" data-original-title="Delete"');
                 }
             )
@@ -95,28 +95,12 @@ Class Arsip extends CI_Controller {
         redirect('arsip');
     }
 
-    // function upload_dokumen(){
-    //     $config['upload_path']          = './uploads/file';
-    //     $config['allowed_types']        = 'jpg|png|pdf';
-    //     $config['max_size']             = 1024; // imb
-    //     $this->load->library('upload', $config);
-    //         // proses upload
-    //     if(! $this->upload->do_upload('file_dokumen')){
-    //         $error = array('error'=> $this->upload->display_errors());
-    //         $this->load->view('template', 'arsip/list',$error);
-    //     }else{
-    //         $data= array('upload_data'=> $this->upload->data());
-    //         $this->load->view('template', 'arsip/list',$data);
-    //     }
-    //     // $this->upload->do_upload('file_dokumen');
-    //     // $upload = $this->upload->data();
-    //     // return $upload['file_name'];
-    // }
     function upload_file_dokumen(){
         $id_dok = $this->uri->segment(3);
         $config['upload_path']          = './uploads/file/';
         $config['allowed_types']        = 'jpg|png|pdf';
         $config['max_size']             = 1024; // imb
+        $config['file_name']            = "dokumen-" . uniqid();
         $this->load->library('upload', $config);
             // proses upload
         $this->upload->do_upload('userfile');

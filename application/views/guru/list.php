@@ -1,6 +1,7 @@
 <div class="col-md-12">
     <!-- start: DYNAMIC TABLE PANEL -->
-   
+    &nbsp;<?php echo anchor('guru/add','Tambah Data Guru',array('class'=>'btn btn-success btn-sm'))?>
+    <div style="margin-bottom: 10px;"></div>
     <div class="panel panel-default">
         <div class="panel-heading">
             <i class="fa fa-external-link-square"></i> Data Guru
@@ -18,9 +19,14 @@
                 <thead>
                     <tr>
                         <th>NO</th>
+                        <th>FOTO</th>
                         <th>NUPTK</th>
-                        <th>NAMA GURU</th>
-                        <th>GENDER</th>
+                        <th>NAMA GURU/KARYAWAN</th>
+                        <th>JENIS KELAMIN</th>
+                        <th>TEMPAT LAHIR</th>
+                        <th>TANGGAL LAHIR</th>
+                        <th>PHONE</th>
+                        <th>ALAMAT</th>
                         <th>AKSI</th>
                     </tr>
                 </thead>
@@ -42,18 +48,37 @@
                 "columns": [
                     {
                         "data": null,
-                        "width": "50px",
+                        "width": "1px",
                         "sClass": "text-center",
                         "orderable": false,
                     },
                     {
+                        "data": "foto",
+                        "width": "30px",
+                        "sClass": "text-center"
+                    },{
                         "data": "nuptk",
-                        "width": "120px",
-                        "sClass": "text-left"
+                        "width": "30px",
+                        "sClass": "text-justify"
                     },
-                    { "data": "nama_guru" },
-                    { "data": "gender","width": "90px", },
-                    { "data": "aksi","width": "80px" },
+                    { "data": "nama_guru",
+                        "width": "80px",
+                        "sClass": "text-justify" },
+                    { "data": "gender","width": "30px", 
+                        "width": "30px",
+                        "sClass": "text-center"},
+                    { "data": "tempat_lahir","width": "30px",
+                        "width": "30px",
+                        "sClass": "text-center"},
+                    { "data": "tanggal_lahir","width": "30px",
+                        "width": "30px",
+                        "sClass": "text-center" },
+                    { "data": "phone","width": "30px",
+                        "sClass": "text-center"},
+                    { "data": "alamat","width": "30px", 
+                        "sClass": "text-justify"},
+                    { "data": "aksi","width": "10px",
+                        "sClass": "text-center" },
                 ]
             } );
                

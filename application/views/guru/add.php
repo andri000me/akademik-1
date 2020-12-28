@@ -3,23 +3,7 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <i class="fa fa-external-link-square"></i>
-            Text Fields
-            <div class="panel-tools">
-                <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
-                </a>
-                <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
-                    <i class="fa fa-wrench"></i>
-                </a>
-                <a class="btn btn-xs btn-link panel-refresh" href="#">
-                    <i class="fa fa-refresh"></i>
-                </a>
-                <a class="btn btn-xs btn-link panel-expand" href="#">
-                    <i class="fa fa-resize-full"></i>
-                </a>
-                <a class="btn btn-xs btn-link panel-close" href="#">
-                    <i class="fa fa-times"></i>
-                </a>
-            </div>
+            Tambah Data Guru
         </div>
         <div class="panel-body">
 
@@ -32,41 +16,62 @@
                     NUPTK
                 </label>
                 <div class="col-sm-9">
-                    <input type="text" name="nuptk" placeholder="MASUKAN NUPTK" id="form-field-1" class="form-control">
+                    <input type="text" name="nuptk" placeholder="NUPTK" id="form-field-1" class="form-control">
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label" for="form-field-1">
-                    NAMA GURU
+                    NAMA GURU/KARYAWAN
                 </label>
                 <div class="col-sm-9">
-                    <input type="text" name="nama_guru" placeholder="MASUKAN NAMA GURU" id="form-field-1" class="form-control">
+                    <input type="text" name="nama_guru" placeholder="NAMA GURU/KARYAWAN" id="form-field-1" class="form-control">
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="form-field-1">
-                    GENDER
+                <label class="col-sm-2 control-label text-justify" for="form-field-1">
+                    JENIS KELAMIN
                 </label>
                 <div class="col-sm-9">
                     <?php echo form_dropdown('gender', array('p' => 'LAKI LAKI', 'w' => 'PEREMPUAN'), '', "class='form-control'") ?>
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="form-field-1">
-                    USERNAME
-                </label>
-                <div class="col-sm-9">
-                    <input type="text" name="username" placeholder="MASUKAN USERNAME" id="form-field-1" class="form-control">
-                </div>
+                        <label class="col-sm-2 control-label text-justify" for="form-field-1">
+                            TEMPAT, TANGGAL LAHIR 
+                        </label>
+                        <div class="col-sm-5">
+                            <input type="text" name="tempat_lahir" placeholder="TEMPAT LAHIR" id="form-field-1" class="form-control">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="date" name="tanggal_lahir" placeholder="TANGGAL LAHIR" id="form-field-1" class="form-control">
+                        </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="form-field-1">
-                    PASSWORD
-                </label>
-                <div class="col-sm-9">
-                    <input type="password" name="password" placeholder="MASUKAN PASSWORD" id="form-field-1" class="form-control">
-                </div>
+                        <label class="col-sm-2 control-label" for="form-field-1">
+                            NO HP/TELEPON 
+                        </label>
+                        <div class="col-sm-3">
+                            <input type="number" placeholder="NO HP/TELEPON" name="phone" class="form-control"></input>
+                        </div>
+                    
+            </div> 
+            <div class="form-group">
+                        <label class="col-sm-2 control-label" for="form-field-1">
+                            ALAMAT 
+                        </label>
+                        <div class="col-sm-6">
+                            <textarea placeholder="ALAMAT" name="alamat" class="form-control"></textarea>
+                        </div>
+                    
+            </div>
+            <div class="form-group">
+                        <label class="col-sm-2 control-label" for="form-field-1">
+                            FOTO
+                        </label>
+                        <div class="col-sm-2">
+                            <input type="file" name="userfile">
+                        </div>
             </div>
 
             <div class="form-group">
