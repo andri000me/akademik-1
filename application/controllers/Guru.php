@@ -78,7 +78,8 @@ Class Guru extends CI_Controller {
     
     function edit(){
         if(isset($_POST['submit'])){
-            $this->Model_guru->update();
+            $uploadFoto = $this->upload_foto_siswa();
+            $this->Model_guru->update($uploadFoto);
             redirect('guru');
         }else{
             $id_guru      = $this->uri->segment(3);
@@ -100,6 +101,7 @@ Class Guru extends CI_Controller {
         $config['upload_path']          = './uploads/foto_guru';
         $config['allowed_types']        = 'jpg|png';
         $config['max_size']             = 1024; // imb
+        $config['file_name']            = "foto_guru-" . uniqid();
         $this->load->library('upload', $config);
             // proses upload
         $this->upload->do_upload('userfile');

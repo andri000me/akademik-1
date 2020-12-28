@@ -82,6 +82,7 @@ Class Users extends CI_Controller {
         $config['upload_path']          = './uploads/foto_users/';
         $config['allowed_types']        = 'jpg|png';
         $config['max_size']             = 1024; // imb
+        $config['file_name']            = "foto_user-" . uniqid();
         $this->load->library('upload', $config);
             // proses upload
         $this->upload->do_upload('userfile');
