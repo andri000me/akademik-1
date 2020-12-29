@@ -36,6 +36,7 @@ class Walikelas extends CI_Controller{
         
         //$where = 'tahun_akademik='.get_tahun_akademik_aktif('tahun_akademik');
         $where = "tahun_akademik='".get_tahun_akademik_aktif('tahun_akademik')."'";
+        header('Content-Type: application/json');
         echo json_encode(
                 SSP::complex($_GET, $sql_details, $table, $primaryKey, $columns,$where)
         );

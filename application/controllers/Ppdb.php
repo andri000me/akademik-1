@@ -31,7 +31,7 @@ class Ppdb extends CI_Controller {
             array('db' => 'nama_siswa', 'dt' => 'nama_siswa'),
             array('db' => 'tempat_lahir', 'dt' => 'tempat_lahir'),
             array('db' => 'tanggal_lahir', 'dt' => 'tanggal_lahir'),
-            array('db' => 'created', 'dt' => 'tanggal_mendaftar'),
+            array('db' => 'CreatedOn', 'dt' => 'tanggal_mendaftar'),
             array('db' => 'status', 'dt' => 'status'),
             array(
                 'db' => 'id_pendaftar',
@@ -52,7 +52,7 @@ class Ppdb extends CI_Controller {
             'db' => $this->db->database,
             'host' => $this->db->hostname
         );
-
+        header('Content-Type: application/json');
         echo json_encode(
                 SSP::simple($_GET, $sql_details, $table, $primaryKey, $columns)
         );
@@ -61,8 +61,10 @@ class Ppdb extends CI_Controller {
 
         // nama tabel
         $table = 'tbl_ppdb';
+      
         // nama PK
         $primaryKey = 'id_pendaftar';
+        
         // list field
         $columns = array(
             array('db' => 'foto',
@@ -79,8 +81,8 @@ class Ppdb extends CI_Controller {
             array('db' => 'nama_siswa', 'dt' => 'nama_siswa'),
             array('db' => 'tempat_lahir', 'dt' => 'tempat_lahir'),
             array('db' => 'tanggal_lahir', 'dt' => 'tanggal_lahir'),
-            array('db' => 'created', 'dt' => 'tanggal_mendaftar'),
-            array('db' => 'status', 'dt' => 'status',),
+            array('db' => 'CreatedOn', 'dt' => 'tanggal_mendaftar'),
+            array('db' => 'status', 'dt' => 'status', ),
             array(
                 'db' => 'id_pendaftar',
                 'dt' => 'aksi',
@@ -99,7 +101,10 @@ class Ppdb extends CI_Controller {
             'pass' => $this->db->password,
             'db' => $this->db->database,
             'host' => $this->db->hostname
+            
         );
+        // $sql = 'SELECT * FROM `tbl_ppdb` WHERE `status` = "Diterima" ORDER BY id_pendaftar ASC ';
+        header('Content-Type: application/json');
 
         echo json_encode(
                 SSP::simple($_GET, $sql_details, $table, $primaryKey, $columns)

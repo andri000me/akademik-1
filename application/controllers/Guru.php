@@ -56,6 +56,7 @@ Class Guru extends CI_Controller {
             'db' => $this->db->database,
             'host' => $this->db->hostname
         );
+        header('Content-Type: application/json');
 
         echo json_encode(
                 SSP::simple($_GET, $sql_details, $table, $primaryKey, $columns)

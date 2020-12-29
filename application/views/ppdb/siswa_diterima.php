@@ -17,6 +17,7 @@
                         <th class="text-center">FOTO</th>
                         <th class="text-center">NISN</th>
                         <th class="text-center">NAMA</th>
+                        <th class="text-center">TANGGAL DAFTAR</th>
                         <th class="text-center">STATUS</th>
                     </tr>
                 </thead>
@@ -42,11 +43,11 @@
         $(document).ready(function() {
             var t = $('#mytable').DataTable( {
                 "ajax": {
-                    "url": "<?php echo site_url('ppdb/data'); ?>",
+                    "url": "<?php echo site_url('ppdb/data_diterima'); ?>",
                     "type": "POST",
                 },
                 
-                "order": [[ 0, 'asc' ]],
+                "order": [[ 4, 'asc' ]],
                 "columns": [
                     {
                         "data": null,
@@ -67,9 +68,12 @@
                     { "data": "nama_siswa",
                         "width":"100px",
                         "sClass": "text-center", },
+                    { "data": "tanggal_mendaftar",
+                        "width":"100px",
+                        "sClass": "text-center", },
                     { 
                         "data": "status",
-                        "where": [['Diterima']],
+                        "filter": "Diterima",
                         "width":"100px",
                         "sClass": "text-center", },
                 ]
