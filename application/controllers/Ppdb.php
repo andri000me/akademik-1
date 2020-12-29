@@ -32,13 +32,14 @@ class Ppdb extends CI_Controller {
             array('db' => 'tempat_lahir', 'dt' => 'tempat_lahir'),
             array('db' => 'tanggal_lahir', 'dt' => 'tanggal_lahir'),
             array(
-                'db' => 'nis',
+                'db' => 'id_pendaftar',
                 'dt' => 'aksi',
                 'formatter' => function( $d) {
                     //return "<a href='edit.php?id=$d'>EDIT</a>";
-                    return anchor('ppdb/edit/'.$d,'<i class="fa fa-edit"></i>','class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit"').'
-                    <br><br>
-                        '.anchor('ppdb/delete/'.$d,'<i class="fa fa-trash"></i>','class="btn btn-xs btn-danger tooltips" data-placement="top" data-original-title="Delete"');
+                    return anchor('ppdb/detail/'.$d,'<i class="fa fa-search"></i>','class="btn btn-xs btn-success tooltips" data-placement="top" data-original title="Detail"').'
+                    &nbsp;'.anchor('ppdb/edit/'.$d,'<i class="fa fa-edit"></i>','class="btn btn-xs btn-warning tooltips" data-placement="top" data-original title="Edit"').'
+                        &nbsp;
+                        '.anchor('ppdb/delete/'.$d,'<i class="fa fa-trash"></i>','class="btn btn-xs btn-danger tooltips" data-placement="top" data-original title="Delete"');
                 }
             )
         );
@@ -59,7 +60,17 @@ class Ppdb extends CI_Controller {
     {
       $this->template->load('template', 'ppdb/list');
     }
-
+    function detail() {
+        if(isset($_POST['submit'])){
+            $uploadFoto = $this->upload_foto_siswa();
+            $this->Model_siswa->update($uploadFoto);
+            redirect('ppdb');
+        }else{
+            $nim           = $this->uri->segment(3);
+            $data['ppdb'] = $this->db->get_where('tbl_ppdb',array('id_pendaftar'=>$nim))->row_array();
+            $this->template->load('template', 'ppdb/detail',$data);
+        }
+    }
     function add() {
         if (isset($_POST['submit'])) {
             $uploadFoto = $this->upload_foto_siswa();
@@ -79,7 +90,7 @@ class Ppdb extends CI_Controller {
             redirect('ppdb');
         }else{
             $nisn          = $this->uri->segment(3);
-            $data['siswa'] = $this->db->get_where('tbl_ppdb',array('id_pendaftar'=>$nisn))->row_array();
+            $data['ppdb'] = $this->db->get_where('tbl_ppdb',array('id_pendaftar'=>$nisn))->row_array();
             $this->template->load('template', 'ppdb/edit',$data);
         }
     }
@@ -88,7 +99,7 @@ class Ppdb extends CI_Controller {
         $nisn = $this->uri->segment(3);
         if(!empty($nisn)){
             // proses delete data
-            $this->db->where('nis',$nisn);
+            $this->db->where('id_pendaftar',$nisn);
             $this->db->delete('tbl_ppdb');
         }
         redirect('ppdb');
@@ -105,7 +116,7 @@ class Ppdb extends CI_Controller {
         return $upload['file_name'];
     }
     function upload_file_ijazah_siswa(){
-        $config['upload_path']          = './uploads/ppdb/file_ijazah_siswa_baru/';
+        $config['upload_path']          = './uploads/ppdb/foto_siswa_baru/';
         $config['allowed_types']        = 'jpg|png|pdf';
         $config['max_size']             = 1024; // imb
         $this->load->library('upload', $config);
@@ -115,12 +126,12 @@ class Ppdb extends CI_Controller {
         return $upload['file_name'];
     }
     function upload_file_skhun_siswa(){
-        $config['upload_path']          = './uploads/ppdb/file_skhun_siswa_baru/';
+        $config['upload_path']          = './uploads/ppdb/foto_siswa_baru/';
         $config['allowed_types']        = 'jpg|png|pdf';
         $config['max_size']             = 1024; // imb
         $this->load->library('upload', $config);
             // proses upload
-        $this->upload->do_upload('file_skhun');
+        $this->upload->do_upload('skhun');
         $upload = $this->upload->data();
         return $upload['file_name'];
     }

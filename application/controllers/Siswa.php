@@ -38,9 +38,8 @@ Class Siswa extends CI_Controller {
                 'dt' => 'aksi',
                 'formatter' => function( $d) {
                     //return "<a href='edit.php?id=$d'>EDIT</a>";
-                    return anchor('siswa/edit/'.$d,'<i class="fa fa-edit"></i>','class="btn btn-xs btn-warning tooltips" data-placement="top" data-original title="Edit"').'
-                    &nbsp;
-                        '.anchor('siswa/detail/'.$d,'<i class="fa fa-search"></i>','class="btn btn-xs btn-success tooltips" data-placement="top" data-original title="Detail"').'
+                    return anchor('siswa/detail/'.$d,'<i class="fa fa-search"></i>','class="btn btn-xs btn-success tooltips" data-placement="top" data-original title="Detail"').'
+                    &nbsp;'.anchor('siswa/edit/'.$d,'<i class="fa fa-edit"></i>','class="btn btn-xs btn-warning tooltips" data-placement="top" data-original title="Edit"').'
                         &nbsp;
                         '.anchor('siswa/delete/'.$d,'<i class="fa fa-trash"></i>','class="btn btn-xs btn-danger tooltips" data-placement="top" data-original title="Delete"');
                 }

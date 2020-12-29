@@ -29,7 +29,7 @@ Class Arsip extends CI_Controller {
                 if(empty($d)){
                     return "File Tidak Ada";
                 }else{
-                    return "<a href='".base_url()."uploads/file/".$d."'>Download</a>";
+                    return "<a href='".base_url()."uploads/file/".$d."' download target='_blank' >Download</a>";
                 }
              }),
             array(

@@ -29,7 +29,7 @@ class Model_ppdb extends CI_Model {
             'nomor_hp_ortu'     => $this->input->post('nomor_hp_ortu',TRUE),
             'foto' => $foto,
             'file_ijazah' => $ijazah,
-            'file_ijazah' => $skhun,
+            'file_skhun' => $skhun,
             'keterangan'     => $this->input->post('keterangan',TRUE),
             'status'     => $this->input->post('status',TRUE),
 

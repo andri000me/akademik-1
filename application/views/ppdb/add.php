@@ -99,6 +99,14 @@
                     <input type="file" name="ijazah">
                 </div>
             </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="form-field-1">
+                    SKHUN
+                </label>
+                <div class="col-sm-2">
+                    <input type="file" name="skhun">
+                </div>
+            </div>
 
 
                 </div>
