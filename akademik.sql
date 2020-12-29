@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 28, 2020 at 04:01 PM
+-- Generation Time: Dec 29, 2020 at 10:20 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -179,7 +179,7 @@ INSERT INTO `tbl_guru` (`id_guru`, `nuptk`, `nama_guru`, `gender`, `tempat_lahir
 (6, '302930920', 'Bambang', 'p', 'Ponorogo', '2020-12-23', '02147483647', 'Sana ajaa', '', '2020-12-28 13:06:30'),
 (7, '30293029', 'Agus', 'p', 'Sragen', '2020-12-16', '08292982982', 'Jayakarta', '', '2020-12-28 13:13:52'),
 (8, '32909302930', 'Buagus', 'p', 'Pati', '2020-12-02', '0283923972973', 'Semawut', '', '2020-12-28 13:16:15'),
-(9, '2029029i3', 'Ridwan Hanif', 'p', 'Klaten', '2020-11-30', '239029302903', 'Surabaya', 'foto_guru-5fe9f33ebc301', '2020-12-28 15:01:18');
+(9, '2029029i3', 'Ridwan Hanif', 'p', 'Klaten', '2020-11-30', '239029302903', 'Surabaya', 'foto_guru-5fead71aa4b8d.png', '2020-12-29 07:13:30');
 
 -- --------------------------------------------------------
 
@@ -499,6 +499,51 @@ INSERT INTO `tbl_phonebook` (`id_phonebook`, `id_group`, `no_hp`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_ppdb`
+--
+
+CREATE TABLE `tbl_ppdb` (
+  `id_pendaftar` int(100) NOT NULL,
+  `nis` int(100) NOT NULL,
+  `nama_siswa` varchar(200) NOT NULL,
+  `gender` enum('Laki-Laki','Perempuan','','') NOT NULL,
+  `tempat_lahir` varchar(100) NOT NULL,
+  `tanggal_lahir` date NOT NULL,
+  `kd_agama` int(20) NOT NULL,
+  `alamat_siswa` varchar(200) NOT NULL,
+  `nama_ayah` varchar(200) NOT NULL,
+  `tempat_lahir_ayah` varchar(200) NOT NULL,
+  `tanggal_lahir_ayah` date NOT NULL,
+  `nama_ibu` varchar(200) NOT NULL,
+  `tempat_lahir_ibu` varchar(200) NOT NULL,
+  `tanggal_lahir_ibu` date NOT NULL,
+  `pekerjaan_ibu` varchar(200) NOT NULL,
+  `pekerjaan_ayah` varchar(200) NOT NULL,
+  `alamat_ortu` varchar(200) NOT NULL,
+  `jumlah_saudara` int(200) NOT NULL,
+  `penghasilan_ortu` int(200) NOT NULL,
+  `nilai_un` int(100) NOT NULL,
+  `nilai_raport` int(100) NOT NULL,
+  `foto` varchar(200) NOT NULL,
+  `file_ijazah` varchar(200) NOT NULL,
+  `file_skhun` varchar(200) NOT NULL,
+  `nomor_hp_ortu` varchar(30) NOT NULL,
+  `keterangan` varchar(200) NOT NULL,
+  `status` enum('Diverifikasi','Ditolak','Diterima','') NOT NULL,
+  `created` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_ppdb`
+--
+
+INSERT INTO `tbl_ppdb` (`id_pendaftar`, `nis`, `nama_siswa`, `gender`, `tempat_lahir`, `tanggal_lahir`, `kd_agama`, `alamat_siswa`, `nama_ayah`, `tempat_lahir_ayah`, `tanggal_lahir_ayah`, `nama_ibu`, `tempat_lahir_ibu`, `tanggal_lahir_ibu`, `pekerjaan_ibu`, `pekerjaan_ayah`, `alamat_ortu`, `jumlah_saudara`, `penghasilan_ortu`, `nilai_un`, `nilai_raport`, `foto`, `file_ijazah`, `file_skhun`, `nomor_hp_ortu`, `keterangan`, `status`, `created`) VALUES
+(1, 20903903, 'suprayogi', 'Laki-Laki', 'Ponorogo', '2020-12-23', 1, 'Sini aja', 'Wirman', 'Jakarta', '2020-12-03', 'PARJIEM', 'Surabaya', '2020-12-30', 'PNS', 'PNS', 'Sana aja', 2, 8500000, 90, 99, '7-2-axe-picture5.png', '3700479-education-elearning-graduate-learning-presentation-student-training_1087635.png', '', '0920020280', 'Sedang di cek', '', '2020-12-29 09:13:48'),
+(2, 20903903, 'waskita karya pt', 'Laki-Laki', 'Makassar', '2020-12-14', 1, 'Sana sini', 'Bintar', 'Jakarta', '2020-12-22', 'PARJIEM', 'Surabaya', '2020-12-23', 'DJ', 'PNS', 'Sana sini', 12, 123144111, 890, 289, '50_113701.png', 'settings.png', '', '0828288128179729', 'hi', '', '2020-12-29 09:16:52');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_presensi`
 --
 
@@ -622,7 +667,7 @@ CREATE TABLE `tbl_siswa` (
 INSERT INTO `tbl_siswa` (`nis`, `nama`, `gender`, `tanggal_lahir`, `tempat_lahir`, `kd_agama`, `foto`, `id_rombel`, `alamat_siswa`, `nama_ayah`, `tempat_lahir_ayah`, `tanggal_lahir_ayah`, `pekerjaan_ayah`, `nama_ibu`, `tempat_lahir_ibu`, `tanggal_lahir_ibu`, `pekerjaan_ibu`, `alamat_ortu`, `jumlah_saudara`, `penghasilan_ortu`, `created`) VALUES
 ('20903903', 'andin ', 'L', '2020-12-14', 'Semarang', '01', '5fe9e37169ba6_image.png', 1, 'jayakarta', 'Wirman', 'Jakarta', '2020-12-22', 'PNS', 'PARJIEM', 'Surabaya', '2020-12-15', 'PNS', 'SJjejakal', 4, 8500000, '2020-12-28 13:53:53'),
 ('20930903', 'Ardian ', 'L', '2020-12-21', 'Semarang', '01', 'ar.png', 1, 'Semarang jakarta sana aja', 'Joko', 'Jakarta', '1983-02-28', 'PNS', 'PINTUM', 'Surabaya', '2020-12-22', 'PNS', 'Sama', 7, 0, '2020-12-28 13:11:26'),
-('29883928093', 'Indra', 'L', '2020-12-01', 'Makassar', '01', 'foto_siswa-5fe9e6d01988c.png', 1, 'Sana sini', 'Bintar', 'Jakarta', '2020-12-01', 'PNS', 'PARJIEM', 'Surabaya', '2020-12-31', 'DJ', 'Sama', 9, 0, '2020-12-28 14:08:16'),
+('29883928093', 'Indra', 'L', '2020-12-01', 'Makassar', '01', 'foto_siswa-5fe9ff7e0ddd3.png', 1, 'Sana sini', 'Bintar', 'Jakarta', '2020-12-01', 'PNS', 'PARJIEM', 'Surabaya', '2020-12-31', 'DJ', 'Sama', 9, 2147483647, '2020-12-28 15:53:34'),
 ('320309', 'Winangsih Sri', 'L', '2020-12-22', 'Semarang', '01', 'array(nis)5fe9e4d73020a.png', 2, 'JAKRTA LAMA SEKALI AKU CUMA COBA DOANG APAKAH BISA RT 04 RW 09 Jakarta Selatan jaoh seklai aku mao maen aja ahh wkwkw\r\n', 'Wirman', 'Jakarta', '2020-12-01', 'PNS', 'PARJIEM', 'Surabaya', '2020-12-17', 'DJ', 'JAKRTA LAMA SEKALI AKU CUMA COBA DOANG APAKAH BISA RT 04 RW 09 Jakarta Selatan', 6, 0, '2020-12-28 13:59:51'),
 ('32030922', 'suprayogi', 'L', '2020-12-15', 'Ponorogo', '01', 'foto_siswa-5fe9e5177eec3.jpg', 1, 'SEMARANG', 'Buaguse', 'Jakarta', '2020-12-10', 'PNS', 'PARMIAH', 'Surabaya', '2020-12-10', 'DJ', 'Situ aja', 8, 0, '2020-12-28 14:00:55');
 
@@ -956,6 +1001,12 @@ ALTER TABLE `tbl_phonebook`
   ADD PRIMARY KEY (`id_phonebook`);
 
 --
+-- Indexes for table `tbl_ppdb`
+--
+ALTER TABLE `tbl_ppdb`
+  ADD PRIMARY KEY (`id_pendaftar`);
+
+--
 -- Indexes for table `tbl_presensi`
 --
 ALTER TABLE `tbl_presensi`
@@ -1108,6 +1159,12 @@ ALTER TABLE `tbl_pembayaran`
 --
 ALTER TABLE `tbl_phonebook`
   MODIFY `id_phonebook` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tbl_ppdb`
+--
+ALTER TABLE `tbl_ppdb`
+  MODIFY `id_pendaftar` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_presensi`
