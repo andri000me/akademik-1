@@ -57,12 +57,12 @@
                         "sClass": "text-center",
                     },
                     {
-                        "data": "nisn",
+                        "data": "nis",
                         "width": "150px",
                         "height" : "30px",
                         "sClass": "text-center"
                     },
-                    { "data": "nama",
+                    { "data": "nama_siswa",
                         "width":"100px",
                         "sClass": "text-center", },
                     { "data": "tempat_lahir",

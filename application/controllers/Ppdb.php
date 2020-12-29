@@ -27,12 +27,12 @@ class Ppdb extends CI_Controller {
                    }
                 }
             ),
-            array('db' => 'nisn', 'dt' => 'nisn'),
-            array('db' => 'nama', 'dt' => 'nama'),
+            array('db' => 'nis', 'dt' => 'nis'),
+            array('db' => 'nama_siswa', 'dt' => 'nama_siswa'),
             array('db' => 'tempat_lahir', 'dt' => 'tempat_lahir'),
             array('db' => 'tanggal_lahir', 'dt' => 'tanggal_lahir'),
             array(
-                'db' => 'nisn',
+                'db' => 'nis',
                 'dt' => 'aksi',
                 'formatter' => function( $d) {
                     //return "<a href='edit.php?id=$d'>EDIT</a>";
@@ -88,7 +88,7 @@ class Ppdb extends CI_Controller {
         $nisn = $this->uri->segment(3);
         if(!empty($nisn)){
             // proses delete data
-            $this->db->where('nisn',$nisn);
+            $this->db->where('nis',$nisn);
             $this->db->delete('tbl_ppdb');
         }
         redirect('ppdb');
@@ -113,7 +113,7 @@ class Ppdb extends CI_Controller {
         $this->upload->do_upload('file_ijazah');
         $upload = $this->upload->data();
         return $upload['file_name'];
-    } 
+    }
     function upload_file_skhun_siswa(){
         $config['upload_path']          = './uploads/ppdb/file_skhun_siswa_baru/';
         $config['allowed_types']        = 'jpg|png|pdf';
