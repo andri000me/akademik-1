@@ -27,6 +27,7 @@
                         <th class="text-center">NAMA</th>
                         <th class="text-center">TEMPAT LAHIR</th>
                         <th class="text-center">TANGGAL LAHIR</th>
+                        <th class="text-center">TANGGAL DAFTAR</th>
                         <th class="text-center">AKSI</th>
                     </tr>
                 </thead>
@@ -38,7 +39,13 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.0/jquery.dataTables.js"></script>
 <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.js"></script>
+<link href='//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css' rel='stylesheet' type='text/css'>
 
+     <!-- jQuery Library -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+     <!-- Datatable JS -->
+     <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
   <script>
         $(document).ready(function() {
@@ -69,6 +76,8 @@
                         "width":"100px",
                         "sClass": "text-center", },
                     { "data": "tanggal_lahir", "width": "15px",
+                        "sClass": "text-center",
+                    },{ "data": "tanggal_mendaftar", "width": "15px",
                         "sClass": "text-center",
                     },
                     { "data": "aksi","width": "50px",

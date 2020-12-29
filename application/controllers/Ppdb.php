@@ -31,6 +31,56 @@ class Ppdb extends CI_Controller {
             array('db' => 'nama_siswa', 'dt' => 'nama_siswa'),
             array('db' => 'tempat_lahir', 'dt' => 'tempat_lahir'),
             array('db' => 'tanggal_lahir', 'dt' => 'tanggal_lahir'),
+            array('db' => 'created', 'dt' => 'tanggal_mendaftar'),
+            array('db' => 'status', 'dt' => 'status'),
+            array(
+                'db' => 'id_pendaftar',
+                'dt' => 'aksi',
+                'formatter' => function( $d) {
+                    //return "<a href='edit.php?id=$d'>EDIT</a>";
+                    return anchor('ppdb/detail/'.$d,'<i class="fa fa-search"></i>','class="btn btn-xs btn-success tooltips" data-placement="top" data-original title="Detail"').'
+                    &nbsp;'.anchor('ppdb/edit/'.$d,'<i class="fa fa-edit"></i>','class="btn btn-xs btn-warning tooltips" data-placement="top" data-original title="Edit"').'
+                        &nbsp;
+                        '.anchor('ppdb/delete/'.$d,'<i class="fa fa-trash"></i>','class="btn btn-xs btn-danger tooltips" data-placement="top" data-original title="Delete"');
+                }
+            )
+        );
+
+        $sql_details = array(
+            'user' => $this->db->username,
+            'pass' => $this->db->password,
+            'db' => $this->db->database,
+            'host' => $this->db->hostname
+        );
+
+        echo json_encode(
+                SSP::simple($_GET, $sql_details, $table, $primaryKey, $columns)
+        );
+    }
+    function data_diterima() {
+
+        // nama tabel
+        $table = 'tbl_ppdb';
+        // nama PK
+        $primaryKey = 'id_pendaftar';
+        // list field
+        $columns = array(
+            array('db' => 'foto',
+                'dt' => 'foto',
+                'formatter' => function( $d) {
+                   if(empty($d)){
+                       return "<img width='30px' src='".  base_url()."/uploads/user-siluet.jpg'>";
+                   }else{
+                       return "<img width='75px' height='88px' src='".  base_url()."/uploads/ppdb/foto_siswa_baru/".$d."'>";
+                   }
+                }
+            ),
+            array('db' => 'nis', 'dt' => 'nis'),
+            array('db' => 'nama_siswa', 'dt' => 'nama_siswa'),
+            array('db' => 'tempat_lahir', 'dt' => 'tempat_lahir'),
+            array('db' => 'tanggal_lahir', 'dt' => 'tanggal_lahir'),
+            array('db' => 'created', 'dt' => 'tanggal_mendaftar'),
+            array('db' => 'status', 'dt' => 'status',),
             array(
                 'db' => 'id_pendaftar',
                 'dt' => 'aksi',

@@ -26,7 +26,6 @@
                         <th class="text-center">NISN</th>
                         <th class="text-center">NAMA</th>
                         <th class="text-center">STATUS</th>
-                        <th class="text-center">AKSI</th>
                     </tr>
                 </thead>
             </table>
@@ -37,13 +36,25 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.0/jquery.dataTables.js"></script>
 <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.js"></script>
+<link href='//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css' rel='stylesheet' type='text/css'>
+
+     <!-- jQuery Library -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+     <!-- Datatable JS -->
+     <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
 
 
   <script>
         $(document).ready(function() {
             var t = $('#mytable').DataTable( {
-                "ajax": '<?php echo site_url('ppdb/siswa_diterima'); ?>',
-                "order": [[ 2, 'asc' ]],
+                "ajax": {
+                    "url": "<?php echo site_url('ppdb/data'); ?>",
+                    "type": "POST",
+                },
+                
+                "order": [[ 0, 'asc' ]],
                 "columns": [
                     {
                         "data": null,
@@ -64,10 +75,10 @@
                     { "data": "nama_siswa",
                         "width":"100px",
                         "sClass": "text-center", },
-                    { "data": "status", "width": "15px",
-                        "sClass": "text-center",
-                    },
-                    { "data": "aksi","width": "50px",
+                    { 
+                        "data": "status",
+                        "where": [['Diterima']],
+                        "width":"100px",
                         "sClass": "text-center", },
                 ]
             } );
