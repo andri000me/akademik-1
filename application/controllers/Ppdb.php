@@ -23,7 +23,7 @@ class Ppdb extends CI_Controller {
                    if(empty($d)){
                        return "<img width='30px' src='".  base_url()."/uploads/user-siluet.jpg'>";
                    }else{
-                       return "<img width='75px' height='88px' src='".  base_url()."/uploads/".$d."'>";
+                       return "<img width='75px' height='88px' src='".  base_url()."/uploads/ppdb/foto_siswa_baru/".$d."'>";
                    }
                 }
             ),
@@ -110,7 +110,7 @@ class Ppdb extends CI_Controller {
         $config['max_size']             = 1024; // imb
         $this->load->library('upload', $config);
             // proses upload
-        $this->upload->do_upload('file_ijazah');
+        $this->upload->do_upload('ijazah');
         $upload = $this->upload->data();
         return $upload['file_name'];
     }

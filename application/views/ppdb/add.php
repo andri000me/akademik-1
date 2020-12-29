@@ -84,29 +84,21 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label" for="form-field-1">
-                            FOTO
-                        </label>
-                        <div class="col-sm-2">
-                            <input type="file" name="userfile">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label" for="form-field-1">
-                            FILE IJAZAH
-                        </label>
-                        <div class="col-sm-2">
-                            <input type="file" name="file_ijazah">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label" for="form-field-1">
-                            FILE SKHUN
-                        </label>
-                        <div class="col-sm-2">
-                            <input type="file" name="file_skhun">
-                        </div>
-                    </div>
+                <label class="col-sm-3 control-label" for="form-field-1">
+                    FOTO SISWA
+                </label>
+                <div class="col-sm-2">
+                    <input type="file" name="userfile">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="form-field-1">
+                    IJAZAH
+                </label>
+                <div class="col-sm-2">
+                    <input type="file" name="ijazah">
+                </div>
+            </div>
 
 
                 </div>
@@ -213,29 +205,14 @@
                     <input type="number" name="penghasilan_ortu" placeholder="PENGHASILAN KEDUA ORANG TUA" id="form-field-1" class="form-control">
                 </div>
             </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="form-field-1">
-                    FOTO SISWA
-                </label>
-                <div class="col-sm-2">
-                    <input type="file" name="userfile">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="form-field-1">
-                    IJAZAH
-                </label>
-                <div class="col-sm-2">
-                    <input type="file" name="ijazah">
-                </div>
-            </div>
+           
             <div class="form-group text-left">
                             <label class="col-sm-5 control-label" for="form-field-1">
                                 STATUS
                             </label>
                             <div class="col-sm-5">
                                 <?php
-                                echo form_dropdown('status', array('Diverfikasi' => 'Diverifikasi', 'Ditolak' => 'Ditolak', 'Diterima' => 'Diterima'), null, "class='form-control'");
+                                echo form_dropdown('status', array('Diverifikasi' => 'Diverifikasi', 'Ditolak' => 'Ditolak', 'Diterima' => 'Diterima'), null, "class='form-control'");
                                 ?>
                             </div>
             </div>
