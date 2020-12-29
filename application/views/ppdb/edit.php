@@ -1,7 +1,7 @@
 <div class="col-sm-12">
 <?php
                     echo form_open_multipart('ppdb/edit', 'role="form" class="form-horizontal"');
-                    echo form_hidden('id_pendaftar', $siswa['id_pendaftar']);
+                    echo form_hidden('id_pendaftar', $ppdb['id_pendaftar']);
                     ?>
         <div class="col-sm-6">
             <!-- start: TEXT FIELDS PANEL -->
@@ -16,7 +16,7 @@
                             NIS
                         </label>
                         <div class="col-sm-5">
-                            <input type="text" name="nis" placeholder="NIS" id="form-field-1" class="form-control">
+                            <input type="text" name="nis" value="<?php echo $ppdb['nis'] ?>" placeholder="NIS" id="form-field-1" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
@@ -24,7 +24,7 @@
                             NAMA
                         </label>
                         <div class="col-sm-9">
-                            <input type="text" name="nama" placeholder="NAMA LENGKAP" id="form-field-1" class="form-control">
+                            <input type="text" name="nama" value="<?php echo $ppdb['nama_siswa'] ?>" placeholder="NAMA LENGKAP" id="form-field-1" class="form-control">
                         </div>
                     </div>
 
@@ -33,10 +33,10 @@
                             TEMPAT, TANGGAL LAHIR
                         </label>
                         <div class="col-sm-5">
-                            <input type="text" name="tempat_lahir" placeholder="TEMPAT LAHIR" id="form-field-1" class="form-control">
+                            <input type="text" name="tempat_lahir" value="<?php echo $ppdb['tempat_lahir'] ?>" placeholder="TEMPAT LAHIR" id="form-field-1" class="form-control">
                         </div>
                         <div class="col-sm-4">
-                            <input type="date" name="tanggal_lahir" placeholder="TANGGAL LAHIR" id="form-field-1" class="form-control">
+                            <input type="date" name="tanggal_lahir" value="<?php echo $ppdb['tanggal_lahir'] ?>" placeholder="TANGGAL LAHIR" id="form-field-1" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
@@ -45,7 +45,7 @@
                         </label>
                         <div class="col-sm-5">
                             <?php
-                            echo form_dropdown('gender', array('Laki-Laki' => 'LAKI LAKI', 'Perempuan' => 'PEREMPUAN'), null, "class='form-control'");
+                            echo form_dropdown('gender', array('Laki-Laki' => 'LAKI LAKI', 'Perempuan' => 'PEREMPUAN'), null, "class='form-control'", $ppdb['gender']);
                             ?>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                         </label>
                         <div class="col-sm-5">
                             <?php
-                            echo cmb_dinamis('agama', 'tbl_agama', 'nama_agama', 'kd_agama');
+                            echo cmb_dinamis('agama', 'tbl_agama', 'nama_agama', 'kd_agama', $ppdb['kd_agama']);
                             ?>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                             ALAMAT SISWA
                         </label>
                         <div class="col-sm-6">
-                            <textarea placeholder="ALAMAT SISWA" name="alamat_siswa" class="form-control"></textarea>
+                            <textarea placeholder="ALAMAT SISWA" name="alamat_siswa" class="form-control"><?php echo htmlspecialchars($ppdb['alamat_siswa']); ?></textarea>
                         </div>
 
                     </div>
@@ -73,7 +73,7 @@
                             NILAI UN
                         </label>
                         <div class="col-sm-5">
-                            <input type="text" name="nilai_un" placeholder="NILAI UN" id="form-field-1" class="form-control">
+                            <input type="text" name="nilai_un" value="<?php echo $ppdb['nilai_un'] ?>" placeholder="NILAI UN" id="form-field-1" class="form-control">
                         </div>
                     </div>
                      <div class="form-group">
@@ -81,7 +81,7 @@
                             NILAI RAPORT
                         </label>
                         <div class="col-sm-5">
-                            <input type="text" name="nilai_raport" placeholder="NILAI RAPORT" id="form-field-1" class="form-control">
+                            <input type="text" value="<?php echo $ppdb['nilai_raport'] ?>" name="nilai_raport" placeholder="NILAI RAPORT" id="form-field-1" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
@@ -89,7 +89,7 @@
                     FOTO SISWA
                 </label>
                 <div class="col-sm-2">
-                    <input type="file" name="userfile">
+                    <input type="file" value="<?php echo $ppdb['foto'] ?>" name="userfile">
                 </div>
             </div>
             <div class="form-group">
@@ -97,7 +97,7 @@
                     IJAZAH
                 </label>
                 <div class="col-sm-2">
-                    <input type="file" name="ijazah">
+                    <input type="file" value="<?php echo $ppdb['file_ijazah'] ?>"name="ijazah">
                 </div>
             </div>
             <div class="form-group">
@@ -105,7 +105,7 @@
                     SKHUN
                 </label>
                 <div class="col-sm-2">
-                    <input type="file" name="skhun">
+                    <input type="file" value="<?php echo $ppdb['file_skhun'] ?>" name="skhun">
                 </div>
             </div>
 
@@ -128,7 +128,7 @@
                         NAMA AYAH
                     </label>
                     <div class="col-sm-5">
-                        <input type="text" name="nama_ayah" placeholder="NAMA AYAH" id="form-field-1" class="form-control">
+                        <input type="text" value="<?php echo $ppdb['nama_ayah'] ?>"name="nama_ayah" placeholder="NAMA AYAH" id="form-field-1" class="form-control">
                     </div>
                 </div>
                 <div class="form-group">
@@ -136,10 +136,10 @@
                             TEMPAT, TANGGAL LAHIR AYAH
                         </label>
                         <div class="col-sm-5">
-                            <input type="text" name="tempat_lahir_ayah" placeholder="TEMPAT LAHIR" id="form-field-1" class="form-control">
+                            <input type="text" value="<?php echo $ppdb['tempat_lahir_ayah'] ?>" name="tempat_lahir_ayah" placeholder="TEMPAT LAHIR" id="form-field-1" class="form-control">
                         </div>
                         <div class="col-sm-4">
-                            <input type="date" name="tanggal_lahir_ayah" placeholder="TANGGAL LAHIR" id="form-field-1" class="form-control">
+                            <input type="date" value="<?php echo $ppdb['tanggal_lahir_ayah'] ?>" name="tanggal_lahir_ayah" placeholder="TANGGAL LAHIR" id="form-field-1" class="form-control">
                         </div>
                     </div>
 
@@ -148,7 +148,7 @@
                         PEKERJAAN AYAH
                     </label>
                     <div class="col-sm-9">
-                        <input type="text" name="pekerjaan_ayah" placeholder="PEKERJAAN AYAH" id="form-field-1" class="form-control">
+                        <input type="text" value="<?php echo $ppdb['pekerjaan_ayah'] ?>" name="pekerjaan_ayah" placeholder="PEKERJAAN AYAH" id="form-field-1" class="form-control">
                     </div>
                 </div>
                 <div class="form-group">
@@ -156,7 +156,7 @@
                         NAMA IBU
                     </label>
                     <div class="col-sm-5">
-                        <input type="text" name="nama_ibu" placeholder="NAMA IBU" id="form-field-1" class="form-control">
+                        <input type="text" value="<?php echo $ppdb['nama_ibu'] ?>" name="nama_ibu" placeholder="NAMA IBU" id="form-field-1" class="form-control">
                     </div>
                 </div>
                 <div class="form-group">
@@ -164,10 +164,10 @@
                             TEMPAT, TANGGAL LAHIR IBU
                         </label>
                         <div class="col-sm-5">
-                            <input type="text" name="tempat_lahir_ibu" placeholder="TEMPAT LAHIR" id="form-field-1" class="form-control">
+                            <input type="text" value="<?php echo $ppdb['tempat_lahir_ibu'] ?>" name="tempat_lahir_ibu" placeholder="TEMPAT LAHIR" id="form-field-1" class="form-control">
                         </div>
                         <div class="col-sm-4">
-                            <input type="date" name="tanggal_lahir_ibu" placeholder="TANGGAL LAHIR" id="form-field-1" class="form-control">
+                            <input type="date" value="<?php echo $ppdb['tanggal_lahir_ibu'] ?>" name="tanggal_lahir_ibu" placeholder="TANGGAL LAHIR" id="form-field-1" class="form-control">
                         </div>
                     </div>
 
@@ -176,7 +176,7 @@
                         PEKERJAAN IBU
                     </label>
                     <div class="col-sm-9">
-                        <input type="text" name="pekerjaan_ibu" placeholder="PEKERJAAN IBU" id="form-field-1" class="form-control">
+                        <input type="text" value="<?php echo $ppdb['pekerjaan_ibu'] ?>" name="pekerjaan_ibu" placeholder="PEKERJAAN IBU" id="form-field-1" class="form-control">
                     </div>
                 </div>
 
@@ -186,7 +186,7 @@
                     NOMOR HP
                 </label>
                 <div class="col-sm-9">
-                    <input type="number" name="nomor_hp_ortu" placeholder="NOMOR HP ORANG TUA" id="form-field-1" class="form-control">
+                    <input type="number" value="<?php echo $ppdb['nomor_hp_ortu'] ?>" name="nomor_hp_ortu" placeholder="NOMOR HP ORANG TUA" id="form-field-1" class="form-control">
                 </div>
             </div>
             <div class="form-group">
@@ -194,7 +194,7 @@
                     ALAMAT
                 </label>
                 <div class="col-sm-6">
-                    <textarea name="alamat_ortu" class="form-control"></textarea>
+                    <textarea name="alamat_ortu" class="form-control"><?php echo htmlspecialchars($ppdb['alamat_ortu']); ?></textarea>
                 </div>
 
             </div>
@@ -203,7 +203,7 @@
                     JUMLAH SAUDARA
                 </label>
                 <div class="col-sm-9">
-                    <input type="number" name="jumlah_saudara" placeholder="JUMLAH SAUDARA " id="form-field-1" class="form-control">
+                    <input type="number" value="<?php echo $ppdb['jumlah_saudara'] ?>" name="jumlah_saudara" placeholder="JUMLAH SAUDARA " id="form-field-1" class="form-control">
                 </div>
             </div>
             <div class="form-group">
@@ -211,17 +211,17 @@
                     JUMLAH PENGHASILAN KEDUA ORTU
                 </label>
                 <div class="col-sm-9">
-                    <input type="number" name="penghasilan_ortu" placeholder="PENGHASILAN KEDUA ORANG TUA" id="form-field-1" class="form-control">
+                    <input type="number" value="<?php echo $ppdb['penghasilan_ortu'] ?>"name="penghasilan_ortu" placeholder="PENGHASILAN KEDUA ORANG TUA" id="form-field-1" class="form-control">
                 </div>
             </div>
-           
+
             <div class="form-group text-left">
                             <label class="col-sm-5 control-label" for="form-field-1">
                                 STATUS
                             </label>
                             <div class="col-sm-5">
                                 <?php
-                                echo form_dropdown('status', array('Diverifikasi' => 'Diverifikasi', 'Ditolak' => 'Ditolak', 'Diterima' => 'Diterima'), null, "class='form-control'");
+                                echo form_dropdown('status', array('Diverifikasi' => 'Diverifikasi', 'Ditolak' => 'Ditolak', 'Diterima' => 'Diterima'), null, "class='form-control'", $ppdb['status']);
                                 ?>
                             </div>
             </div>
@@ -231,7 +231,7 @@
                             KETERANGAN
                         </label>
                         <div class="col-sm-5">
-                            <textarea placeholder="KETERANGAN" name="keterangan"class="form-control"></textarea>
+                            <textarea placeholder="KETERANGAN" value="<?php echo $ppdb['keterangan'] ?>" name="keterangan"class="form-control"></textarea>
                         </div>
 
                     </div>

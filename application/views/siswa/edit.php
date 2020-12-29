@@ -25,7 +25,7 @@
 
                     <div class="form-group">
                         <label class="col-sm-3 control-label" for="form-field-1">
-                            NAMA 
+                            NAMA
                         </label>
                         <div class="col-sm-9">
                             <input type="text" name="nama" value="<?php echo $siswa['nama'] ?>"  id="form-field-1" class="form-control">
@@ -70,7 +70,7 @@
                         <div class="col-sm-9">
                         <textarea type="text" name="alamat_siswa"  id="form-field-1" class="form-control"><?php echo htmlspecialchars($siswa['alamat_siswa']); ?></textarea>
                     </div>
-                    
+
                     </div>
                     <div class="form-group">
                         <label class="col-sm-3 control-label" for="form-field-1">
@@ -92,7 +92,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- end: TEXT FIELDS PANEL -->
         </div>
         <div class="col-sm-6">
@@ -125,7 +125,7 @@
 
                 <div class="form-group">
                     <label class="col-sm-3 control-label" for="form-field-1">
-                        PEKERJAAN AYAH 
+                        PEKERJAAN AYAH
                     </label>
                     <div class="col-sm-9">
                         <input type="text" name="pekerjaan_ayah" value="<?php echo $siswa['pekerjaan_ayah'] ?>" id="form-field-1" class="form-control">
@@ -153,7 +153,7 @@
 
                 <div class="form-group">
                     <label class="col-sm-3 control-label" for="form-field-1">
-                        PEKERJAAN IBU 
+                        PEKERJAAN IBU
                     </label>
                     <div class="col-sm-9">
                         <input type="text" name="pekerjaan_ibu" value="<?php echo $siswa['pekerjaan_ibu'] ?>"  id="form-field-1" class="form-control">
@@ -166,7 +166,7 @@
                     <div class="col-sm-9">
                     <textarea type="text" name="alamat_ortu"  id="form-field-1" class="form-control"><?php echo htmlspecialchars($siswa['alamat_ortu']); ?></textarea>
                     </div>
-                
+
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label" for="form-field-1">
