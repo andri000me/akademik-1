@@ -24,7 +24,7 @@
         <div class="panel-body">
 
             <?php
-            echo form_open('guru/edit', 'role="form" class="form-horizontal"');
+            echo form_open_multipart('guru/edit', 'role="form" class="form-horizontal"');
             echo form_hidden('id_guru', $guru['id_guru']);
             ?>
 
@@ -55,7 +55,7 @@
             </div>
             <div class="form-group">
                         <label class="col-sm-2 control-label text-justify" for="form-field-1">
-                            TEMPAT, TANGGAL LAHIR 
+                            TEMPAT, TANGGAL LAHIR
                         </label>
                         <div class="col-sm-5">
                             <input type="text" name="tempat_lahir" value="<?php echo $guru['tempat_lahir']?>" id="form-field-1" class="form-control">
@@ -66,21 +66,21 @@
             </div>
             <div class="form-group">
                         <label class="col-sm-2 control-label" for="form-field-1">
-                            NO HP/TELEPON 
+                            NO HP/TELEPON
                         </label>
                         <div class="col-sm-3">
                             <input type="number" value="<?php echo $guru['phone']?>" name="phone" class="form-control"></input>
                         </div>
-                    
-            </div> 
+
+            </div>
             <div class="form-group">
                         <label class="col-sm-2 control-label" for="form-field-1">
-                            ALAMAT 
+                            ALAMAT
                         </label>
                         <div class="col-sm-6">
                             <textarea name="alamat" class="form-control"><?php echo htmlspecialchars($guru['alamat']); ?></textarea>
                         </div>
-                    
+
             </div>
             <div class="form-group">
                         <label class="col-sm-2 control-label" for="form-field-1">
