@@ -8,7 +8,7 @@
         <div class="panel-body">
 
             <?php
-            echo form_open('guru/add', 'role="form" class="form-horizontal"');
+            echo form_open_multipart('guru/add', 'role="form" class="form-horizontal"');
             ?>
 
             <div class="form-group">
@@ -38,7 +38,7 @@
             </div>
             <div class="form-group">
                         <label class="col-sm-2 control-label text-justify" for="form-field-1">
-                            TEMPAT, TANGGAL LAHIR 
+                            TEMPAT, TANGGAL LAHIR
                         </label>
                         <div class="col-sm-5">
                             <input type="text" name="tempat_lahir" placeholder="TEMPAT LAHIR" id="form-field-1" class="form-control">
@@ -49,21 +49,21 @@
             </div>
             <div class="form-group">
                         <label class="col-sm-2 control-label" for="form-field-1">
-                            NO HP/TELEPON 
+                            NO HP/TELEPON
                         </label>
                         <div class="col-sm-3">
                             <input type="number" placeholder="NO HP/TELEPON" name="phone" class="form-control"></input>
                         </div>
-                    
-            </div> 
+
+            </div>
             <div class="form-group">
                         <label class="col-sm-2 control-label" for="form-field-1">
-                            ALAMAT 
+                            ALAMAT
                         </label>
                         <div class="col-sm-6">
                             <textarea placeholder="ALAMAT" name="alamat" class="form-control"></textarea>
                         </div>
-                    
+
             </div>
             <div class="form-group">
                         <label class="col-sm-2 control-label" for="form-field-1">
