@@ -9,6 +9,8 @@ class Auth extends CI_Controller {
     }
 
     function index() {
+        $pemberitahuan = "<div class='alert alert-danger text-center'><b>Anda Harus Login Dahulu </b></div>";
+        $this->session->set_flashdata('pemberitahuan', $pemberitahuan);
         $this->load->view('auth/login');
     }
 
@@ -34,7 +36,9 @@ class Auth extends CI_Controller {
                 redirect('jadwal');
             } else {
                 // gagal login
+               echo ('Salah Password Bro');
                 redirect('auth');
+                
             }
         } else {
             redirect('auth');

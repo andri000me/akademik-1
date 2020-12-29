@@ -19,7 +19,7 @@ Class Guru extends CI_Controller {
             'dt' => 'foto',
             'formatter' => function( $d) {
                if(empty($d)){
-                   return "<img width='30px' src='".  base_url()."/uploads/foto_guru/no-image.png'>";
+                   return "<img width='75px' height='88px' src='".  base_url()."/uploads/foto_guru/no-image.png'>";
                }else{
                    return "<img width='75px' height='88px' src='".  base_url()."/uploads/foto_guru/".$d."'>";
                }

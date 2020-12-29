@@ -59,7 +59,7 @@
                     },{
                         "data": "nuptk",
                         "width": "30px",
-                        "sClass": "text-justify"
+                        "sClass": "text-center"
                     },
                     { "data": "nama_guru",
                         "width": "80px",

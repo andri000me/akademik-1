@@ -63,7 +63,9 @@ class Ppdb extends CI_Controller {
     function add() {
         if (isset($_POST['submit'])) {
             $uploadFoto = $this->upload_foto_siswa();
-            $this->Model_ppdb->save($uploadFoto);
+            $uploadFileIjazah = $this->upload_file_ijazah_siswa();
+            $uploadFileSkhun = $this->upload_file_skhun_siswa();
+            $this->Model_ppdb->save($uploadFoto, $uploadFileIjazah, $uploadFileSkhun);
             redirect('ppdb');
         } else {
             $this->template->load('template', 'ppdb/add');
@@ -77,7 +79,7 @@ class Ppdb extends CI_Controller {
             redirect('ppdb');
         }else{
             $nisn          = $this->uri->segment(3);
-            $data['siswa'] = $this->db->get_where('tbl_ppdb',array('nisn'=>$nisn))->row_array();
+            $data['siswa'] = $this->db->get_where('tbl_ppdb',array('id_pendaftar'=>$nisn))->row_array();
             $this->template->load('template', 'ppdb/edit',$data);
         }
     }
@@ -93,12 +95,32 @@ class Ppdb extends CI_Controller {
     }
 
     function upload_foto_siswa(){
-        $config['upload_path']          = './uploads/';
+        $config['upload_path']          = './uploads/ppdb/foto_siswa_baru/';
         $config['allowed_types']        = 'jpg|png';
         $config['max_size']             = 1024; // imb
         $this->load->library('upload', $config);
             // proses upload
         $this->upload->do_upload('userfile');
+        $upload = $this->upload->data();
+        return $upload['file_name'];
+    }
+    function upload_file_ijazah_siswa(){
+        $config['upload_path']          = './uploads/ppdb/file_ijazah_siswa_baru/';
+        $config['allowed_types']        = 'jpg|png|pdf';
+        $config['max_size']             = 1024; // imb
+        $this->load->library('upload', $config);
+            // proses upload
+        $this->upload->do_upload('file_ijazah');
+        $upload = $this->upload->data();
+        return $upload['file_name'];
+    } 
+    function upload_file_skhun_siswa(){
+        $config['upload_path']          = './uploads/ppdb/file_skhun_siswa_baru/';
+        $config['allowed_types']        = 'jpg|png|pdf';
+        $config['max_size']             = 1024; // imb
+        $this->load->library('upload', $config);
+            // proses upload
+        $this->upload->do_upload('file_skhun');
         $upload = $this->upload->data();
         return $upload['file_name'];
     }
