@@ -125,4 +125,10 @@ class Ppdb extends CI_Controller {
         return $upload['file_name'];
     }
 
+    function siswa_diterima()
+    {
+      $sql = 'SELECT * FROM `tbl_ppdb` WHERE `status` = "Diterima" ORDER BY id_pendaftar ASC ';
+      $data['siswa'] = $this->db->query($sql);
+      $this->template->load('template', 'ppdb/siswa_diterima');
+    }
 }
