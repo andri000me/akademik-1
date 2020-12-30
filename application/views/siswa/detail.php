@@ -25,7 +25,7 @@
 
                     <div class="form-group">
                         <label class="col-sm-3 control-label" for="form-field-1">
-                            NAMA 
+                            NAMA
                         </label>
                         <div class="col-sm-9">
                             <input type="text" name="nama" value="<?php echo $siswa['nama'] ?>" readonly="" id="form-field-1" class="form-control">
@@ -68,7 +68,7 @@
                         <div class="col-sm-9">
                         <textarea type="text" name="alamat_siswa"  id="form-field-1" class="form-control" readonly><?php echo htmlspecialchars($siswa['alamat_siswa']); ?></textarea>
                     </div>
-                    
+
                     </div>
                     <div class="form-group">
                         <label class="col-sm-3 control-label" for="form-field-1">
@@ -84,12 +84,12 @@
                             ROMBEL
                         </label>
                         <div class="col-sm-6">
-                            <?php echo cmb_dinamis ('rombel', 'tbl_rombel', 'nama_rombel', 'id_rombel',$siswa['id_rombel'],'readonly');?>
+                            <?php echo cmb_dinamis ('kelas', 'tbl_rombel', 'kelas', 'id_rombel',$siswa['id_rombel'],'readonly');?>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <!-- end: TEXT FIELDS PANEL -->
         </div>
         <div class="col-sm-6">
@@ -122,7 +122,7 @@
 
                 <div class="form-group">
                     <label class="col-sm-3 control-label" for="form-field-1">
-                        PEKERJAAN AYAH 
+                        PEKERJAAN AYAH
                     </label>
                     <div class="col-sm-9">
                         <input type="text" name="pekerjaan_ayah" value="<?php echo $siswa['pekerjaan_ayah'] ?>" readonly="" id="form-field-1" class="form-control">
@@ -150,7 +150,7 @@
 
                 <div class="form-group">
                     <label class="col-sm-3 control-label" for="form-field-1">
-                        PEKERJAAN IBU 
+                        PEKERJAAN IBU
                     </label>
                     <div class="col-sm-9">
                         <input type="text" name="pekerjaan_ibu" value="<?php echo $siswa['pekerjaan_ibu'] ?>" readonly="" id="form-field-1" class="form-control">
@@ -163,7 +163,7 @@
                     <div class="col-sm-9">
                     <textarea type="text" name="alamat_ortu"  id="form-field-1" class="form-control" readonly><?php echo htmlspecialchars($siswa['alamat_ortu']); ?></textarea>
                     </div>
-                
+
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label" for="form-field-1">

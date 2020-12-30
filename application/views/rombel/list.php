@@ -1,6 +1,6 @@
 <div class="col-md-12">
     <!-- start: DYNAMIC TABLE PANEL -->
-   
+
     <div class="panel panel-default">
         <div class="panel-heading">
             <i class="fa fa-external-link-square"></i> Dynamic Table
@@ -13,8 +13,6 @@
                 <thead>
                     <tr>
                         <th>NO</th>
-                        <th>NAMA ROMBEL</th>
-                        <th>JURUSAN</th>
                         <th>KELAS</th>
                         <th></th>
                     </tr>
@@ -48,13 +46,11 @@
                         "sClass": "text-center",
                         "orderable": false,
                     },
-                    { "data": "nama_rombel" },
-                    { "data": "nama_jurusan" },
-                    { "data": "kelas","width": "60px","sClass": "text-center" },
-                    { "data": "aksi","width": "90px" },
+                    { "data": "kelas","width": "90px","sClass": "text-center" },
+                    { "data": "aksi","width": "10px" },
                 ]
             } );
-               
+
             t.on( 'order.dt search.dt', function () {
                 t.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
                     cell.innerHTML = i+1;

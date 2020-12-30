@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 23, 2020 at 09:15 AM
+-- Generation Time: Dec 30, 2020 at 02:09 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -40,7 +40,7 @@ CREATE TABLE `tabel_menu` (
 --
 
 INSERT INTO `tabel_menu` (`id`, `nama_menu`, `link`, `icon`, `is_main_menu`) VALUES
-(1, 'DATA SISWA', 'siswa', 'fas fa-user', 9),
+(1, 'DATA SISWA', 'siswa', 'fa fa-users', 9),
 (2, 'DATA GURU & KARYAWAN', 'guru', 'fa fa-user', 9),
 (8, 'data sekolah', 'sekolah', 'fa fa-building', 9),
 (9, 'DATA & INFORMASI', '#', 'fa fa-bars', 0),
@@ -48,7 +48,7 @@ INSERT INTO `tabel_menu` (`id`, `nama_menu`, `link`, `icon`, `is_main_menu`) VAL
 (11, 'Ruangan Kelas', 'ruangan', 'fa fa-building', 9),
 (12, 'Jurusan', 'jurusan', 'fa fa-th-large', 9),
 (13, 'Tahun Akademik', 'tahunakademik', 'fa fa-calendar-o', 9),
-(14, 'MATA PELAJARAN', '#', 'fa fa-calendar', 0),
+(14, 'DATA PRESENSI', '#', 'fa fa-book', 0),
 (15, 'Rombongan Belajar', 'rombel', 'fa fa-users', 9),
 (19, 'Kurikulum', 'kurikulum', 'fa fa-newspaper-o', 9),
 (20, 'Wali Kelas', 'walikelas', 'fa fa-users', 9),
@@ -61,18 +61,18 @@ INSERT INTO `tabel_menu` (`id`, `nama_menu`, `link`, `icon`, `is_main_menu`) VAL
 (27, 'phonebook', 'sms_group', 'fa fa-book', 26),
 (28, 'form sms', 'sms', 'fa fa-keyboard-o', 26),
 (29, 'Laporan', 'keuangan', 'fa fa-desktop', 0),
-(31, 'DATA NILAI SISWA', '#', 'fa fa-home', 0),
-(32, 'RAPORT SISWA', 'raport', 'fas fa-user', 31),
-(34, 'PPDB', '#', 'fas fa-user', 0),
-(36, 'DATA CALON SISWA', 'ppdb', 'fas fa-user', 34),
-(37, 'SISWA DITERIMA', 'ppdb/siswa_diterima', 'fas fa-user', 34),
-(39, 'USERS', 'users', 'fas fa-user', 0),
-(40, 'MENU SISTEM', 'menu', 'fas fa-user', 0),
-(41, 'LOGOUT', 'auth/logout', 'fas fa-user', 0),
-(42, 'PRESENSI SISWA', 'Presensi', 'fas fa-user', 14),
-(43, 'JADWAL', 'jadwal', 'fas fa-user', 14),
-(44, 'NILAI SISWA', 'nilai', 'fas fa-user', 31),
-(45, 'ARSIP DOKUMEN', 'arsip', 'fas fa-user', 0);
+(31, 'DATA NILAI SISWA', '#', 'fa fa-graduation-cap', 0),
+(32, 'RAPORT SISWA', 'raport', 'fa fa-bookmark-o', 31),
+(34, 'PPDB', '#', 'fa fa-plus-square', 0),
+(36, 'DATA CALON SISWA', 'ppdb', 'fa fa-user-circle o', 34),
+(37, 'SISWA DITERIMA', 'ppdb/siswa_diterima', 'fa fa-user-circle o', 34),
+(39, 'USERS', 'users', 'fa fa-user-plus', 0),
+(40, 'MENU SISTEM', 'menu', 'fa fa-address-book', 0),
+(41, 'ARSIP DOKUMEN', 'arsip', 'fa fa-files-o', 0),
+(42, 'PRESENSI SISWA', 'presensi', 'fa fa-check-square-o', 14),
+(43, 'JADWAL', 'jadwal', 'fa fa-calendar', 14),
+(44, 'NILAI SISWA', 'nilai', 'fa fa-file-text', 31),
+(45, 'LOGOUT', 'auth/logout', 'fa fa-sign-out', 0);
 
 -- --------------------------------------------------------
 
@@ -126,6 +126,34 @@ INSERT INTO `tbl_biaya_sekolah` (`id_biaya`, `id_jenis_pembayaran`, `id_tahun_ak
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_dokumen`
+--
+
+CREATE TABLE `tbl_dokumen` (
+  `id_dokumen` int(100) NOT NULL,
+  `nama_pemilik` varchar(4000) NOT NULL,
+  `nis_nuptk` varchar(40) NOT NULL,
+  `nama_dokumen` varchar(4000) NOT NULL,
+  `tanggal` date NOT NULL,
+  `pemilik` enum('Siswa','Guru','Karyawan') NOT NULL,
+  `file_dokumen` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_dokumen`
+--
+
+INSERT INTO `tbl_dokumen` (`id_dokumen`, `nama_pemilik`, `nis_nuptk`, `nama_dokumen`, `tanggal`, `pemilik`, `file_dokumen`) VALUES
+(7, 'Septian', '9893930', 'Ijazah', '2020-12-24', 'Siswa', '50_1137011.png'),
+(10, 'Alif', '3400495', 'Ijazah', '2020-12-24', 'Siswa', '30spki-nohastag.png'),
+(11, 'Painem', '3400495', 'Ijazah', '2020-12-24', 'Siswa', ''),
+(12, 'Mumtas', '2300920', 'Ijazah', '2020-12-25', 'Guru', ''),
+(13, 'Jaka', '9893930', 'Foto KTP', '2020-12-25', 'Karyawan', '5_6231207135074582905.pdf'),
+(14, 'Rejek', '90290192', 'Buku Nikah', '2020-12-10', 'Guru', 'dokumen-5fe9e5f5d69bb.png');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_guru`
 --
 
@@ -134,20 +162,23 @@ CREATE TABLE `tbl_guru` (
   `nuptk` varchar(16) NOT NULL,
   `nama_guru` varchar(30) NOT NULL,
   `gender` enum('p','w') NOT NULL,
-  `username` varchar(30) NOT NULL,
-  `password` varchar(32) NOT NULL
+  `tempat_lahir` varchar(200) NOT NULL,
+  `tanggal_lahir` date NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `alamat` varchar(200) NOT NULL,
+  `foto` varchar(200) NOT NULL,
+  `created` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_guru`
 --
 
-INSERT INTO `tbl_guru` (`id_guru`, `nuptk`, `nama_guru`, `gender`, `username`, `password`) VALUES
-(1, '8728372382738273', 'drs diawan sst', 'p', '', ''),
-(2, '46676768686', 'nuris akbar mkom', 'p', '', ''),
-(3, '4343434434343434', 'irma muliana sst mpd', 'w', '', ''),
-(4, '3434343232323', 'syamsuddin', 'w', 'udin123', '3af4c9341e31bce1f4262a326285170d'),
-(5, '093902903', 'Ardian', 'p', 'admin', '0192023a7bbd73250516f069df18b500');
+INSERT INTO `tbl_guru` (`id_guru`, `nuptk`, `nama_guru`, `gender`, `tempat_lahir`, `tanggal_lahir`, `phone`, `alamat`, `foto`, `created`) VALUES
+(6, '302930920', 'Bambang', 'p', 'Ponorogo', '2020-12-23', '02147483647', 'Sana ajaa', '', '2020-12-28 13:06:30'),
+(7, '30293029', 'Agus', 'p', 'Sragen', '2020-12-16', '08292982982', 'Jayakarta', '', '2020-12-28 13:13:52'),
+(8, '32909302930', 'Buagus', 'p', 'Pati', '2020-12-02', '0283923972973', 'Semawut', '', '2020-12-28 13:16:15'),
+(9, '2029029i3', 'Ridwan Hanif', 'p', 'Klaten', '2020-11-30', '239029302903', 'Surabaya', 'foto_guru-5fead71aa4b8d.png', '2020-12-29 07:13:30');
 
 -- --------------------------------------------------------
 
@@ -158,7 +189,7 @@ INSERT INTO `tbl_guru` (`id_guru`, `nuptk`, `nama_guru`, `gender`, `username`, `
 CREATE TABLE `tbl_history_kelas` (
   `id_history` int(11) NOT NULL,
   `id_rombel` int(11) NOT NULL,
-  `nim` varchar(11) NOT NULL,
+  `nis` varchar(11) NOT NULL,
   `id_tahun_akademik` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -166,7 +197,7 @@ CREATE TABLE `tbl_history_kelas` (
 -- Dumping data for table `tbl_history_kelas`
 --
 
-INSERT INTO `tbl_history_kelas` (`id_history`, `id_rombel`, `nim`, `id_tahun_akademik`) VALUES
+INSERT INTO `tbl_history_kelas` (`id_history`, `id_rombel`, `nis`, `id_tahun_akademik`) VALUES
 (1, 1, 'TI3003239', 1),
 (2, 1, 'RM00502', 1),
 (3, 1, 'TI102132', 1),
@@ -175,7 +206,16 @@ INSERT INTO `tbl_history_kelas` (`id_history`, `id_rombel`, `nim`, `id_tahun_aka
 (6, 1, 'TIM102135', 1),
 (7, 1, 'TI1021395', 1),
 (8, 1, 'A11.2017.10', 1),
-(9, 1, 'A11.2017.10', 1);
+(9, 1, 'A11.2017.10', 1),
+(10, 1, '', 1),
+(11, 1, '2200033', 1),
+(12, 1, '2903902', 1),
+(13, 1, '292030', 1),
+(14, 2, '320309', 1),
+(15, 2, '2909209389', 1),
+(16, 1, '32030922', 1),
+(17, 1, '20903903', 1),
+(18, 1, '29883928093', 1);
 
 -- --------------------------------------------------------
 
@@ -204,7 +244,7 @@ CREATE TABLE `tbl_jadwal` (
 INSERT INTO `tbl_jadwal` (`id_jadwal`, `id_tahun_akademik`, `kd_jurusan`, `kelas`, `kd_mapel`, `id_guru`, `jam`, `kd_ruangan`, `semester`, `hari`, `id_rombel`) VALUES
 (13, 1, 'RPL', 1, 'MTK', 4, '08.00 - 08.45', '01A', 1, 'SELASA', 1),
 (14, 1, 'RPL', 1, 'MTK', 2, '', '01B', 1, '', 2),
-(15, 1, 'RPL', 1, 'BID', 2, '09.30 - 10.00', '01A', 1, 'RABU', 1),
+(15, 1, 'RPL', 1, 'BID', 2, '09.30 - 10.00', '01B', 1, 'RABU', 1),
 (16, 1, 'RPL', 1, 'BID', 2, '', '011', 1, '', 2),
 (17, 1, 'RPL', 1, 'IPA', 4, '10.00 - 10.45', '01B', 1, 'JUMAT', 1),
 (18, 1, 'RPL', 1, 'IPA', 2, '', '011', 1, '', 2);
@@ -458,6 +498,51 @@ INSERT INTO `tbl_phonebook` (`id_phonebook`, `id_group`, `no_hp`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_ppdb`
+--
+
+CREATE TABLE `tbl_ppdb` (
+  `id_pendaftar` int(100) NOT NULL,
+  `nis` int(100) NOT NULL,
+  `nama_siswa` varchar(200) NOT NULL,
+  `gender` enum('Laki-Laki','Perempuan','','') NOT NULL,
+  `tempat_lahir` varchar(100) NOT NULL,
+  `tanggal_lahir` date NOT NULL,
+  `kd_agama` int(20) NOT NULL,
+  `alamat_siswa` varchar(200) NOT NULL,
+  `nama_ayah` varchar(200) NOT NULL,
+  `tempat_lahir_ayah` varchar(200) NOT NULL,
+  `tanggal_lahir_ayah` date NOT NULL,
+  `nama_ibu` varchar(200) NOT NULL,
+  `tempat_lahir_ibu` varchar(200) NOT NULL,
+  `tanggal_lahir_ibu` date NOT NULL,
+  `pekerjaan_ibu` varchar(200) NOT NULL,
+  `pekerjaan_ayah` varchar(200) NOT NULL,
+  `alamat_ortu` varchar(200) NOT NULL,
+  `jumlah_saudara` int(200) NOT NULL,
+  `penghasilan_ortu` int(200) NOT NULL,
+  `nilai_un` int(100) NOT NULL,
+  `nilai_raport` int(100) NOT NULL,
+  `foto` varchar(200) NOT NULL,
+  `file_ijazah` varchar(200) NOT NULL,
+  `file_skhun` varchar(200) NOT NULL,
+  `nomor_hp_ortu` varchar(30) NOT NULL,
+  `keterangan` varchar(200) NOT NULL,
+  `status` enum('Diverifikasi','Ditolak','Diterima','') NOT NULL,
+  `created` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_ppdb`
+--
+
+INSERT INTO `tbl_ppdb` (`id_pendaftar`, `nis`, `nama_siswa`, `gender`, `tempat_lahir`, `tanggal_lahir`, `kd_agama`, `alamat_siswa`, `nama_ayah`, `tempat_lahir_ayah`, `tanggal_lahir_ayah`, `nama_ibu`, `tempat_lahir_ibu`, `tanggal_lahir_ibu`, `pekerjaan_ibu`, `pekerjaan_ayah`, `alamat_ortu`, `jumlah_saudara`, `penghasilan_ortu`, `nilai_un`, `nilai_raport`, `foto`, `file_ijazah`, `file_skhun`, `nomor_hp_ortu`, `keterangan`, `status`, `created`) VALUES
+(1, 20903903, 'suprayogi', 'Laki-Laki', 'Ponorogo', '2020-12-23', 1, 'Sini aja', 'Wirman', 'Jakarta', '2020-12-03', 'PARJIEM', 'Surabaya', '2020-12-30', 'PNS', 'PNS', 'Sana aja', 2, 8500000, 90, 99, '7-2-axe-picture5.png', '3700479-education-elearning-graduate-learning-presentation-student-training_1087635.png', '', '0920020280', 'Sedang di cek', '', '2020-12-29 09:13:48'),
+(2, 20903903, 'waskita karya pt', 'Laki-Laki', 'Makassar', '2020-12-14', 1, 'Sana sini', 'Bintar', 'Jakarta', '2020-12-22', 'PARJIEM', 'Surabaya', '2020-12-23', 'DJ', 'PNS', 'Sana sini', 12, 123144111, 890, 289, '50_113701.png', 'settings.png', '', '0828288128179729', 'hi', '', '2020-12-29 09:16:52');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_presensi`
 --
 
@@ -467,8 +552,15 @@ CREATE TABLE `tbl_presensi` (
   `nim` int(11) NOT NULL,
   `nama` text NOT NULL,
   `rombel` varchar(11) NOT NULL,
-  `absen` varchar(5) NOT NULL
+  `absen` enum('Hadir','Sakit','Alpa','Izin') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_presensi`
+--
+
+INSERT INTO `tbl_presensi` (`id_presensi`, `tanggal`, `nim`, `nama`, `rombel`, `absen`) VALUES
+(1, '2020-12-25', 222332, 'Bambang', 'RPL', 'Sakit');
 
 -- --------------------------------------------------------
 
@@ -478,21 +570,19 @@ CREATE TABLE `tbl_presensi` (
 
 CREATE TABLE `tbl_rombel` (
   `id_rombel` int(11) NOT NULL,
-  `nama_rombel` varchar(30) NOT NULL,
-  `kelas` int(11) NOT NULL,
-  `kd_jurusan` varchar(4) NOT NULL
+  `kelas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_rombel`
 --
 
-INSERT INTO `tbl_rombel` (`id_rombel`, `nama_rombel`, `kelas`, `kd_jurusan`) VALUES
-(1, 'RPL1A', 1, 'RPL'),
-(2, 'RPL1B', 1, 'RPL'),
-(3, 'RPL2A', 3, 'RPL'),
-(4, 'RPL2B', 2, 'RPL'),
-(5, 'RPL2C', 2, 'RPL');
+INSERT INTO `tbl_rombel` (`id_rombel`, `kelas`) VALUES
+(1, 1),
+(2, 1),
+(3, 3),
+(4, 2),
+(5, 2);
 
 -- --------------------------------------------------------
 
@@ -544,29 +634,39 @@ INSERT INTO `tbl_sekolah_info` (`id_sekolah`, `nama_sekolah`, `id_jenjang_sekola
 --
 
 CREATE TABLE `tbl_siswa` (
-  `nim` varchar(11) NOT NULL,
+  `nis` varchar(11) NOT NULL,
   `nama` varchar(40) NOT NULL,
-  `gender` enum('P','W') NOT NULL,
+  `gender` enum('L','P') NOT NULL,
   `tanggal_lahir` date NOT NULL,
   `tempat_lahir` varchar(30) NOT NULL,
   `kd_agama` varchar(2) NOT NULL,
   `foto` text NOT NULL,
-  `id_rombel` int(11) NOT NULL
+  `id_rombel` int(11) NOT NULL,
+  `alamat_siswa` varchar(800) NOT NULL,
+  `nama_ayah` varchar(200) NOT NULL,
+  `tempat_lahir_ayah` varchar(200) NOT NULL,
+  `tanggal_lahir_ayah` date NOT NULL,
+  `pekerjaan_ayah` varchar(200) NOT NULL,
+  `nama_ibu` varchar(200) NOT NULL,
+  `tempat_lahir_ibu` varchar(200) NOT NULL,
+  `tanggal_lahir_ibu` date NOT NULL,
+  `pekerjaan_ibu` varchar(200) NOT NULL,
+  `alamat_ortu` varchar(800) NOT NULL,
+  `jumlah_saudara` int(50) NOT NULL,
+  `penghasilan_ortu` int(255) NOT NULL,
+  `created` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_siswa`
 --
 
-INSERT INTO `tbl_siswa` (`nim`, `nama`, `gender`, `tanggal_lahir`, `tempat_lahir`, `kd_agama`, `foto`, `id_rombel`) VALUES
-('A11.2017.10', 'Ardian Ferdy Firmansyah', 'P', '1999-02-23', 'Semarang', '01', 'aspirin.jpg', 1),
-('RM00502', 'SAFIKAH KAMAL', 'P', '2017-01-23', 'BANDA ACEH', '02', '', 1),
-('TI102132', 'NURIS AKBAR', 'P', '2017-01-22', 'LANGSA', '01', '', 1),
-('TI102133', 'M HAFIDZ MUZAKI', 'P', '2017-01-16', 'LANGSA', '01', '', 1),
-('TI1021395', 'BALQIS HUMAIRA', 'W', '2017-01-11', 'KUALA SIMPANG', '01', '', 1),
-('TI3003239', 'JONO', 'P', '2017-02-18', 'BANDUNG', '01', 'Yaya_yah10.png', 1),
-('TIM102134', 'DESI HANDAYANI', 'W', '2017-01-22', 'RANGKASBITUNG', '01', '', 1),
-('TIM102135', 'IRMA MULIANA', 'W', '2017-01-25', 'LANGSA', '01', '', 1);
+INSERT INTO `tbl_siswa` (`nis`, `nama`, `gender`, `tanggal_lahir`, `tempat_lahir`, `kd_agama`, `foto`, `id_rombel`, `alamat_siswa`, `nama_ayah`, `tempat_lahir_ayah`, `tanggal_lahir_ayah`, `pekerjaan_ayah`, `nama_ibu`, `tempat_lahir_ibu`, `tanggal_lahir_ibu`, `pekerjaan_ibu`, `alamat_ortu`, `jumlah_saudara`, `penghasilan_ortu`, `created`) VALUES
+('20903903', 'andin ', 'L', '2020-12-14', 'Semarang', '01', '5fe9e37169ba6_image.png', 1, 'jayakarta', 'Wirman', 'Jakarta', '2020-12-22', 'PNS', 'PARJIEM', 'Surabaya', '2020-12-15', 'PNS', 'SJjejakal', 4, 8500000, '2020-12-28 13:53:53'),
+('20930903', 'Ardian ', 'L', '2020-12-21', 'Semarang', '01', 'ar.png', 1, 'Semarang jakarta sana aja', 'Joko', 'Jakarta', '1983-02-28', 'PNS', 'PINTUM', 'Surabaya', '2020-12-22', 'PNS', 'Sama', 7, 0, '2020-12-28 13:11:26'),
+('29883928093', 'Indra', 'L', '2020-12-01', 'Makassar', '01', 'foto_siswa-5fe9ff7e0ddd3.png', 1, 'Sana sini', 'Bintar', 'Jakarta', '2020-12-01', 'PNS', 'PARJIEM', 'Surabaya', '2020-12-31', 'DJ', 'Sama', 9, 2147483647, '2020-12-28 15:53:34'),
+('320309', 'Winangsih Sri', 'L', '2020-12-22', 'Semarang', '01', 'foto_siswa-5fec7adb43f74', 0, 'JAKRTA LAMA SEKALI AKU CUMA COBA DOANG APAKAH BISA RT 04 RW 09 Jakarta Selatan jaoh seklai aku mao maen aja ahh wkwkw\r\n', 'Wirman', 'Jakarta', '2020-12-01', 'PNS', 'PARJIEM', 'Surabaya', '2020-12-17', 'DJ', 'JAKRTA LAMA SEKALI AKU CUMA COBA DOANG APAKAH BISA RT 04 RW 09 Jakarta Selatan', 6, 0, '2020-12-30 13:04:27'),
+('32030922', 'suprayogi', 'L', '2020-12-15', 'Ponorogo', '01', 'foto_siswa-5fe9e5177eec3.jpg', 1, 'SEMARANG', 'Buaguse', 'Jakarta', '2020-12-10', 'PNS', 'PARMIAH', 'Surabaya', '2020-12-10', 'DJ', 'Situ aja', 8, 0, '2020-12-28 14:00:55');
 
 -- --------------------------------------------------------
 
@@ -609,7 +709,7 @@ CREATE TABLE `tbl_tahun_akademik` (
 
 INSERT INTO `tbl_tahun_akademik` (`id_tahun_akademik`, `tahun_akademik`, `is_aktif`, `semester_aktif`) VALUES
 (1, '2016/ 2017', 'y', 1),
-(2, '2015/2016', 'n', 0),
+(2, '2015/2016', 'y', 0),
 (6, '2017/2018', 'n', 0);
 
 -- --------------------------------------------------------
@@ -632,7 +732,8 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`id_user`, `nama_lengkap`, `username`, `password`, `id_level_user`, `foto`) VALUES
-(8, 'ardian ferdy firmansyah', 'ardian', '09cfbef35d33065e77443a5ff1e6e2d1', 1, '');
+(8, 'Ardian', 'ardian', '09cfbef35d33065e77443a5ff1e6e2d1', 1, '3700479-education-elearning-graduate-learning-presentation-student-training_108763.png'),
+(9, 'Alif', 'alif', 'f553aa35c5fac63fc6e1c81f3b45b58c', 1, 'app.png');
 
 -- --------------------------------------------------------
 
@@ -718,11 +819,6 @@ INSERT INTO `tbl_walikelas` (`id_walikelas`, `id_guru`, `id_tahun_akademik`, `id
 -- (See below for the actual view)
 --
 CREATE TABLE `v_master_rombel` (
-`id_rombel` int(11)
-,`nama_rombel` varchar(30)
-,`kelas` int(11)
-,`kd_jurusan` varchar(4)
-,`nama_jurusan` varchar(30)
 );
 
 -- --------------------------------------------------------
@@ -748,13 +844,6 @@ CREATE TABLE `v_tbl_user` (
 -- (See below for the actual view)
 --
 CREATE TABLE `v_walikelas` (
-`nama_guru` varchar(30)
-,`nama_rombel` varchar(30)
-,`id_walikelas` int(11)
-,`id_tahun_akademik` int(11)
-,`nama_jurusan` varchar(30)
-,`kelas` int(11)
-,`tahun_akademik` varchar(10)
 );
 
 -- --------------------------------------------------------
@@ -805,6 +894,12 @@ ALTER TABLE `tbl_agama`
 --
 ALTER TABLE `tbl_biaya_sekolah`
   ADD PRIMARY KEY (`id_biaya`);
+
+--
+-- Indexes for table `tbl_dokumen`
+--
+ALTER TABLE `tbl_dokumen`
+  ADD PRIMARY KEY (`id_dokumen`);
 
 --
 -- Indexes for table `tbl_guru`
@@ -891,6 +986,12 @@ ALTER TABLE `tbl_phonebook`
   ADD PRIMARY KEY (`id_phonebook`);
 
 --
+-- Indexes for table `tbl_ppdb`
+--
+ALTER TABLE `tbl_ppdb`
+  ADD PRIMARY KEY (`id_pendaftar`);
+
+--
 -- Indexes for table `tbl_presensi`
 --
 ALTER TABLE `tbl_presensi`
@@ -918,7 +1019,7 @@ ALTER TABLE `tbl_sekolah_info`
 -- Indexes for table `tbl_siswa`
 --
 ALTER TABLE `tbl_siswa`
-  ADD PRIMARY KEY (`nim`);
+  ADD PRIMARY KEY (`nis`);
 
 --
 -- Indexes for table `tbl_sms_group`
@@ -958,7 +1059,7 @@ ALTER TABLE `tbl_walikelas`
 -- AUTO_INCREMENT for table `tabel_menu`
 --
 ALTER TABLE `tabel_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=402;
 
 --
 -- AUTO_INCREMENT for table `tbl_biaya_sekolah`
@@ -967,16 +1068,22 @@ ALTER TABLE `tbl_biaya_sekolah`
   MODIFY `id_biaya` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT for table `tbl_dokumen`
+--
+ALTER TABLE `tbl_dokumen`
+  MODIFY `id_dokumen` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
 -- AUTO_INCREMENT for table `tbl_guru`
 --
 ALTER TABLE `tbl_guru`
-  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_history_kelas`
 --
 ALTER TABLE `tbl_history_kelas`
-  MODIFY `id_history` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_history` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `tbl_jadwal`
@@ -1039,10 +1146,16 @@ ALTER TABLE `tbl_phonebook`
   MODIFY `id_phonebook` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `tbl_ppdb`
+--
+ALTER TABLE `tbl_ppdb`
+  MODIFY `id_pendaftar` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT for table `tbl_presensi`
 --
 ALTER TABLE `tbl_presensi`
-  MODIFY `id_presensi` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_presensi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_rombel`
@@ -1066,7 +1179,7 @@ ALTER TABLE `tbl_tahun_akademik`
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_user_rule`

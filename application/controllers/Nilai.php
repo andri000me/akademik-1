@@ -18,7 +18,7 @@ class Nilai extends CI_Controller{
         $id_jadwal      = $this->uri->segment(3);
         $jadwal         = $this->db->get_where('tbl_jadwal',array('id_jadwal'=>$id_jadwal))->row_array();
         $id_rombel      = $jadwal['id_rombel'];
-        $rombel         =   "SELECT rb.nama_rombel,rb.kelas,jr.nama_jurusan, mp.nama_mapel
+        $rombel         =   "SELECT rb.kelas,rb.kelas,jr.nama_jurusan, mp.nama_mapel
                             FROM tbl_jadwal AS j,tbl_jurusan as jr, tbl_rombel as rb,tbl_mapel as mp
                             WHERE j.kd_jurusan=jr.kd_jurusan and rb.id_rombel=j.id_rombel and mp.kd_mapel=j.kd_mapel
                             and j.id_jadwal=13='$id_rombel'";

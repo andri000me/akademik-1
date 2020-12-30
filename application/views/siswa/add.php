@@ -23,13 +23,13 @@
                             ROMBEL
                         </label>
                         <div class="col-sm-6">
-                            <?php echo cmb_dinamis('rombel', 'tbl_rombel', 'nama_rombel', 'id_rombel') ?>
+                            <?php echo cmb_dinamis('kelas', 'tbl_rombel', 'kelas', 'id_rombel') ?>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-sm-3 control-label" for="form-field-1">
-                            NAMA 
+                            NAMA
                         </label>
                         <div class="col-sm-9">
                             <input type="text" name="nama" placeholder="MASUKAN NAMA LENGKAP" id="form-field-1" class="form-control">
@@ -74,7 +74,7 @@
                         <div class="col-sm-6">
                             <textarea placeholder="MASUKKAN ALAMAT" name="alamat_siswa" class="form-control"></textarea>
                         </div>
-                    
+
                     </div>
                     <div class="form-group">
                         <label class="col-sm-3 control-label" for="form-field-1">
@@ -85,10 +85,10 @@
                         </div>
                     </div>
 
-                    
+
                 </div>
             </div>
-            
+
             <!-- end: TEXT FIELDS PANEL -->
         </div>
         <div class="col-sm-6">
@@ -121,7 +121,7 @@
 
                 <div class="form-group">
                     <label class="col-sm-3 control-label" for="form-field-1">
-                        PEKERJAAN AYAH 
+                        PEKERJAAN AYAH
                     </label>
                     <div class="col-sm-9">
                         <input type="text" name="pekerjaan_ayah" placeholder="PEKERJAAN AYAH" id="form-field-1" class="form-control">
@@ -149,7 +149,7 @@
 
                 <div class="form-group">
                     <label class="col-sm-3 control-label" for="form-field-1">
-                        PEKERJAAN IBU 
+                        PEKERJAAN IBU
                     </label>
                     <div class="col-sm-9">
                         <input type="text" name="pekerjaan_ibu" placeholder="PEKERJAAN IBU" id="form-field-1" class="form-control">
@@ -162,7 +162,7 @@
                     <div class="col-sm-6">
                         <textarea placeholder="ALAMAT ORANG TUA" name="alamat_ortu"class="form-control"></textarea>
                     </div>
-                
+
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label" for="form-field-1">
