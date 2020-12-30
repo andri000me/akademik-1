@@ -38,12 +38,12 @@
 
 <script type="text/javascript">
 
-function updateNilai(nim){
-    var nilai = $("#nilai"+nim).val();
+function updateNilai(nis){
+    var nilai = $("#nilai"+nis).val();
     $.ajax({
             type:'GET',
             url :'<?php echo base_url() ?>index.php/nilai/update_nilai',
-            data:'nim='+nim+'&id_jadwal='+<?php echo $this->uri->segment(3)?>+'&nilai='+nilai,
+            data:'nis='+nis+'&id_jadwal='+<?php echo $this->uri->segment(3)?>+'&nilai='+nilai,
             success:function(html){
                 //$("#dataSiswa").html(html);
             }
