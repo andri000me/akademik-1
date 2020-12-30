@@ -3,7 +3,7 @@
     <table class="table table-bordered">
         <tr><td width="200">TAHUN AKADEMIK</td><td> : <?php echo get_tahun_akademik_aktif('tahun_akademik')?></td></tr>
         <tr><td>SEMESTER</td><td> :  <?php echo get_tahun_akademik_aktif('semester_aktif')?></td></tr>
-        <tr><td>JURUSAN</td><td> : KELAS <?php echo $rombel['kelas']?></td></tr>
+        <tr><td>KELAS</td><td> : KELAS <?php echo $rombel['kelas']?></td></tr>
         <tr><td>MATA PELAJARAN</td><td><?php echo $rombel['nama_mapel']?></td></tr>
     </table>
     <!-- end: DYNAMIC TABLE PANEL -->

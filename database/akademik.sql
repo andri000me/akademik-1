@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 30, 2020 at 02:09 PM
+-- Generation Time: Dec 30, 2020 at 02:39 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -428,7 +428,7 @@ INSERT INTO `tbl_mapel` (`kd_mapel`, `nama_mapel`) VALUES
 CREATE TABLE `tbl_nilai` (
   `id_nilai` int(11) NOT NULL,
   `id_jadwal` int(11) NOT NULL,
-  `nim` varchar(15) NOT NULL,
+  `nis` varchar(15) NOT NULL,
   `nilai` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -436,7 +436,7 @@ CREATE TABLE `tbl_nilai` (
 -- Dumping data for table `tbl_nilai`
 --
 
-INSERT INTO `tbl_nilai` (`id_nilai`, `id_jadwal`, `nim`, `nilai`) VALUES
+INSERT INTO `tbl_nilai` (`id_nilai`, `id_jadwal`, `nis`, `nilai`) VALUES
 (1, 13, 'TI3003239', 100),
 (2, 13, 'RM00502', 89),
 (3, 13, 'TI102132', 89),
@@ -450,7 +450,10 @@ INSERT INTO `tbl_nilai` (`id_nilai`, `id_jadwal`, `nim`, `nilai`) VALUES
 (11, 17, 'TI102133', 99),
 (12, 17, 'TIM102134', 90),
 (13, 17, 'TIM102135', 86),
-(14, 17, 'TI1021395', 89);
+(14, 17, 'TI1021395', 89),
+(15, 13, '32030922', 89),
+(16, 13, '20903903', 90),
+(17, 13, '29883928093', 99);
 
 -- --------------------------------------------------------
 
@@ -1131,7 +1134,7 @@ ALTER TABLE `tbl_level_user`
 -- AUTO_INCREMENT for table `tbl_nilai`
 --
 ALTER TABLE `tbl_nilai`
-  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `tbl_pembayaran`

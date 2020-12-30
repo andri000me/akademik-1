@@ -20,9 +20,9 @@ function get_tahun_akademik_aktif($field) {
     return $tahun[$field];
 }
 
-function chek_nilai($nim, $id_jadwal) {
+function chek_nilai($nis, $id_jadwal) {
     $ci = & get_instance();
-    $nilai = $ci->db->get_where('tbl_nilai', array('nim' => $nim, 'id_jadwal' => $id_jadwal));
+    $nilai = $ci->db->get_where('tbl_nilai', array('nis' => $nis, 'id_jadwal' => $id_jadwal));
     if ($nilai->num_rows() > 0) {
         $row = $nilai->row_array();
         return $row['nilai'];

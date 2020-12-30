@@ -34,18 +34,18 @@ class Nilai extends CI_Controller{
 
 
     function update_nilai(){
-        $nim        = $_GET['nim'];
+        $nis        = $_GET['nis'];
         $id_jadwal  = $_GET['id_jadwal'];
         $nilai      = $_GET['nilai'];
 
         // parameter
-        $params = array('nim'=>$nim,'id_jadwal'=>$id_jadwal,'nilai'=>$nilai);
+        $params = array('nis'=>$nis,'id_jadwal'=>$id_jadwal,'nilai'=>$nilai);
 
-        $validasi = array('nim'=>$nim,'id_jadwal'=>$id_jadwal);
+        $validasi = array('nis'=>$nis,'id_jadwal'=>$id_jadwal);
         $chek = $this->db->get_where('tbl_nilai',$validasi);
         if($chek->num_rows()>0){
             // proses update
-            $this->db->where('nim',$nim);
+            $this->db->where('nis',$nis);
             $this->db->where('id_jadwal',$id_jadwal);
             $this->db->update('tbl_nilai',array('nilai'=>$nilai));
         }else{
