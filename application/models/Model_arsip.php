@@ -25,7 +25,7 @@ class Model_arsip extends CI_Model {
                 $data = array(
                 'nama_pemilik'          => $this->input->post('nama_pemilik', TRUE),
                 'nis_nuptk'      => $this->input->post('nis_nuptk', TRUE),
-                'nama_dokumen' => $this->input->post('nama_dokumen', TRUE),
+                'nama_dokumen' => $this->input->post('dokumen', TRUE),
                 'tanggal'  => $this->input->post('tanggal', TRUE),
                 'pemilik'        => $this->input->post('pemilik', TRUE)
             );
@@ -34,7 +34,7 @@ class Model_arsip extends CI_Model {
                 $data = array(
                     'nama_pemilik'          => $this->input->post('nama_pemilik', TRUE),
                     'nis_nuptk'      => $this->input->post('nis_nuptk', TRUE),
-                    'nama_dokumen' => $this->input->post('nama_dokumen', TRUE),
+                    'nama_dokumen' => $this->input->post('dokumen', TRUE),
                     'tanggal'  => $this->input->post('tanggal', TRUE),
                     'pemilik'        => $this->input->post('pemilik', TRUE),
                     'file_dokumen'          => $foto

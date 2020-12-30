@@ -89,7 +89,9 @@
                     FOTO SISWA
                 </label>
                 <div class="col-sm-2">
-                    <input type="file" value="<?php echo $ppdb['foto'] ?>" name="userfile">
+                    <input type="file" name="userfile">
+                    <br>
+                    <img src="<?php echo base_url()."/uploads/ppdb/foto_siswa_baru/".$ppdb['foto']?>" width="200">
                 </div>
             </div>
             <div class="form-group">
@@ -98,6 +100,8 @@
                 </label>
                 <div class="col-sm-2">
                     <input type="file" value="<?php echo $ppdb['file_ijazah'] ?>"name="ijazah">
+                    <br>
+                    <img src="<?php echo base_url()."/uploads/ppdb/foto_siswa_baru/".$ppdb['file_ijazah']?>" width="200">
                 </div>
             </div>
             <div class="form-group">
@@ -106,6 +110,8 @@
                 </label>
                 <div class="col-sm-2">
                     <input type="file" value="<?php echo $ppdb['file_skhun'] ?>" name="skhun">
+                    <br>
+                    <img src="<?php echo base_url()."/uploads/ppdb/foto_siswa_baru/".$ppdb['file_skhun']?>" width="200">
                 </div>
             </div>
 
@@ -231,7 +237,7 @@
                             KETERANGAN
                         </label>
                         <div class="col-sm-5">
-                            <textarea placeholder="KETERANGAN" value="<?php echo $ppdb['keterangan'] ?>" name="keterangan"class="form-control"></textarea>
+                            <textarea placeholder="KETERANGAN"name="keterangan"class="form-control"><?php echo htmlspecialchars($ppdb['keterangan']); ?></textarea>
                         </div>
 
                     </div>
@@ -243,7 +249,7 @@
                     <button type="submit" name="submit" class="btn btn-danger  btn-sm">SIMPAN</button>
                 </div>
                 <div class="col-sm-1">
-                    <?php echo anchor('siswa', 'Kembali', array('class' => 'btn btn-info btn-sm')); ?>
+                    <?php echo anchor('ppdb', 'Kembali', array('class' => 'btn btn-info btn-sm')); ?>
                 </div>
 
 

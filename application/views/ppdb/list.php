@@ -10,11 +10,6 @@
             <i class="fa fa-external-link-square"></i> Data Siswa Pendaftar
             <div class="panel-tools">
                 <?php echo anchor('ppdb/add','<i class="fa fa-edit" aria-hidden="true"></i>',"title='Tambah Data'");?>
-                <a class="btn btn-xs btn-link panel-collapse collapses" href="#"> </a>
-                <!-- <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal"> <i class="fa fa-wrench"></i> </a>
-                <a class="btn btn-xs btn-link panel-refresh" href="#"> <i class="fa fa-refresh"></i> </a>
-                <a class="btn btn-xs btn-link panel-expand" href="#"> <i class="fa fa-resize-full"></i> </a>
-                <a class="btn btn-xs btn-link panel-close" href="#"> <i class="fa fa-times"></i> </a> -->
             </div>
         </div>
         <div class="panel-body">
@@ -25,9 +20,10 @@
                         <th class="text-center">FOTO</th>
                         <th class="text-center">NISN</th>
                         <th class="text-center">NAMA</th>
-                        <th class="text-center">TEMPAT LAHIR</th>
+                        <th class="text-center">ASAL SEKOLAH</th>
                         <th class="text-center">TANGGAL LAHIR</th>
                         <th class="text-center">TANGGAL DAFTAR</th>
+                        <th class="text-center">STATUS</th>
                         <th class="text-center">AKSI</th>
                     </tr>
                 </thead>
@@ -51,7 +47,7 @@
         $(document).ready(function() {
             var t = $('#mytable').DataTable( {
                 "ajax": '<?php echo site_url('ppdb/data'); ?>',
-                "order": [[ 2, 'asc' ]],
+                "order": [[ 6, 'asc' ]],
                 "columns": [
                     {
                         "data": null,
@@ -72,12 +68,14 @@
                     { "data": "nama_siswa",
                         "width":"100px",
                         "sClass": "text-center", },
-                    { "data": "tempat_lahir",
+                    { "data": "asal_sekolah",
                         "width":"100px",
                         "sClass": "text-center", },
                     { "data": "tanggal_lahir", "width": "15px",
                         "sClass": "text-center",
                     },{ "data": "tanggal_mendaftar", "width": "15px",
+                        "sClass": "text-center",
+                    },{ "data": "status", "width": "15px",
                         "sClass": "text-center",
                     },
                     { "data": "aksi","width": "50px",
@@ -97,7 +95,7 @@
   <div class="modal-dialog">
 
     <!-- Modal content-->
-    <div class="modal-content">
+    <!-- <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Form Upload</h4>
@@ -111,7 +109,7 @@
       <div class="modal-footer">
           <button type="submit" class="btn btn-danger btn-sm">Upload Data</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
-      </div>
+      </div> -->
     </div>
 
   </div>

@@ -29,7 +29,7 @@ class Ppdb extends CI_Controller {
             ),
             array('db' => 'nis', 'dt' => 'nis'),
             array('db' => 'nama_siswa', 'dt' => 'nama_siswa'),
-            array('db' => 'tempat_lahir', 'dt' => 'tempat_lahir'),
+            array('db' => 'asal_sekolah', 'dt' => 'asal_sekolah'),
             array('db' => 'tanggal_lahir', 'dt' => 'tanggal_lahir'),
             array('db' => 'CreatedOn', 'dt' => 'tanggal_mendaftar'),
             array('db' => 'status', 'dt' => 'status'),
@@ -57,60 +57,6 @@ class Ppdb extends CI_Controller {
                 SSP::simple($_GET, $sql_details, $table, $primaryKey, $columns)
         );
     }
-    function data_diterima() {
-
-        // nama tabel
-        $table = 'tbl_ppdb';
-      
-        // nama PK
-        $primaryKey = 'id_pendaftar';
-        
-        // list field
-        $columns = array(
-            array('db' => 'foto',
-                'dt' => 'foto',
-                'formatter' => function( $d) {
-                   if(empty($d)){
-                       return "<img width='30px' src='".  base_url()."/uploads/user-siluet.jpg'>";
-                   }else{
-                       return "<img width='75px' height='88px' src='".  base_url()."/uploads/ppdb/foto_siswa_baru/".$d."'>";
-                   }
-                }
-            ),
-            array('db' => 'nis', 'dt' => 'nis'),
-            array('db' => 'nama_siswa', 'dt' => 'nama_siswa'),
-            array('db' => 'tempat_lahir', 'dt' => 'tempat_lahir'),
-            array('db' => 'tanggal_lahir', 'dt' => 'tanggal_lahir'),
-            array('db' => 'CreatedOn', 'dt' => 'tanggal_mendaftar'),
-            array('db' => 'status', 'dt' => 'status', ),
-            array(
-                'db' => 'id_pendaftar',
-                'dt' => 'aksi',
-                'formatter' => function( $d) {
-                    //return "<a href='edit.php?id=$d'>EDIT</a>";
-                    return anchor('ppdb/detail/'.$d,'<i class="fa fa-search"></i>','class="btn btn-xs btn-success tooltips" data-placement="top" data-original title="Detail"').'
-                    &nbsp;'.anchor('ppdb/edit/'.$d,'<i class="fa fa-edit"></i>','class="btn btn-xs btn-warning tooltips" data-placement="top" data-original title="Edit"').'
-                        &nbsp;
-                        '.anchor('ppdb/delete/'.$d,'<i class="fa fa-trash"></i>','class="btn btn-xs btn-danger tooltips" data-placement="top" data-original title="Delete"');
-                }
-            )
-        );
-
-        $sql_details = array(
-            'user' => $this->db->username,
-            'pass' => $this->db->password,
-            'db' => $this->db->database,
-            'host' => $this->db->hostname
-            
-        );
-        // $sql = 'SELECT * FROM `tbl_ppdb` WHERE `status` = "Diterima" ORDER BY id_pendaftar ASC ';
-        header('Content-Type: application/json');
-
-        echo json_encode(
-                SSP::simple($_GET, $sql_details, $table, $primaryKey, $columns)
-        );
-    }
-
     function index()
     {
       $this->template->load('template', 'ppdb/list');
@@ -118,14 +64,20 @@ class Ppdb extends CI_Controller {
     function detail() {
         if(isset($_POST['submit'])){
             $uploadFoto = $this->upload_foto_siswa();
-            $this->Model_siswa->update($uploadFoto);
+            $this->Model_ppdb->update($uploadFoto);
             redirect('ppdb');
         }else{
-            $nim           = $this->uri->segment(3);
-            $data['ppdb'] = $this->db->get_where('tbl_ppdb',array('id_pendaftar'=>$nim))->row_array();
+            $nisn          = $this->uri->segment(3);
+            $data['ppdb'] = $this->db->get_where('tbl_ppdb',array('id_pendaftar'=>$nisn))->row_array();
             $this->template->load('template', 'ppdb/detail',$data);
         }
     }
+    public function siswa_diterima(){
+
+        $data['data']=$this->Model_ppdb->show_data();
+        $this->template->load('template', 'ppdb/siswa_diterima',$data);
+
+  }
     function add() {
         if (isset($_POST['submit'])) {
             $uploadFoto = $this->upload_foto_siswa();
@@ -191,10 +143,10 @@ class Ppdb extends CI_Controller {
         return $upload['file_name'];
     }
 
-    function siswa_diterima()
-    {
-      $sql = 'SELECT * FROM `tbl_ppdb` WHERE `status` = "Diterima" ORDER BY id_pendaftar ASC ';
-      $data['siswa'] = $this->db->query($sql);
-      $this->template->load('template', 'ppdb/siswa_diterima');
-    }
+    // function siswa_diterima()
+    // {
+    //   $sql = 'SELECT * FROM `tbl_ppdb` WHERE `status` = "Diterima" ORDER BY id_pendaftar ASC ';
+    //   $data['siswa'] = $this->db->query($sql);
+    //   $this->template->load('template', 'ppdb/siswa_diterima');
+    // }
 }

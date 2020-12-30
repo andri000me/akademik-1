@@ -69,18 +69,26 @@
                     </div>
                     <div class="form-group">
                         <label class="col-sm-3 control-label" for="form-field-1">
-                            NILAI UN
+                            ASAL SEKOLAH
                         </label>
                         <div class="col-sm-5">
-                            <input type="text" name="nilai_un" placeholder="NILAI UN" id="form-field-1" class="form-control">
+                            <input type="text" name="asal_sekolah" placeholder="ASAL SEKOLAH" id="form-field-1" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="form-field-1">
+                            RERATA NILAI UN
+                        </label>
+                        <div class="col-sm-5">
+                            <input type="number" name="nilai_un" placeholder="NILAI UN" id="form-field-1" class="form-control">
                         </div>
                     </div>
                      <div class="form-group">
                         <label class="col-sm-3 control-label" for="form-field-1">
-                            NILAI RAPORT
+                            RERATA NILAI RAPORT
                         </label>
                         <div class="col-sm-5">
-                            <input type="text" name="nilai_raport" placeholder="NILAI RAPORT" id="form-field-1" class="form-control">
+                            <input type="number" name="nilai_raport" placeholder="NILAI RAPORT" id="form-field-1" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
