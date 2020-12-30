@@ -70,6 +70,14 @@
                     </div>
                     <div class="form-group">
                         <label class="col-sm-3 control-label" for="form-field-1">
+                            ASAL SEKOLAH
+                        </label>
+                        <div class="col-sm-5">
+                            <input type="text" name="asal_sekolah" placeholder="ASAL SEKOLAH" id="form-field-1" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="form-field-1">
                             NILAI UN
                         </label>
                         <div class="col-sm-5">
