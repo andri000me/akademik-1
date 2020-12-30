@@ -4,27 +4,11 @@
         <div class="panel-heading">
             <i class="fa fa-external-link-square"></i>
             Edit Data Dokumen
-            <!-- <div class="panel-tools">
-                <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
-                </a>
-                <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
-                    <i class="fa fa-wrench"></i>
-                </a>
-                <a class="btn btn-xs btn-link panel-refresh" href="#">
-                    <i class="fa fa-refresh"></i>
-                </a>
-                <a class="btn btn-xs btn-link panel-expand" href="#">
-                    <i class="fa fa-resize-full"></i>
-                </a>
-                <a class="btn btn-xs btn-link panel-close" href="#">
-                    <i class="fa fa-times"></i>
-                </a>
-            </div> -->
         </div>
         <div class="panel-body">
 
             <?php
-            echo form_open('arsip/edit', 'role="form" class="form-horizontal"');
+            echo form_open_multipart('arsip/edit', 'role="form" class="form-horizontal"');
              echo form_hidden('id_dokumen', $arsip['id_dokumen']);
             ?>
             <div class="form-group">
@@ -54,7 +38,7 @@
             <div class="form-group">
             <label class="col-sm-2  control-label" for="date">Tanggal</label>
             <div class="col-sm-9">
-                <input type="date"value="<?php echo $arsip['tanggal']?>" name="tanggal" placeholder="TANGGAL" id="form-field-1" class="form-control">
+                <input type="date"value="<?php echo $arsip['tanggal']?>" name="tanggal" id="form-field-1" class="form-control">
             </div>
             </div>
 
@@ -73,14 +57,13 @@
                 <div class="col-sm-9">
                     <input type="file" name="userfile">
                     <br>
+                    <h6 style="font-family:verdana;" class="alert alert-danger"><b>Format File PDF, JPG, PNG Serta Size Tidak Lebih Dari 1Mb</b></h6>
                     <a href="<?php echo base_url()."uploads/file/".$arsip['file_dokumen']?>" class="btn btn-warning btn-sm" target="_blank">Lihat File Sekarang</a>
-                    
-                    <!-- <iframe src="<?php echo base_url()."uploads/file/".$arsip['file_dokumen']?>" width="50%" height="50%"></iframe> -->
+                    <!-- <img src="<?php echo base_url()."uploads/file/".$arsip['file_dokumen']?>" width="50%" height="50%"></img> -->
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label" for="form-field-1">
-
                 </label>
                 <div class="col-sm-1">
                     <button type="submit" name="submit" class="btn btn-danger btn-sm">SIMPAN</button>

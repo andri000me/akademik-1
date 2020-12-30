@@ -71,8 +71,7 @@ Class Arsip extends CI_Controller {
         }
     }
 
-    function edit($id = null){
-
+    function edit(){
         if(isset($_POST['submit'])){
             $uploadFoto = $this->upload_file_dokumen();
             $this->Model_arsip->update($uploadFoto);
@@ -96,8 +95,7 @@ Class Arsip extends CI_Controller {
     }
 
     function upload_file_dokumen(){
-        $id_dok = $this->uri->segment(3);
-        $config['upload_path']          = './uploads/file/';
+        $config['upload_path']          = './uploads/file';
         $config['allowed_types']        = 'jpg|png|pdf';
         $config['max_size']             = 1024; // imb
         $config['encrypt_name'] 		= true;

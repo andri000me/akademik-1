@@ -80,8 +80,9 @@
                         <label class="col-sm-3 control-label" for="form-field-1">
                             FOTO
                         </label>
-                        <div class="col-sm-2">
+                        <div class="col-sm-6">
                             <input type="file" name="userfile">
+                            <h6 style="font-family:verdana;" class="alert alert-danger"><b>Format File JPG, PNG Serta Size Tidak Lebih Dari 1Mb</b></h6>
                         </div>
                     </div>
 

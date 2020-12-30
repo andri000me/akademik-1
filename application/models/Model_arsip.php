@@ -17,8 +17,6 @@ class Model_arsip extends CI_Model {
         $this->db->insert($this->table,$data);
 
     }
-
-
     function update($foto) {
         if(empty($foto)){
             // update without foto

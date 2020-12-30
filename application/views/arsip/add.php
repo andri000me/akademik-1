@@ -56,6 +56,7 @@
                 </label>
                 <div class="col-sm-9">
                     <input type="file" name="userfile">
+                    <h6 style="font-family:verdana;" class="alert alert-danger"><b>Format File PDF, JPG, PNG Serta Size Tidak Lebih Dari 1Mb</b></h6>
                 </div>
             </div>
             

@@ -13,10 +13,7 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <i class="fa fa-external-link-square"></i> Arsip Dokumen
-            <div class="panel-tools">
-                <?php echo anchor('arsip/add','<i class="fa fa-edit" aria-hidden="true"></i>',"title='Tambah Data'");?>
-            </div>
-        </div>
+                   </div>
         <div class="panel-body">
             <table id="mytable" class="table table-striped table-bordered table-hover table-full-width dataTable" cellspacing="0" width="100%">
                 <thead>
@@ -38,7 +35,7 @@
                               ?>
                                   <tr>
                                       <td><?php echo $no;?></td>
-                                      <!-- jika ada barang di dalam database maka tampilkan -->
+                                      jika ada barang di dalam database maka tampilkan -->
                                       <td><?php echo $row->nama_pemilik;?></td>
                                       <td><?php echo $row->nis_nuptk;?></td>
                                       <td><?php echo $row->nama_dokumen;?></td>

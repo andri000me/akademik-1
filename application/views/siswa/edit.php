@@ -76,9 +76,11 @@
                         <label class="col-sm-3 control-label" for="form-field-1">
                             FOTO
                         </label>
-                        <div class="col-sm-2">
+                        <div class="col-sm-6">
                         <input type="file" name="userfile">
+                        <br>
                         <img src="<?php echo base_url()."/uploads/foto_siswa/".$siswa['foto']?>" width="200">
+                        <h6 style="font-family:verdana;" class="alert alert-danger"><b>Format File JPG, PNG Serta Size Tidak Lebih Dari 1Mb</b></h6>
                         </div>
                     </div>
 

@@ -73,7 +73,7 @@
                             ASAL SEKOLAH
                         </label>
                         <div class="col-sm-5">
-                            <input type="text" name="asal_sekolah" placeholder="ASAL SEKOLAH" id="form-field-1" class="form-control">
+                            <input type="text" name="asal_sekolah" value="<?php echo $ppdb['asal_sekolah'] ?>"id="form-field-1" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
@@ -96,30 +96,33 @@
                 <label class="col-sm-3 control-label" for="form-field-1">
                     FOTO SISWA
                 </label>
-                <div class="col-sm-2">
+                <div class="col-sm-6">
                     <input type="file" name="userfile">
                     <br>
                     <img src="<?php echo base_url()."/uploads/ppdb/foto_siswa_baru/".$ppdb['foto']?>" width="200">
+                    <h6 style="font-family:verdana;" class="alert alert-danger"><b>Format File JPG, PNG Serta Size Tidak Lebih Dari 1Mb</b></h6>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-3 control-label" for="form-field-1">
                     IJAZAH
                 </label>
-                <div class="col-sm-2">
+                <div class="col-sm-6">
                     <input type="file" value="<?php echo $ppdb['file_ijazah'] ?>"name="ijazah">
                     <br>
                     <img src="<?php echo base_url()."/uploads/ppdb/foto_siswa_baru/".$ppdb['file_ijazah']?>" width="200">
+                    <h6 style="font-family:verdana;" class="alert alert-danger"><b>Format File PDF, JPG, PNG Serta Size Tidak Lebih Dari 1Mb</b></h6>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-3 control-label" for="form-field-1">
                     SKHUN
                 </label>
-                <div class="col-sm-2">
+                <div class="col-sm-6">
                     <input type="file" value="<?php echo $ppdb['file_skhun'] ?>" name="skhun">
                     <br>
                     <img src="<?php echo base_url()."/uploads/ppdb/foto_siswa_baru/".$ppdb['file_skhun']?>" width="200">
+                    <h6 style="font-family:verdana;" class="alert alert-danger"><b>Format File PDF, JPG, PNG Serta Size Tidak Lebih Dari 1Mb</b></h6>
                 </div>
             </div>
 
