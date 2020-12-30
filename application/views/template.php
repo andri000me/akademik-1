@@ -67,7 +67,7 @@
                     </button>
                     <!-- end: RESPONSIVE MENU TOGGLER -->
                     <!-- start: LOGO -->
-                    <a class="navbar-brand" href="<?php echo base_url()?>index.php/siswa">SISTEM AKADEMIK &nbsp;</a>
+                    <a class="navbar-brand" href="<?php echo base_url()?>siswa">SISTEM AKADEMIK &nbsp;</a>
                     <img src="<?php echo base_url()?>uploads/smp2.png" alt="Logo SMP" width="60" height="60">
                     <!-- end: LOGO -->
                 </div>
