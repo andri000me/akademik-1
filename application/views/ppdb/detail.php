@@ -19,7 +19,7 @@
                             NIS
                         </label>
                         <div class="col-sm-5">
-                            <input type="text" name="nis" value="<?php echo $ppdb['nis'] ?>" readonly id="form-field-1" class="form-control">
+                            <input type="text" name="nis" value="<?php echo $ppdb['nis'] ?>" disabled id="form-field-1" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
@@ -27,7 +27,7 @@
                             NAMA
                         </label>
                         <div class="col-sm-9">
-                            <input type="text" name="nama" value="<?php echo $ppdb['nama_siswa'] ?>" readonly id="form-field-1" class="form-control">
+                            <input type="text" name="nama" value="<?php echo $ppdb['nama_siswa'] ?>" disabled id="form-field-1" class="form-control">
                         </div>
                     </div>
 
@@ -36,10 +36,10 @@
                             TEMPAT, TANGGAL LAHIR
                         </label>
                         <div class="col-sm-5">
-                            <input type="text" name="tempat_lahir" value="<?php echo $ppdb['tempat_lahir'] ?>" readonly id="form-field-1" class="form-control">
+                            <input type="text" name="tempat_lahir" value="<?php echo $ppdb['tempat_lahir'] ?>" disabled id="form-field-1" class="form-control">
                         </div>
                         <div class="col-sm-4">
-                            <input type="date" name="tanggal_lahir" value="<?php echo $ppdb['tanggal_lahir'] ?>" readonly id="form-field-1" class="form-control">
+                            <input type="date" name="tanggal_lahir" value="<?php echo $ppdb['tanggal_lahir'] ?>" disabled id="form-field-1" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
@@ -47,7 +47,7 @@
                             JENIS KELAMIN
                         </label>
                         <div class="col-sm-5">
-                        <input type="text" name="gender" value="<?php echo $ppdb['gender'] ?>" readonly="" id="form-field-1" class="form-control">
+                        <input type="text" name="gender" value="<?php echo $ppdb['gender'] ?>" disabled="" id="form-field-1" class="form-control">
                            
                         </div>
                     </div>
@@ -57,7 +57,7 @@
                         </label>
                         <div class="col-sm-5">
                             <?php
-                            echo cmb_dinamis('agama', 'tbl_agama', 'nama_agama', 'kd_agama', $ppdb['kd_agama'],'readonly');
+                            echo cmb_dinamis('agama', 'tbl_agama', 'nama_agama', 'kd_agama', $ppdb['kd_agama'],'disabled');
                             ?>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                             ALAMAT SISWA
                         </label>
                         <div class="col-sm-6">
-                            <textarea readonly name="alamat_siswa" class="form-control"><?php echo htmlspecialchars($ppdb['alamat_siswa']); ?></textarea>
+                            <textarea rows="6" cols="100" disabled name="alamat_siswa" class="form-control"><?php echo htmlspecialchars($ppdb['alamat_siswa']); ?></textarea>
                         </div>
 
                     </div>
@@ -75,7 +75,7 @@
                             NILAI UN
                         </label>
                         <div class="col-sm-5">
-                            <input type="text" name="nilai_un" value="<?php echo $ppdb['nilai_un'] ?>" readonly id="form-field-1" class="form-control">
+                            <input type="text" name="nilai_un" value="<?php echo $ppdb['nilai_un'] ?>" disabled id="form-field-1" class="form-control">
                         </div>
                     </div>
                      <div class="form-group">
@@ -83,7 +83,7 @@
                             NILAI RAPORT
                         </label>
                         <div class="col-sm-5">
-                            <input type="text" value="<?php echo $ppdb['nilai_raport'] ?>" name="nilai_raport" readonly id="form-field-1" class="form-control">
+                            <input type="text" value="<?php echo $ppdb['nilai_raport'] ?>" name="nilai_raport" disabled id="form-field-1" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
@@ -91,7 +91,7 @@
                     FOTO SISWA
                 </label>
                 <div class="col-sm-2">
-                    <img src="<?php echo base_url()."/uploads/ppdb/foto_siswa_baru/".$ppdb['foto']?>" readonly width="200">
+                    <img src="<?php echo base_url()."/uploads/ppdb/foto_siswa_baru/".$ppdb['foto']?>" disabled width="200">
                 </div>
             </div>
             <div class="form-group">
@@ -99,7 +99,7 @@
                     IJAZAH
                 </label>
                 <div class="col-sm-2">
-                    <img src="<?php echo base_url()."/uploads/ppdb/foto_siswa_baru/".$ppdb['file_ijazah']?>"readonly width="200">
+                    <img src="<?php echo base_url()."/uploads/ppdb/foto_siswa_baru/".$ppdb['file_ijazah']?>"disabled width="200">
                 </div>
             </div>
             <div class="form-group">
@@ -107,7 +107,7 @@
                     SKHUN
                 </label>
                 <div class="col-sm-2">
-                    <img src="<?php echo base_url()."/uploads/ppdb/foto_siswa_baru/".$ppdb['file_skhun']?>" readonly width="200">
+                    <img src="<?php echo base_url()."/uploads/ppdb/foto_siswa_baru/".$ppdb['file_skhun']?>" disabled width="200">
                 </div>
             </div>
 
@@ -130,7 +130,7 @@
                         NAMA AYAH
                     </label>
                     <div class="col-sm-5">
-                        <input type="text" value="<?php echo $ppdb['nama_ayah'] ?>"name="nama_ayah"readonly id="form-field-1" class="form-control">
+                        <input type="text" value="<?php echo $ppdb['nama_ayah'] ?>"name="nama_ayah"disabled id="form-field-1" class="form-control">
                     </div>
                 </div>
                 <div class="form-group">
@@ -138,10 +138,10 @@
                             TEMPAT, TANGGAL LAHIR AYAH
                         </label>
                         <div class="col-sm-5">
-                            <input type="text" value="<?php echo $ppdb['tempat_lahir_ayah'] ?>" name="tempat_lahir_ayah" readonly id="form-field-1" class="form-control">
+                            <input type="text" value="<?php echo $ppdb['tempat_lahir_ayah'] ?>" name="tempat_lahir_ayah" disabled id="form-field-1" class="form-control">
                         </div>
                         <div class="col-sm-4">
-                            <input type="date" value="<?php echo $ppdb['tanggal_lahir_ayah'] ?>" name="tanggal_lahir_ayah" readonly id="form-field-1" class="form-control">
+                            <input type="date" value="<?php echo $ppdb['tanggal_lahir_ayah'] ?>" name="tanggal_lahir_ayah" disabled id="form-field-1" class="form-control">
                         </div>
                     </div>
 
@@ -150,7 +150,7 @@
                         PEKERJAAN AYAH
                     </label>
                     <div class="col-sm-9">
-                        <input type="text" value="<?php echo $ppdb['pekerjaan_ayah'] ?>" name="pekerjaan_ayah" readonly id="form-field-1" class="form-control">
+                        <input type="text" value="<?php echo $ppdb['pekerjaan_ayah'] ?>" name="pekerjaan_ayah" disabled id="form-field-1" class="form-control">
                     </div>
                 </div>
                 <div class="form-group">
@@ -158,7 +158,7 @@
                         NAMA IBU
                     </label>
                     <div class="col-sm-5">
-                        <input type="text" value="<?php echo $ppdb['nama_ibu'] ?>" name="nama_ibu" readonly id="form-field-1" class="form-control">
+                        <input type="text" value="<?php echo $ppdb['nama_ibu'] ?>" name="nama_ibu" disabled id="form-field-1" class="form-control">
                     </div>
                 </div>
                 <div class="form-group">
@@ -166,10 +166,10 @@
                             TEMPAT, TANGGAL LAHIR IBU
                         </label>
                         <div class="col-sm-5">
-                            <input type="text" value="<?php echo $ppdb['tempat_lahir_ibu'] ?>" name="tempat_lahir_ibu" readonly id="form-field-1" class="form-control">
+                            <input type="text" value="<?php echo $ppdb['tempat_lahir_ibu'] ?>" name="tempat_lahir_ibu" disabled id="form-field-1" class="form-control">
                         </div>
                         <div class="col-sm-4">
-                            <input type="date" value="<?php echo $ppdb['tanggal_lahir_ibu'] ?>" name="tanggal_lahir_ibu" readonly id="form-field-1" class="form-control">
+                            <input type="date" value="<?php echo $ppdb['tanggal_lahir_ibu'] ?>" name="tanggal_lahir_ibu" disabled id="form-field-1" class="form-control">
                         </div>
                     </div>
 
@@ -178,7 +178,7 @@
                         PEKERJAAN IBU
                     </label>
                     <div class="col-sm-9">
-                        <input type="text" value="<?php echo $ppdb['pekerjaan_ibu'] ?>" name="pekerjaan_ibu" readonly id="form-field-1" class="form-control">
+                        <input type="text" value="<?php echo $ppdb['pekerjaan_ibu'] ?>" name="pekerjaan_ibu" disabled id="form-field-1" class="form-control">
                     </div>
                 </div>
 
@@ -188,7 +188,7 @@
                     NOMOR HP
                 </label>
                 <div class="col-sm-9">
-                    <input type="number" value="<?php echo $ppdb['nomor_hp_ortu'] ?>" name="nomor_hp_ortu" readonly id="form-field-1" class="form-control">
+                    <input type="number" value="<?php echo $ppdb['nomor_hp_ortu'] ?>" name="nomor_hp_ortu" disabled id="form-field-1" class="form-control">
                 </div>
             </div>
             <div class="form-group">
@@ -196,7 +196,7 @@
                     ALAMAT ORTU
                 </label>
                 <div class="col-sm-6">
-                    <textarea name="alamat_ortu" readonly class="form-control"><?php echo htmlspecialchars($ppdb['alamat_ortu']); ?></textarea>
+                    <textarea rows="6" cols="100" name="alamat_ortu" disabled class="form-control"><?php echo htmlspecialchars($ppdb['alamat_ortu']); ?></textarea>
                 </div>
 
             </div>
@@ -205,7 +205,7 @@
                     JUMLAH SAUDARA
                 </label>
                 <div class="col-sm-9">
-                    <input type="number" value="<?php echo $ppdb['jumlah_saudara'] ?>" name="jumlah_saudara" readonly id="form-field-1" class="form-control">
+                    <input type="number" value="<?php echo $ppdb['jumlah_saudara'] ?>" name="jumlah_saudara" disabled id="form-field-1" class="form-control">
                 </div>
             </div>
             <div class="form-group">
@@ -213,7 +213,7 @@
                     JUMLAH PENGHASILAN KEDUA ORTU
                 </label>
                 <div class="col-sm-9">
-                    <input type="number" value="<?php echo $ppdb['penghasilan_ortu'] ?>"name="penghasilan_ortu" readonly id="form-field-1" class="form-control">
+                    <input type="number" value="<?php echo $ppdb['penghasilan_ortu'] ?>"name="penghasilan_ortu" disabled id="form-field-1" class="form-control">
                 </div>
             </div>
 
@@ -222,7 +222,7 @@
                                 STATUS
                             </label>
                             <div class="col-sm-5">
-                            <input type="text" value="<?php echo $ppdb['status'] ?>"name="status" readonly id="form-field-1" class="form-control">
+                            <input type="text" value="<?php echo $ppdb['status'] ?>"name="status" disabled id="form-field-1" class="form-control">
                             </div>
             </div>
 
@@ -231,7 +231,7 @@
                             KETERANGAN
                         </label>
                         <div class="col-sm-5">
-                            <textarea readonly name="keterangan"class="form-control"><?php echo htmlspecialchars($ppdb['keterangan']); ?></textarea>
+                            <textarea rows="6" cols="100" disabled name="keterangan"class="form-control"><?php echo htmlspecialchars($ppdb['keterangan']); ?></textarea>
                         </div>
 
                     </div>

@@ -78,7 +78,7 @@
                             ALAMAT
                         </label>
                         <div class="col-sm-6">
-                            <textarea name="alamat" class="form-control"><?php echo htmlspecialchars($guru['alamat']); ?></textarea>
+                            <textarea rows="6" cols="100" name="alamat" class="form-control"><?php echo htmlspecialchars($guru['alamat']); ?></textarea>
                         </div>
 
             </div>

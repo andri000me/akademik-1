@@ -8,9 +8,6 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <i class="fa fa-external-link-square"></i> Data Siswa
-            <div class="panel-tools">
-                <?php echo anchor('siswa/add','<i class="fa fa-edit" aria-hidden="true"></i>',"title='Tambah Data'");?>
-            </div>
         </div>
         <div class="panel-body">
             <table id="mytable" class="table table-striped table-bordered table-hover table-full-width dataTable" cellspacing="0" width="100%">

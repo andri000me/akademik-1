@@ -72,7 +72,7 @@
                             ALAMAT SISWA
                         </label>
                         <div class="col-sm-6">
-                            <textarea placeholder="MASUKKAN ALAMAT" name="alamat_siswa" class="form-control"></textarea>
+                            <textarea rows="6" cols="100" placeholder="MASUKKAN ALAMAT" name="alamat_siswa" class="form-control"></textarea>
                         </div>
 
                     </div>
@@ -160,7 +160,7 @@
                         ALAMAT<br>ORANG TUA
                     </label>
                     <div class="col-sm-6">
-                        <textarea placeholder="ALAMAT ORANG TUA" name="alamat_ortu"class="form-control"></textarea>
+                        <textarea rows="6" cols="100" placeholder="ALAMAT ORANG TUA" name="alamat_ortu"class="form-control"></textarea>
                     </div>
 
                 </div>

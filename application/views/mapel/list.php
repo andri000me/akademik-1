@@ -1,12 +1,10 @@
 <div class="col-md-12">
     <!-- start: DYNAMIC TABLE PANEL -->
-   
+    &nbsp;<?php echo anchor('mapel/add','Tambah Mata Pelajaran',array('class'=>'btn btn-success btn-sm'))?>
+    <div style="margin-bottom: 10px;"></div>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <i class="fa fa-external-link-square"></i> Dynamic Table
-            <div class="panel-tools">
-                <?php echo anchor('mapel/add','<i class="fa fa-edit" aria-hidden="true"></i>',"title='Tambah Data'");?>
-            </div>
+            <i class="fa fa-external-link-square"></i> MATA PELAJARAN
         </div>
         <div class="panel-body">
             <table id="mytable" class="table table-striped table-bordered table-hover table-full-width dataTable" cellspacing="0" width="100%">

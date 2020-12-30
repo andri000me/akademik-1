@@ -58,10 +58,10 @@
             </div>
             <div class="form-group">
                         <label class="col-sm-2 control-label" for="form-field-1">
-                            ALAMAT
+                            ALAMAT 
                         </label>
                         <div class="col-sm-6">
-                            <textarea placeholder="ALAMAT" name="alamat" class="form-control"></textarea>
+                            <textarea placeholder="ALAMAT" name="alamat" class="form-control" rows="6" cols="100" ></textarea>
                         </div>
 
             </div>

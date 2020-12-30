@@ -19,7 +19,7 @@
                             NIS
                         </label>
                         <div class="col-sm-5">
-                            <input type="text" name="nis" value="<?php echo $siswa['nis'] ?>" readonly="" id="form-field-1" class="form-control">
+                            <input type="text" name="nis" value="<?php echo $siswa['nis'] ?>" disabled="" id="form-field-1" class="form-control">
                         </div>
                     </div>
 
@@ -28,7 +28,7 @@
                             NAMA
                         </label>
                         <div class="col-sm-9">
-                            <input type="text" name="nama" value="<?php echo $siswa['nama'] ?>" readonly="" id="form-field-1" class="form-control">
+                            <input type="text" name="nama" value="<?php echo $siswa['nama'] ?>" disabled="" id="form-field-1" class="form-control">
                         </div>
                     </div>
 
@@ -37,10 +37,10 @@
                             TEMPAT, TANGGAL LAHIR
                         </label>
                         <div class="col-sm-5">
-                            <input type="text" name="tempat_lahir" value="<?php echo $siswa['tempat_lahir'] ?>" readonly="" id="form-field-1" class="form-control">
+                            <input type="text" name="tempat_lahir" value="<?php echo $siswa['tempat_lahir'] ?>" disabled="" id="form-field-1" class="form-control">
                         </div>
                         <div class="col-sm-4">
-                            <input type="date" name="tanggal_lahir" value="<?php echo $siswa['tanggal_lahir'] ?>" readonly="" id="form-field-1" class="form-control">
+                            <input type="date" name="tanggal_lahir" value="<?php echo $siswa['tanggal_lahir'] ?>" disabled="" id="form-field-1" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
@@ -48,7 +48,7 @@
                             JENIS KELAMIN
                         </label>
                         <div class="col-sm-5">
-                             <input type="text" name="gender" value="<?php echo $siswa['gender'] ?>" readonly="" id="form-field-1" class="form-control">
+                             <input type="text" name="gender" value="<?php echo $siswa['gender'] ?>" disabled="" id="form-field-1" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
@@ -57,7 +57,7 @@
                         </label>
                         <div class="col-sm-5">
                         <?php
-                        echo cmb_dinamis('agama', 'tbl_agama', 'nama_agama', 'kd_agama', $siswa['kd_agama'],'readonly');
+                        echo cmb_dinamis('agama', 'tbl_agama', 'nama_agama', 'kd_agama', $siswa['kd_agama'],'disabled');
                         ?>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                             ALAMAT SISWA
                         </label>
                         <div class="col-sm-9">
-                        <textarea type="text" name="alamat_siswa"  id="form-field-1" class="form-control" readonly><?php echo htmlspecialchars($siswa['alamat_siswa']); ?></textarea>
+                        <textarea rows="6" cols="100" type="text" name="alamat_siswa"  id="form-field-1" class="form-control" disabled><?php echo htmlspecialchars($siswa['alamat_siswa']); ?></textarea>
                     </div>
 
                     </div>
@@ -84,7 +84,7 @@
                             ROMBEL
                         </label>
                         <div class="col-sm-6">
-                            <?php echo cmb_dinamis ('kelas', 'tbl_rombel', 'kelas', 'id_rombel',$siswa['id_rombel'],'readonly');?>
+                            <?php echo cmb_dinamis ('kelas', 'tbl_rombel', 'kelas', 'id_rombel',$siswa['id_rombel'],'disabled');?>
                         </div>
                     </div>
                 </div>
@@ -105,7 +105,7 @@
                         NAMA AYAH
                     </label>
                     <div class="col-sm-5">
-                        <input type="text" name="nama_ayah" value="<?php echo $siswa['nama_ayah'] ?>" readonly="" id="form-field-1" class="form-control">
+                        <input type="text" name="nama_ayah" value="<?php echo $siswa['nama_ayah'] ?>" disabled="" id="form-field-1" class="form-control">
                     </div>
                 </div>
                 <div class="form-group">
@@ -113,10 +113,10 @@
                             TEMPAT, TANGGAL LAHIR AYAH
                         </label>
                         <div class="col-sm-5">
-                            <input type="text" name="tempat_lahir_ayah" value="<?php echo $siswa['tempat_lahir_ayah'] ?>" readonly="" id="form-field-1" class="form-control">
+                            <input type="text" name="tempat_lahir_ayah" value="<?php echo $siswa['tempat_lahir_ayah'] ?>" disabled="" id="form-field-1" class="form-control">
                         </div>
                         <div class="col-sm-4">
-                            <input type="date" name="tanggal_lahir_ayah" value="<?php echo $siswa['tanggal_lahir_ayah'] ?>" readonly="" id="form-field-1" class="form-control">
+                            <input type="date" name="tanggal_lahir_ayah" value="<?php echo $siswa['tanggal_lahir_ayah'] ?>" disabled="" id="form-field-1" class="form-control">
                         </div>
                     </div>
 
@@ -125,7 +125,7 @@
                         PEKERJAAN AYAH
                     </label>
                     <div class="col-sm-9">
-                        <input type="text" name="pekerjaan_ayah" value="<?php echo $siswa['pekerjaan_ayah'] ?>" readonly="" id="form-field-1" class="form-control">
+                        <input type="text" name="pekerjaan_ayah" value="<?php echo $siswa['pekerjaan_ayah'] ?>" disabled="" id="form-field-1" class="form-control">
                     </div>
                 </div>
                 <div class="form-group">
@@ -133,7 +133,7 @@
                         NAMA IBU
                     </label>
                     <div class="col-sm-5">
-                        <input type="text" name="nama_ibu" value="<?php echo $siswa['nama_ibu'] ?>" readonly="" id="form-field-1" class="form-control">
+                        <input type="text" name="nama_ibu" value="<?php echo $siswa['nama_ibu'] ?>" disabled="" id="form-field-1" class="form-control">
                     </div>
                 </div>
                 <div class="form-group">
@@ -141,10 +141,10 @@
                             TEMPAT, TANGGAL LAHIR IBU
                         </label>
                         <div class="col-sm-5">
-                            <input type="text" name="tempat_lahir_ibu"  value="<?php echo $siswa['tempat_lahir_ibu'] ?>" readonly="" id="form-field-1" class="form-control">
+                            <input type="text" name="tempat_lahir_ibu"  value="<?php echo $siswa['tempat_lahir_ibu'] ?>" disabled="" id="form-field-1" class="form-control">
                         </div>
                         <div class="col-sm-4">
-                            <input type="date" name="tanggal_lahir_ibu"  value="<?php echo $siswa['tanggal_lahir_ibu'] ?>" readonly="" id="form-field-1" class="form-control">
+                            <input type="date" name="tanggal_lahir_ibu"  value="<?php echo $siswa['tanggal_lahir_ibu'] ?>" disabled="" id="form-field-1" class="form-control">
                         </div>
                     </div>
 
@@ -153,7 +153,7 @@
                         PEKERJAAN IBU
                     </label>
                     <div class="col-sm-9">
-                        <input type="text" name="pekerjaan_ibu" value="<?php echo $siswa['pekerjaan_ibu'] ?>" readonly="" id="form-field-1" class="form-control">
+                        <input type="text" name="pekerjaan_ibu" value="<?php echo $siswa['pekerjaan_ibu'] ?>" disabled="" id="form-field-1" class="form-control">
                     </div>
                 </div>
                 <div class="form-group">
@@ -161,7 +161,7 @@
                         ALAMAT<br>ORANG TUA
                     </label>
                     <div class="col-sm-9">
-                    <textarea type="text" name="alamat_ortu"  id="form-field-1" class="form-control" readonly><?php echo htmlspecialchars($siswa['alamat_ortu']); ?></textarea>
+                    <textarea rows="6" cols="100" type="text" name="alamat_ortu"  id="form-field-1" class="form-control" disabled><?php echo htmlspecialchars($siswa['alamat_ortu']); ?></textarea>
                     </div>
 
                 </div>
@@ -170,7 +170,7 @@
                         JUMLAH SAUDARA
                     </label>
                     <div class="col-sm-5">
-                        <input type="number" name="jumlah_saudara"value="<?php echo $siswa['jumlah_saudara'] ?>" readonly="" id="form-field-1" class="form-control">
+                        <input type="number" name="jumlah_saudara"value="<?php echo $siswa['jumlah_saudara'] ?>" disabled="" id="form-field-1" class="form-control">
                     </div>
                 </div>
                 <div class="form-group">
@@ -178,7 +178,7 @@
                         JUMLAH PENGHASILAN KEDUA ORTU
                     </label>
                     <div class="col-sm-5">
-                        <input type="text" name="penghasil_ortu" value="<?php echo "Rp. " . number_format($siswa['penghasilan_ortu'], 2, ",", "."); ?>" readonly id="form-field-1" class="form-control">
+                        <input type="text" name="penghasil_ortu" value="<?php echo "Rp. " . number_format($siswa['penghasilan_ortu'], 2, ",", "."); ?>" disabled id="form-field-1" class="form-control">
                     </div>
                 </div>
             </div>

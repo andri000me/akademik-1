@@ -19,7 +19,7 @@
                             NIS
                         </label>
                         <div class="col-sm-5">
-                            <input type="text" readonly name="nis" value="<?php echo $siswa['nis'] ?>"  id="form-field-1" class="form-control">
+                            <input type="text" disabled name="nis" value="<?php echo $siswa['nis'] ?>"  id="form-field-1" class="form-control">
                         </div>
                     </div>
 
@@ -68,7 +68,7 @@
                             ALAMAT SISWA
                         </label>
                         <div class="col-sm-9">
-                        <textarea type="text" name="alamat_siswa"  id="form-field-1" class="form-control"><?php echo htmlspecialchars($siswa['alamat_siswa']); ?></textarea>
+                        <textarea rows="6" cols="100" type="text" name="alamat_siswa"  id="form-field-1" class="form-control"><?php echo htmlspecialchars($siswa['alamat_siswa']); ?></textarea>
                     </div>
 
                     </div>
@@ -164,7 +164,7 @@
                         ALAMAT<br>ORANG TUA
                     </label>
                     <div class="col-sm-9">
-                    <textarea type="text" name="alamat_ortu"  id="form-field-1" class="form-control"><?php echo htmlspecialchars($siswa['alamat_ortu']); ?></textarea>
+                    <textarea rows="6" cols="100" type="text" name="alamat_ortu"  id="form-field-1" class="form-control"><?php echo htmlspecialchars($siswa['alamat_ortu']); ?></textarea>
                     </div>
 
                 </div>

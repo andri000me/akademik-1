@@ -1,6 +1,7 @@
 <div class="col-md-12">
     <!-- start: DYNAMIC TABLE PANEL -->
-   <?php echo anchor('ppdb/add','Input Data Pendaftar',array('class'=>'btn btn-danger btn-sm'))?>
+    &nbsp;<?php echo anchor('ppdb/add','Tambah Data Pendaftar',array('class'=>'btn btn-success btn-sm'))?>
+    <div style="margin-bottom: 10px;"></div>
    <!-- Trigger the modal with a button -->
 <!-- <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Import Data Excel Dari Dapodik</button> -->
 
@@ -8,9 +9,6 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <i class="fa fa-external-link-square"></i> Data Siswa Pendaftar
-            <div class="panel-tools">
-                <?php echo anchor('ppdb/add','<i class="fa fa-edit" aria-hidden="true"></i>',"title='Tambah Data'");?>
-            </div>
         </div>
         <div class="panel-body">
             <table id="mytable" class="table table-striped table-bordered table-hover table-full-width dataTable" cellspacing="0" width="100%">

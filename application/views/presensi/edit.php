@@ -17,7 +17,7 @@
                     NIM
                 </label>
                 <div class="col-sm-4">
-                    <input type="text" value="<?php echo $presensi['nim'] ?>" readonly="" placeholder="MASUKAN NIM" id="form-field-1" class="form-control">
+                    <input type="text" value="<?php echo $presensi['nim'] ?>" disabled="" placeholder="MASUKAN NIM" id="form-field-1" class="form-control">
                 </div>
             </div>
 
@@ -26,7 +26,7 @@
                     NAMA
                 </label>
                 <div class="col-sm-4">
-                    <input type="text" value="<?php echo $presensi['nama'] ?>" readonly="" placeholder="MASUKAN NAMA" id="form-field-1" class="form-control">
+                    <input type="text" value="<?php echo $presensi['nama'] ?>" disabled="" placeholder="MASUKAN NAMA" id="form-field-1" class="form-control">
                 </div>
             </div>
 

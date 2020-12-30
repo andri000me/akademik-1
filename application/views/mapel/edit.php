@@ -33,7 +33,7 @@
                     KODE MAPEL
                 </label>
                 <div class="col-sm-9">
-                    <input type="text" readonly="" value="<?php echo $mapel['kd_mapel'];?>" name="kd_mapel" placeholder="MASUKAN KODE MAPEL" id="form-field-1" class="form-control">
+                    <input type="text" disabled="" value="<?php echo $mapel['kd_mapel'];?>" name="kd_mapel" placeholder="MASUKAN KODE MAPEL" id="form-field-1" class="form-control">
                 </div>
             </div>
             <div class="form-group">

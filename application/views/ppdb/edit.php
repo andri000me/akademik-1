@@ -64,7 +64,7 @@
                             ALAMAT SISWA
                         </label>
                         <div class="col-sm-6">
-                            <textarea placeholder="ALAMAT SISWA" name="alamat_siswa" class="form-control"><?php echo htmlspecialchars($ppdb['alamat_siswa']); ?></textarea>
+                            <textarea rows="6" cols="100" placeholder="ALAMAT SISWA" name="alamat_siswa" class="form-control"><?php echo htmlspecialchars($ppdb['alamat_siswa']); ?></textarea>
                         </div>
 
                     </div>
@@ -200,7 +200,7 @@
                     ALAMAT
                 </label>
                 <div class="col-sm-6">
-                    <textarea name="alamat_ortu" class="form-control"><?php echo htmlspecialchars($ppdb['alamat_ortu']); ?></textarea>
+                    <textarea rows="6" cols="100" name="alamat_ortu" class="form-control"><?php echo htmlspecialchars($ppdb['alamat_ortu']); ?></textarea>
                 </div>
 
             </div>
@@ -237,7 +237,7 @@
                             KETERANGAN
                         </label>
                         <div class="col-sm-5">
-                            <textarea placeholder="KETERANGAN"name="keterangan"class="form-control"><?php echo htmlspecialchars($ppdb['keterangan']); ?></textarea>
+                            <textarea rows="6" cols="100" placeholder="KETERANGAN"name="keterangan"class="form-control"><?php echo htmlspecialchars($ppdb['keterangan']); ?></textarea>
                         </div>
 
                     </div>

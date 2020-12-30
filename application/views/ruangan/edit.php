@@ -33,7 +33,7 @@
                     KODE RUANGAN
                 </label>
                 <div class="col-sm-9">
-                    <input type="text" readonly="" value="<?php echo $ruangan['kd_ruangan']?>" name="kd_ruangan" placeholder="MASUKAN KODE RUANGAN" id="form-field-1" class="form-control">
+                    <input type="text" disabled="" value="<?php echo $ruangan['kd_ruangan']?>" name="kd_ruangan" placeholder="MASUKAN KODE RUANGAN" id="form-field-1" class="form-control">
                 </div>
             </div>
             <div class="form-group">
