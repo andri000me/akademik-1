@@ -31,7 +31,7 @@ class Ppdb extends CI_Controller {
             array('db' => 'nama_siswa', 'dt' => 'nama_siswa'),
             array('db' => 'asal_sekolah', 'dt' => 'asal_sekolah'),
             array('db' => 'tanggal_lahir', 'dt' => 'tanggal_lahir'),
-            array('db' => 'CreatedOn', 'dt' => 'tanggal_mendaftar'),
+            array('db' => 'created', 'dt' => 'tanggal_mendaftar'),
             array('db' => 'status', 'dt' => 'status'),
             array(
                 'db' => 'id_pendaftar',
@@ -93,7 +93,9 @@ class Ppdb extends CI_Controller {
     function edit(){
         if(isset($_POST['submit'])){
             $uploadFoto = $this->upload_foto_siswa();
-            $this->Model_ppdb->update($uploadFoto);
+            $uploadFileIjazah = $this->upload_file_ijazah_siswa();
+            $uploadFileSkhun = $this->upload_file_skhun_siswa();
+            $this->Model_ppdb->update($uploadFoto, $uploadFileIjazah, $uploadFileSkhun);
             redirect('ppdb');
         }else{
             $nisn          = $this->uri->segment(3);

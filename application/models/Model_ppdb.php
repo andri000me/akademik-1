@@ -97,11 +97,11 @@ class Model_ppdb extends CI_Model {
                 'file_skhun' => $skhun,
                 'keterangan'     => $this->input->post('keterangan',TRUE),
                 'status'     => $this->input->post('status',TRUE),
-    
+
             );
         }
-        $nisn   = $this->input->post('nisn');
-        $this->db->where('nisn',$nisn);
+        $nisn   = $this->input->post('nis');
+        $this->db->where('nis',$nisn);
         $this->db->update($this->table,$data);
     }
     function show_data(){
@@ -109,6 +109,6 @@ class Model_ppdb extends CI_Model {
         $hasil=$this->db->query("SELECT * FROM tbl_ppdb WHERE status='Diterima' ORDER BY id_pendaftar ASC");
         return $hasil;
 
-  }    
+  }
 
 }
