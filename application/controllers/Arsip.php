@@ -100,7 +100,7 @@ Class Arsip extends CI_Controller {
         $config['upload_path']          = './uploads/file/';
         $config['allowed_types']        = 'jpg|png|pdf';
         $config['max_size']             = 1024; // imb
-        $config['file_name']            = "dokumen-" . uniqid();
+        $config['encrypt_name'] 		= true;
         $this->load->library('upload', $config);
             // proses upload
         $this->upload->do_upload('userfile');

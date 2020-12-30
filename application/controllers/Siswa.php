@@ -111,7 +111,7 @@ Class Siswa extends CI_Controller {
         $config['upload_path']          = './uploads/foto_siswa';
         $config['allowed_types']        = 'jpg|png';
         $config['max_size']             = 1024; // imb
-        $config['file_name']            = "foto_siswa-" . uniqid();
+        $config['encrypt_name'] 		= true;
 
         $this->load->library('upload', $config);
             // proses upload

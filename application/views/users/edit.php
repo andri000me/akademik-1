@@ -34,7 +34,7 @@
                     PASSWORD
                 </label>
                 <div class="col-sm-9">
-                    <input type="password" name="password" placeholder="MASUKAN PASSWORD" id="form-field-1" class="form-control">
+                    <input type="password" name="password"  id="form-field-1" class="form-control">
                 </div>
             </div>
             <div class="form-group">

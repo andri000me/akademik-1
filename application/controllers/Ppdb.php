@@ -118,6 +118,7 @@ class Ppdb extends CI_Controller {
         $config['upload_path']          = './uploads/ppdb/foto_siswa_baru/';
         $config['allowed_types']        = 'jpg|png';
         $config['max_size']             = 1024; // imb
+        $config['encrypt_name'] 		= true;
         $this->load->library('upload', $config);
             // proses upload
         $this->upload->do_upload('userfile');
@@ -128,6 +129,7 @@ class Ppdb extends CI_Controller {
         $config['upload_path']          = './uploads/ppdb/foto_siswa_baru/';
         $config['allowed_types']        = 'jpg|png|pdf';
         $config['max_size']             = 1024; // imb
+        $config['encrypt_name'] 		= true;
         $this->load->library('upload', $config);
             // proses upload
         $this->upload->do_upload('ijazah');
@@ -138,6 +140,7 @@ class Ppdb extends CI_Controller {
         $config['upload_path']          = './uploads/ppdb/foto_siswa_baru/';
         $config['allowed_types']        = 'jpg|png|pdf';
         $config['max_size']             = 1024; // imb
+        $config['encrypt_name'] 		= true;
         $this->load->library('upload', $config);
             // proses upload
         $this->upload->do_upload('skhun');
