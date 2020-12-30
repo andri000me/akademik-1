@@ -23,10 +23,10 @@
             <table class="table table-bordered">
                 <tr><th>NIS</th><th>NAMA</th><th>NILAI</th></tr>
                 <?php foreach ($siswa as $row){
-                    
-                    echo "<tr>  <td width='100'>$row->nim</td>
+
+                    echo "<tr>  <td width='100'>$row->nis</td>
                                 <td>".  strtoupper($row->nama)."</td>
-                                <td width='150'><input type='int' onKeyup='updateNilai(\"$row->nim\")' id='nilai".$row->nim."' value='".  chek_nilai($row->nim, $this->uri->segment(3))."' class='form-control'></td></tr>";
+                                <td width='150'><input type='int' onKeyup='updateNilai(\"$row->nis\")' id='nilai".$row->nis."' value='".  chek_nilai($row->nis, $this->uri->segment(3))."' class='form-control'></td></tr>";
                 }
 ?>
             </table>

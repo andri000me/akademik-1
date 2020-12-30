@@ -3,7 +3,7 @@
     <table class="table table-bordered">
         <tr><td width="200">TAHUN AKADEMIK</td><td> : <?php echo get_tahun_akademik_aktif('tahun_akademik')?></td></tr>
         <tr><td>SEMESTER</td><td> :  <?php echo get_tahun_akademik_aktif('semester_aktif')?></td></tr>
-        
+
     </table>
     <!-- end: DYNAMIC TABLE PANEL -->
 </div>
@@ -33,6 +33,15 @@
                         <td>$row->nama_ruangan</td>
                         <td>".anchor('nilai/rombel/'.$row->id_jadwal,'<i class="fa fa-eye" aria-hidden="true"></i>',"title='Lihat Kelas'")."</td>
                         </tr>";
+                        // echo "<tr>
+                        //     <td>$no</td>
+                        //     <td>KELAS kelas nama_jurusan</td>
+                        //     <td>nama_mapel</td>
+                        //     <td>hari</td>
+                        //     <td>jam</td>
+                        //     <td>nama_ruangan</td>
+                        //     <td>".anchor('nilai/rombel/<i class="fa fa-eye" aria-hidden="true"></i>',"title='Lihat Kelas'")."</td>
+                        //     </tr>";
                     $no++;
                 }
                 ?>
