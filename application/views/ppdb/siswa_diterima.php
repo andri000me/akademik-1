@@ -33,7 +33,7 @@
                             $nama=$i['nama_siswa'];
                             $tgl_lahir=$i['tanggal_lahir'];
                             $asal_sekolah=$i['asal_sekolah'];
-                            $tgl_daftar=$i['CreatedOn'];
+                            $tgl_daftar=$i['created'];
                             $status=$i['status'];
                             $no++  
                   ?>

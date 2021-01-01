@@ -23,7 +23,7 @@
                             ROMBEL
                         </label>
                         <div class="col-sm-6">
-                            <?php echo cmb_dinamis('kelas', 'tbl_rombel', 'kelas', 'id_rombel') ?>
+                            <?php echo cmb_dinamis('rombel', 'tbl_rombel', 'kelas', 'id_rombel') ?>
                         </div>
                     </div>
 
