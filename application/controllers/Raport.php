@@ -30,7 +30,7 @@ class Raport extends CI_Controller{
         $pdf = new FPDF('P','mm','A4');
         $pdf->AddPage();
         $pdf->SetFont('Arial','B',12);
-        $pdf->Cell(190,5,'NAMA SEKOLAH',1,1,'C');
+        // $pdf->Cell(190,5,'NAMA SEKOLAH',1,1,'C');
         $pdf->SetFont('Arial','B',14);
         $pdf->Cell(190,7,'SMP MARDISISWA 2 SEMARANG',1,1,'C');
         $pdf->SetFont('Arial','',8);
@@ -62,7 +62,7 @@ class Raport extends CI_Controller{
         $pdf->Cell(50,5,'Mata Pelajaran',1,0,'L');
         $pdf->Cell(10,5,'KKM',1,0,'L');
         $pdf->Cell(12,5,'Angka',1,0,'L');
-        $pdf->Cell(30,5,'Huruf',1,0,'L');
+        $pdf->Cell(40,5,'Huruf',1,0,'L');
         $pdf->Cell(23,5,'Ketercapaian',1,0,'L');
         $pdf->Cell(20,5,'Rata Kelas',1,0,'L');
         $pdf->Cell(37,5,'Deskripsi Kemampuan',1,1,'L');
@@ -78,7 +78,7 @@ class Raport extends CI_Controller{
             $pdf->Cell(10,5,75,1,0,'L');
             $nilai = chek_nilai($siswa['nis'], $m->id_jadwal);
             $pdf->Cell(12,5,  $nilai,1,0,'L');
-            $pdf->Cell(30,5,  Terbilang($nilai),1,0,'L');
+            $pdf->Cell(40,5,  Terbilang($nilai),1,0,'L');
             $pdf->Cell(23,5,  $this->ketercapaian_kopetensi($nilai),1,0,'L');
             $pdf->Cell(20,5,  ceil($this->rata_rata_nilai($m->id_jadwal)),1,0,'L');
             $pdf->Cell(37,5,'Deskripsi Kemampuan',1,1,'L');
@@ -86,13 +86,13 @@ class Raport extends CI_Controller{
         }
         // END BLOCK NILAI SISWA --------------------------------
 
-        $pdf->Cell(190,5,'',0,1);
-        $pdf->Cell(8, 5, 'No', 1,0);
-        $pdf->Cell(50, 5, 'Pengembangan Diri', 1,0);
-        $pdf->Cell(10, 5, 'Nilai', 1,0);
-        $pdf->Cell(66, 5, 'Kepribadian', 1,0);
-        $pdf->Cell(20, 5, 'Niilai', 1,0);
-        $pdf->Cell(36, 5, 'Catatan Khusus', 1,1);
+        // $pdf->Cell(190,5,'',0,1);
+        // $pdf->Cell(8, 5, 'No', 1,0);
+        // $pdf->Cell(50, 5, 'Pengembangan Diri', 1,0);
+        // $pdf->Cell(10, 5, 'Nilai', 1,0);
+        // $pdf->Cell(66, 5, 'Kepribadian', 1,0);
+        // $pdf->Cell(20, 5, 'Niilai', 1,0);
+        // $pdf->Cell(36, 5, 'Catatan Khusus', 1,1);
 
         $pdf->Cell(190,5,'',0,1);
         $pdf->Cell(45, 15, 'Mengetahui,', 0,0,'C');

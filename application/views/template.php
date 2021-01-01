@@ -39,7 +39,7 @@
         <link href="http://clipone.nurisakbar.com/bower_components/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
         <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
-        <script>
+        <script type="text/javascript" >
             $(document).ready(function(){
             var date_input=$('input[name="date"]'); //our date input has the name "date"
             var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";

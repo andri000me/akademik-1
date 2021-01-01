@@ -20,6 +20,7 @@
                 <thead>
                     <tr>
                         <th>NO</th>
+                        <th>FOTO</th>
                         <th>NAMA LENGKAP</th>
                         <th>LEVEL</th>
                         <th>AKSI</th>
@@ -55,12 +56,16 @@
                         "orderable": false,
                     },
                     {
+                        "data": "foto",
+                        "width": "50px",
+                        "sClass": "text-center"
+                    },{
                         "data": "nama_lengkap",
-                        "width": "80px",
-                        "sClass": "text-justify"
+                        "width": "30px",
+                        "sClass": "text-center"
                     },
-                    { "data": "nama_level",
-                        "width": "80px",
+                    { "data": "id_level",
+                        "width": "20px",
                         "sClass": "text-justify" },
                     { "data": "aksi","width": "1px",
                         "sClass": "text-center", },

@@ -9,7 +9,7 @@ class Walikelas extends CI_Controller{
 
     function data() {
         // nama tabel
-        $table = 'v_walikelas';
+        $table = 'tbl_walikelas';
         // nama PK
         $primaryKey = 'id_walikelas';
         // list field

@@ -22,7 +22,7 @@
         </div>
         <div class="panel-body">
                 <table class="table table-bordered">
-                    <tr><th>NIM</th><th>NAMA</th><th>LIHAT NILAI</th></tr>
+                    <tr><th>NIS</th><th>NAMA</th><th>LIHAT NILAI</th></tr>
                     <?php
                     foreach ($siswa->result() as $row){
                         echo "<tr>

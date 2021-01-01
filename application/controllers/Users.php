@@ -10,14 +10,23 @@ Class Users extends CI_Controller {
 
     function data() {
         // nama tabel
-        $table = 'v_tbl_user';
+        $table = 'tbl_user';
         // nama PK
         $primaryKey = 'id_user';
         // list field
         $columns = array(
-            array('db' => 'foto', 'dt' => 'foto'),
+            array('db' => 'foto',
+                'dt' => 'foto',
+                'formatter' => function( $d) {
+                   if(empty($d)){
+                       return "<img width='30px' src='".  base_url()."/uploads/foto_users/no-image.png'>";
+                   }else{
+                       return "<img width='75px' height='88px' src='".  base_url()."/uploads/foto_users/".$d."'>";
+                   }
+                }
+            ),
             array('db' => 'nama_lengkap', 'dt' => 'nama_lengkap'),
-            array('db' => 'nama_level', 'dt' => 'nama_level'),
+            array('db' => 'id_level_user', 'dt' => 'id_level'),
             array(
                 'db' => 'id_user',
                 'dt' => 'aksi',
