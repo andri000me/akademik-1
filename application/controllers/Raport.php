@@ -22,7 +22,7 @@ class Raport extends CI_Controller{
     //    blok query info siswa
        $nis = $this->uri->segment(3);
        $sqlSiswa = "SELECT ts.nama as nama_siswa,ts.nis,tr.kelas
-                    FROM tbl_history_kelas as hk,tbl_siswa as ts,tbl_rombel as tr,tbl_jurusan as tj
+                    FROM tbl_history_kelas as hk,tbl_siswa as ts,tbl_rombel as tr
                     WHERE ts.nis=hk.nis and tr.id_rombel=ts.id_rombel and hk.nis='$nis' and hk.id_tahun_akademik=".  get_tahun_akademik_aktif('id_tahun_akademik');
        $siswa = $this->db->query($sqlSiswa)->row_array();
 

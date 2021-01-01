@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 30, 2020 at 02:39 PM
+-- Generation Time: Jan 01, 2021 at 09:00 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -453,7 +453,10 @@ INSERT INTO `tbl_nilai` (`id_nilai`, `id_jadwal`, `nis`, `nilai`) VALUES
 (14, 17, 'TI1021395', 89),
 (15, 13, '32030922', 89),
 (16, 13, '20903903', 90),
-(17, 13, '29883928093', 99);
+(17, 13, '29883928093', 99),
+(18, 15, '20903903', 90),
+(19, 15, '32030922', 99),
+(20, 15, '29883928093', 87);
 
 -- --------------------------------------------------------
 
@@ -508,7 +511,7 @@ CREATE TABLE `tbl_ppdb` (
   `id_pendaftar` int(100) NOT NULL,
   `nis` int(100) NOT NULL,
   `nama_siswa` varchar(200) NOT NULL,
-  `gender` enum('Laki-Laki','Perempuan','','') NOT NULL,
+  `gender` enum('Laki-Laki','Perempuan') NOT NULL,
   `tempat_lahir` varchar(100) NOT NULL,
   `tanggal_lahir` date NOT NULL,
   `kd_agama` int(20) NOT NULL,
@@ -530,6 +533,7 @@ CREATE TABLE `tbl_ppdb` (
   `file_ijazah` varchar(200) NOT NULL,
   `file_skhun` varchar(200) NOT NULL,
   `nomor_hp_ortu` varchar(30) NOT NULL,
+  `asal_sekolah` varchar(64) NOT NULL,
   `keterangan` varchar(200) NOT NULL,
   `status` enum('Diverifikasi','Ditolak','Diterima','') NOT NULL,
   `created` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
@@ -539,9 +543,9 @@ CREATE TABLE `tbl_ppdb` (
 -- Dumping data for table `tbl_ppdb`
 --
 
-INSERT INTO `tbl_ppdb` (`id_pendaftar`, `nis`, `nama_siswa`, `gender`, `tempat_lahir`, `tanggal_lahir`, `kd_agama`, `alamat_siswa`, `nama_ayah`, `tempat_lahir_ayah`, `tanggal_lahir_ayah`, `nama_ibu`, `tempat_lahir_ibu`, `tanggal_lahir_ibu`, `pekerjaan_ibu`, `pekerjaan_ayah`, `alamat_ortu`, `jumlah_saudara`, `penghasilan_ortu`, `nilai_un`, `nilai_raport`, `foto`, `file_ijazah`, `file_skhun`, `nomor_hp_ortu`, `keterangan`, `status`, `created`) VALUES
-(1, 20903903, 'suprayogi', 'Laki-Laki', 'Ponorogo', '2020-12-23', 1, 'Sini aja', 'Wirman', 'Jakarta', '2020-12-03', 'PARJIEM', 'Surabaya', '2020-12-30', 'PNS', 'PNS', 'Sana aja', 2, 8500000, 90, 99, '7-2-axe-picture5.png', '3700479-education-elearning-graduate-learning-presentation-student-training_1087635.png', '', '0920020280', 'Sedang di cek', '', '2020-12-29 09:13:48'),
-(2, 20903903, 'waskita karya pt', 'Laki-Laki', 'Makassar', '2020-12-14', 1, 'Sana sini', 'Bintar', 'Jakarta', '2020-12-22', 'PARJIEM', 'Surabaya', '2020-12-23', 'DJ', 'PNS', 'Sana sini', 12, 123144111, 890, 289, '50_113701.png', 'settings.png', '', '0828288128179729', 'hi', '', '2020-12-29 09:16:52');
+INSERT INTO `tbl_ppdb` (`id_pendaftar`, `nis`, `nama_siswa`, `gender`, `tempat_lahir`, `tanggal_lahir`, `kd_agama`, `alamat_siswa`, `nama_ayah`, `tempat_lahir_ayah`, `tanggal_lahir_ayah`, `nama_ibu`, `tempat_lahir_ibu`, `tanggal_lahir_ibu`, `pekerjaan_ibu`, `pekerjaan_ayah`, `alamat_ortu`, `jumlah_saudara`, `penghasilan_ortu`, `nilai_un`, `nilai_raport`, `foto`, `file_ijazah`, `file_skhun`, `nomor_hp_ortu`, `asal_sekolah`, `keterangan`, `status`, `created`) VALUES
+(1, 20903903, 'suprayogi', 'Laki-Laki', 'Ponorogo', '2020-12-23', 1, 'Sini aja', 'Wirman', 'Jakarta', '2020-12-03', 'PARJIEM', 'Surabaya', '2020-12-30', 'PNS', 'PNS', 'Sana aja', 2, 8500000, 90, 99, '7-2-axe-picture5.png', '3700479-education-elearning-graduate-learning-presentation-student-training_1087635.png', '', '0920020280', 'sd palobon', 'Sedang di cek', 'Diverifikasi', '2020-12-30 14:08:21'),
+(2, 20903903, 'suprayogi', 'Laki-Laki', 'Ponorogo', '2020-12-23', 1, 'Sini aja', 'Wirman', 'Jakarta', '2020-12-03', 'PARJIEM', 'Surabaya', '2020-12-30', 'PNS', 'PNS', 'Sana aja', 2, 8500000, 90, 99, '50_113701.png', 'settings.png', '', '0920020280', 'sd palobon', 'Sedang di cek', 'Diverifikasi', '2020-12-30 14:08:21');
 
 -- --------------------------------------------------------
 
@@ -1134,7 +1138,7 @@ ALTER TABLE `tbl_level_user`
 -- AUTO_INCREMENT for table `tbl_nilai`
 --
 ALTER TABLE `tbl_nilai`
-  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `tbl_pembayaran`

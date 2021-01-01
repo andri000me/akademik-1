@@ -9,11 +9,13 @@ class Walikelas extends CI_Controller{
 
     function data() {
         // nama tabel
-        $table = 'tbl_walikelas';
+        $table = 'v_walikelas';
         // nama PK
         $primaryKey = 'id_walikelas';
         // list field
         $columns = array(
+          array('db' => 'nama_rombel', 'dt' => 'nama_rombel'),
+          array('db' => 'nama_jurusan', 'dt' => 'nama_jurusan'),
             array('db' => 'kelas', 'dt' => 'kelas'),
             //array('db' => 'nama_guru', 'dt' => 'nama_guru'),
             array('db' => 'id_walikelas',
