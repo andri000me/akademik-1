@@ -72,14 +72,12 @@
                     "sClass": "text-center",
                     "orderable": false,
                 },
-                { "data": "nama_rombel" },
-                { "data": "nama_jurusan" },
                 { "data": "kelas" },
                 { "data": "nama_guru" },
-                    
+
             ]
         } );
-               
+
         t.on( 'order.dt search.dt', function () {
             t.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
                 cell.innerHTML = i+1;

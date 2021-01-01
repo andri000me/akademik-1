@@ -24,12 +24,12 @@
                 <table class="table table-bordered">
                     <tr><th>NIM</th><th>NAMA</th><th>LIHAT NILAI</th></tr>
                     <?php
-                    // foreach ($siswa->result() as $row){
-                    //     echo "<tr>
-                    //         <td width='100'>$row->nim</td>
-                    //         <td>$row->nama</td>
-                    //         <td width='100'>".anchor('raport/nilai_semester/'.$row->nim,'Lihat Raport','class="btn btn-success btn-sm"')."</td></tr>";
-                    // }
+                    foreach ($siswa->result() as $row){
+                        echo "<tr>
+                            <td width='100'>$row->nis</td>
+                            <td>$row->nama</td>
+                            <td width='100'>".anchor('raport/nilai_semester/'.$row->nis,'Lihat Raport','class="btn btn-success btn-sm"')."</td></tr>";
+                    }
                     ?>
                 </table>
         </div>
